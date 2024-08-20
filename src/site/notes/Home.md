@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/home/","tags":["gardenEntry"]}
+{"dg-publish":true,"permalink":"/home/","metatags":"description: \"some description\"","pinned":true,"tags":["gardenEntry"]}
 ---
 
 
@@ -19,4 +19,4 @@
 - bullet
 [[Pages/create a link\|create a link]]
 
-{{time}}
+{{date}}
