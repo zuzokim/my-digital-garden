@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/home/","pinned":true,"tags":["gardenEntry"]}
+{"dg-publish":true,"permalink":"/home/","pinned":true,"tags":["gardenEntry"],"dgShowToc":true}
 ---
 
 
@@ -15,6 +15,7 @@
 도전2
 
 데스크탑에서 업데이트 얍             
+
 
 
 | table | table | table |
