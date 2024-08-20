@@ -16,11 +16,12 @@
 
 데스크탑에서 업데이트 얍             
 
+comments?? 가 뭐냐 ? -> 
 
 
 | table | table | table |
-| ---- | ---- | ---- |
-| ... | ... | ... |
+| ----- | ----- | ----- |
+| ...   | ...   | ...   |
 - bullet
 [[Pages/create a link\|create a link]]
 
