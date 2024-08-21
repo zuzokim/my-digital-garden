@@ -5,3 +5,5 @@
 Fe 너무 느려
 참고 :
 https://toss.im/slash-21/sessions/3-2
+
+comments? https://garden.sparrow.zone/Integrating+Comments+in+Obsidian+Publish
