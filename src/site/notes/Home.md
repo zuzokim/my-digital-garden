@@ -10,7 +10,11 @@ Jiwoo Joy Kim
 
 TODOS:
 - [x] task list1
-- [x] task list2
+- [x] 도메인 고르는 중...
+- [ ] 프로필 채우기....
+- [ ] 간략한 cv 적기
+- [ ] 블로그 1번째 뭐적냐?
+- [ ] 음.. 그동안 읽은 책 리스트
 
 | table | table | table |
 | ----- | ----- | ----- |
