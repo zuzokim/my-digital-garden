@@ -3,11 +3,77 @@ body {
       ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
       IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
    ***/
-    //  background-color: white;
-    //  .content {
-    //   font-size: 14px;
-    //  }
-    //  h1 {
-    //   color: black;
-    //  }
+
+    --color-accent: #9ba952 !important;
+    --color-selection-bg: #edfda1 !important;
+    --color-selection-text: var(--code-string) !important;
+    --link-external-color-hover: #c3e80b !important;
+    --link-external-decoration-hover: #c3e80b !important;
+    --scrollbar-bg: #eeeeee80 !important;
+    // --checkbox-size: 16px !important;
+
+    ::-moz-selection { /* Code for Firefox */
+      color: var(--color-selection-text) !important;
+      background: var(--color-selection-bg) !important;
+    }
+    
+    ::selection {
+      color: var(--color-selection-text) !important; 
+      background: var(--color-selection-bg) !important;
+    }
+
+    .header-tags{
+      display: flex !important;
+      gap: 4px !important;
+    }
+
+    a.tag:hover {
+      background-color: var(--background-secondary) !important;
+    }
+    h1 {
+      font-size: 24px !important;
+    }
+
+    .search-button {
+      border: none !important;
+      padding: 0 16px;
+    }
+
+    .search-box {
+      border-radius: 4px !important;
+      border: 1px solid var(--color-accent) !important;
+    }
+
+    .searchresult{
+      border-radius: 4px !important;
+    }
+
+    .graph-title-container{
+      padding: 16px !important;
+    }
+
+    .graph-title{
+      display: none !important;
+    }
+
+    #link-graph{
+      border-radius: 4px !important;
+     
+    }
+    .ctrl-right {
+      margin-right: 12px !important;
+    }
+
+    #tooltip-wrapper{
+      outline: 1px solid var(--color-accent) !important;
+     
+    }
+    #tooltip-content{
+      padding: 6px !important;
+    }
+
+    .excalidraw-wrapper {
+      outline: 1px solid var(--color-accent) !important;
+    }
 }
+ 
