@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/logs/digital-garden-logs/analytics/","updated":"2024-08-20T23:17:00"}
+{"dg-publish":true,"permalink":"/logs/digital-garden-logs/analytics/","updated":"2024-08-23T21:46:00"}
 ---
 
 
