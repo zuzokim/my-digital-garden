@@ -1,12 +1,12 @@
 ---
-{"dg-publish":true,"permalink":"/projects/index/","created":"2024-08-24"}
+{"dg-publish":true,"permalink":"/projects/index/"}
 ---
 
 
 | File                                             | 🗓️                |
 | ------------------------------------------------ | ------------------ |
 | [[Projects/openstudio.info\|openstudio.info]] | September 24, 2023 |
-| [[Projects/cognosco.online\|cognosco.online]] | September 24, 2023 |
 | [[Projects/Index\|Index]]                     | \-                 |
+| [[Projects/cognosco.online\|cognosco.online]] | September 24, 2023 |
 
 { .block-language-dataview}
