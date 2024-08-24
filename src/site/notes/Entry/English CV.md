@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/entry/english-cv/","pinned":true,"tags":["gardenEntry"],"created":"2024-08-20","updated":"2024-08-20T23:17:00"}
+{"dg-publish":true,"permalink":"/entry/english-cv/","pinned":true,"tags":["gardenEntry","gardenEntry"],"created":"2024-08-20","updated":"2024-08-20T23:17:00"}
 ---
 
 [[Entry/Korean\|Korean]]
