@@ -6,4 +6,7 @@
 
 https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API
 
-[[Sharedworker api\|Sharedworker api]]
+[[Web/Sharedworker api\|Sharedworker api]]
+
+[[Web/Page visibility api\|Page visibility api]]
+
