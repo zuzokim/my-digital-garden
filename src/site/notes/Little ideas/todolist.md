@@ -8,7 +8,7 @@
 	- [x] 도메인 연동
 	- [ ] 프로필과 간략한 cv 채우기....
 	- [ ] SEO 작업해둬야겟군 검색해도 안나와
-	    - [x] [[Google Search console에 도메인 등록하기\|Google Search console에 도메인 등록하기]]
+	    - [x] [[Logs/digital-garden-logs/Google Search console에 도메인 등록하기\|Google Search console에 도메인 등록하기]]
 	- [ ] Obsidian Template 만들기
 	- [ ] Home에 notes 프리뷰 리스트 grid로 만들기
 	   - [x] dataview plugin으로 table query로 동기화
