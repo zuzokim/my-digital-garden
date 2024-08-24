@@ -2,11 +2,11 @@
 {"dg-publish":true,"permalink":"/pages/index/"}
 ---
 
-| File                                  | 🗓️                        |
-| ------------------------------------- | -------------------------- |
-| [[Pages/Index\|Index]]             | 7:01 PM - August 24, 2024  |
-| [[Pages/Welcome\|Welcome]]         | 6:13 PM - August 24, 2024  |
-| [[Pages/handwriting\|handwriting]] | 2:20 PM - August 24, 2024  |
-| [[Pages/links\|links]]             | 11:00 PM - August 21, 2024 |
+| File                                  | 🗓️                       |
+| ------------------------------------- | ------------------------- |
+| [[Pages/handwriting\|handwriting]] | 8:27 PM - August 24, 2024 |
+| [[Pages/links\|links]]             | 8:24 PM - August 24, 2024 |
+| [[Pages/Welcome\|Welcome]]         | 8:24 PM - August 24, 2024 |
+| [[Pages/Index\|Index]]             | 7:01 PM - August 24, 2024 |
 
 { .block-language-dataview}
