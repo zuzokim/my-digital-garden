@@ -2,6 +2,11 @@
 {"dg-publish":true,"permalink":"/wip-projects-and-workshops/secret-texts/","updated":"2024-08-24T19:26:00"}
 ---
 
+
+![Screen Shot 2024-08-27 at 11.46.36 PM.png](/img/user/Screen%20Shot%202024-08-27%20at%2011.46.36%20PM.png)
+
+![Screen Shot 2024-08-27 at 11.45.28 PM.png](/img/user/Screen%20Shot%202024-08-27%20at%2011.45.28%20PM.png)
+
 Link
 https://whitespreadsheet.online/secret-texts
 
