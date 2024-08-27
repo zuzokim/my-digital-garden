@@ -41,7 +41,7 @@ R&D Frontend Engineer 2021.11 ~ now
 
 #### __Skills & Tools__
 
-Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap, Prosemirror, Excalidraw, Three.js, p5.js, Matter.js, Node.js, Socket.IO, Express.js, Git
+Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap, Prosemirror, Excalidraw, Three.js, p5.js, Matter.js, Node.js, Express.js, Git
 
 —
 
@@ -90,3 +90,9 @@ Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap
 ###### [[three.js\|three.js]] | 2024 ~ now
 
 ###### [[study archives\|study archives]] | 2021 ~ now
+
+
+
+
+
+
