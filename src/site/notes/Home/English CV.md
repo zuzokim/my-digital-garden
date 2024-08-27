@@ -1,18 +1,25 @@
 ---
-{"dg-publish":true,"permalink":"/home/english-cv/","pinned":true,"tags":["gardenEntry"],"created":"2024-08-20","updated":"2024-08-27T23:18:00"}
+{
+  "dg-publish": true,
+  "permalink": "/home/english-cv/",
+  "pinned": true,
+  "tags": ["gardenEntry"],
+  "created": "2024-08-20",
+  "updated": "2024-08-27T23:18:00",
+}
 ---
 
 [[Home/한국어 CV\|한국어 CV]]
 
 ![스크린샷 2024-03-18 오전 11.14.03.png|150](/img/user/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-03-18%20%EC%98%A4%EC%A0%84%2011.14.03.png)
 
-### Jiwoo Joy Kim
+### __Jiwoo Joy Kim__
 
 Web Frontend Engineer, currently based in Seoul.
 
+—
 
- —
-#### Contact
+#### __Contact__
 
 Email | zuzokim@gmail.com
 
@@ -22,77 +29,64 @@ LinkedIn | [LinkedIn](https://www.linkedin.com/in/%EC%A7%80%EC%9A%B0-%EA%B9%80-6
 
 Linktree | [link.tree](https://linktr.ee/zuzokim)
 
- —
+—
 
-#### Work Experience
+#### __Work Experience__
 
 ##### [I Hate Flying Bugs Inc.](https://www.ihateflyingbugs.com/en/main-en/)
- R&D Frontend Engineer 2021.11 ~ now
 
- —
+R&D Frontend Engineer 2021.11 ~ now
 
-#### Skills & Tools
+—
+
+#### __Skills & Tools__
 
 Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap, Prosemirror, Excalidraw, Three.js, p5.js, Matter.js, Node.js, Socket.IO, Express.js, Git
- 
- —
-#### Other Experience
-
-##### Projects
-
-###### [[Logs/sqetch.club\|sqetch.club]]
-project management, web development 2024 ~ now
-
- ###### [[Projects/cognosco.online\|cognosco.online]]
- creative directing, web development & design 2023
-
-###### [[Martha\|Martha]]
-web development 2023
-
-###### [[Projects/openstudio.info\|openstudio.info]]
-directing & web development 2022, 2023
-
-###### [[recollect.today\|recollect.today]]
-project management, web development & design 2021
-
-##### Commissions
-
-###### [[imzizi.com\|imzizi.com]]
-web development 2024
-
-###### [[Projects/spacematter.co.kr\|spacematter.co.kr]]
-web development & design 2023
-
-###### [[당신2 9하던 삶\|당신2 9하던 삶]]
-web development 2022
 
 —
 
-#### Education
+#### __Other Experience__
 
-###### Codestates 
-Software Engineering Course 28', Frontend Intensive Course 2' 2020.12 ~ 2021.09
+##### _Projects_
 
-###### Korea National University of Arts
-Bachelor's Degree in Fine Arts , School of Visual Arts 2014 ~ 2019.02
+###### [[Logs/sqetch.club\|sqetch.club]] | project management, web development 2024 ~ now
 
+###### [[Projects/cognosco.online\|cognosco.online]] | creative directing, web development & design 2023
+
+###### [[Martha\|Martha]] | web development 2023
+
+###### [[Projects/openstudio.info\|openstudio.info]] | directing & web development 2022, 2023
+
+###### [[recollect.today\|recollect.today]] | project management, web development & design 2021
+
+##### _Commissions_
+
+###### [[imzizi.com\|imzizi.com]] | web development 2024
+
+###### [[Projects/spacematter.co.kr\|spacematter.co.kr]] | web development & design 2023
+
+###### [[당신2 9하던 삶\|당신2 9하던 삶]] | web development 2022
 
 —
 
-#### Etc
+#### __Education__
 
-##### Workshops
+###### Codestates | Software Engineering Course 28', Frontend Intensive Course 2' 2020.12 ~ 2021.09
 
-[AAD Workshop](https://artsactsdays.kr/product/8540/)
-[[Internet Art Timeline\|Internet Art Timeline]] 2024
+###### Korea National University of Arts | Bachelor's Degree in Fine Arts , School of Visual Arts 2014 ~ 2019.02
 
-[whitespreadsheet.online](https://whitespreadsheet.online)
-[[WIP projects & workshops/《SECRET TEXTS》\|《SECRET TEXTS》]] 2023
+—
 
-##### Studies
+#### __Etc__
 
-[[three.js\|three.js]]
-2024 ~ now
+##### _Workshops_
 
-[[study archives\|study archives]]
-2021 ~ now
+###### [AAD Workshop](https://artsactsdays.kr/product/8540/) | [[Internet Art Timeline\|Internet Art Timeline]] 2024
+
+###### [whitespreadsheet.online](https://whitespreadsheet.online) | [[WIP projects & workshops/《SECRET TEXTS》\|《SECRET TEXTS》]] 2023
+
+##### _Studies_
+
+###### [[three.js\|three.js]] | 2024 ~ now
+
+###### [[study archives\|study archives]] | 2021 ~ now

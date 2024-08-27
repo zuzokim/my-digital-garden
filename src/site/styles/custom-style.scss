@@ -4,6 +4,43 @@ body {
       IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
    ***/
 
+
+    .notelink svg{
+      display: none !important;
+    }
+
+   --h1-size: 24px !important;
+   --h2-size: 22px !important;
+   --h3-size: 20px !important;
+   --h4-size: 18px !important;
+   --h5-size: 16px !important;
+   --h6-size: 14px !important;
+
+
+    .navbar {
+      z-index: 9999;
+    }
+
+    .content {
+      font-size: 14px !important;
+      max-width: 620px !important;
+      --h6-weight: 400 !important;
+    }
+
+    .toc {
+      padding: 0 10px !important;
+      border-radius: 0 !important;
+    }
+
+    .toc-container {
+      margin-top: 8px !important;
+      font-size: var(--h6-size) !important;
+    }
+
+    .toc-container li::before {
+      display: none !important;
+    }
+
     --color-accent: #9ba952 !important;
     --color-selection-bg: #edfda1 !important;
     --color-selection-text: var(--code-string) !important;
@@ -30,9 +67,6 @@ body {
     a.tag:hover {
       background-color: var(--background-secondary) !important;
     }
-    h1 {
-      font-size: 24px !important;
-    }
 
     .search-button {
       border: none !important;
@@ -57,9 +91,9 @@ body {
     }
 
     #link-graph{
-      border-radius: 4px !important;
-     
+      border-radius: 0 !important;
     }
+
     .ctrl-right {
       margin-right: 12px !important;
     }
@@ -78,6 +112,7 @@ body {
 
     #disqus_thread  {
      opacity: 0.8;
+     padding-top: 36px
     }
 }
  
