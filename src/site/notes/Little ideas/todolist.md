@@ -6,7 +6,7 @@
 	- [x] obsidian ditigal-garden plugin 세팅
 	- [x] icloud로 멀티 디바이스 동기화
 	- [x] 도메인 연동
-	- [ ] 프로필과 간략한 cv 채우기....
+	- [x] 프로필과 간략한 cv 채우기....
 	- [ ] SEO 작업해둬야겟군 검색해도 안나와
 	    - [x] [[Logs/digital-garden-logs/Google Search console에 도메인 등록하기\|Google Search console에 도메인 등록하기]]
 	- [ ] Obsidian Template 만들기
@@ -26,5 +26,6 @@
 	- [ ] 3년차 회고
 	- [ ] react lazy import
 	- [x] 음.. 그동안 읽은 책 리스트 wiki [[Logs/books wiki\|books wiki]]
+	- [ ] useRef, useEffect cleanup func, why useEffect called twice?
 
 

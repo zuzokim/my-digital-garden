@@ -1,14 +1,14 @@
 ---
-{"dg-publish":true,"permalink":"/home/english-cv/","pinned":true,"tags":["gardenEntry"],"created":"2024-08-20","updated":"2024-08-27T23:18:00"}
+{"dg-publish":true,"permalink":"/home/cv/","created":"2024-08-19","updated":"2024-08-27T23:40:00"}
 ---
 
-[[Home/한국어 CV\|한국어 CV]]
+
+[[Home/English CV\|English CV]]
 
 ![스크린샷 2024-03-18 오전 11.14.03.png|150](/img/user/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-03-18%20%EC%98%A4%EC%A0%84%2011.14.03.png)
+### 김지우
 
-### Jiwoo Joy Kim
-
-Web Frontend Engineer, currently based in Seoul.
+웹 프론트엔드 개발자, 서울
 
 
  —
@@ -27,7 +27,7 @@ Linktree | [link.tree](https://linktr.ee/zuzokim)
 #### Work Experience
 
 ##### [I Hate Flying Bugs Inc.](https://www.ihateflyingbugs.com/en/main-en/)
- R&D Frontend Engineer 2021.11 ~ now
+ R&D FE팀 프론트엔드 개발자 2021.11 ~ 현재
 
  —
 
@@ -38,61 +38,64 @@ Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap
  —
 #### Other Experience
 
-##### Projects
+##### 프로젝트
 
 ###### [[Logs/sqetch.club\|sqetch.club]]
-project management, web development 2024 ~ now
+프로젝트 기획, 프론트엔드 개발 2024 ~ 현재
 
  ###### [[Projects/cognosco.online\|cognosco.online]]
- creative directing, web development & design 2023
+ 크리에이티브 디렉팅, 프론트엔드 개발 및 디자인 2023
 
 ###### [[Martha\|Martha]]
-web development 2023
+프론트엔드, 백엔드 개발 2023
 
 ###### [[Projects/openstudio.info\|openstudio.info]]
-directing & web development 2022, 2023
+프로젝트 기획, 프론트엔드 개발 2022, 2023
 
 ###### [[recollect.today\|recollect.today]]
-project management, web development & design 2021
+프로젝트 기획, 프론트엔드 개발 및 디자인 2021
 
-##### Commissions
+##### 커미션
 
 ###### [[imzizi.com\|imzizi.com]]
-web development 2024
+웹 개발 도움 2024
 
 ###### [[Projects/spacematter.co.kr\|spacematter.co.kr]]
-web development & design 2023
+웹 개발 및 디자인 2023
 
 ###### [[당신2 9하던 삶\|당신2 9하던 삶]]
-web development 2022
+웹 개발 2022
 
 —
 
 #### Education
 
-###### Codestates 
-Software Engineering Course 28', Frontend Intensive Course 2' 2020.12 ~ 2021.09
+###### 코드스테이츠 
+소프트웨어 엔지니어링 코스28',  프론트엔드 심화 코스 2' 2020.12 ~ 2021.09
 
-###### Korea National University of Arts
-Bachelor's Degree in Fine Arts , School of Visual Arts 2014 ~ 2019.02
+###### 한국예술종합학교
+미술원 조형예술과 예술사(학사) 졸업 2014 ~ 2019.02
 
 
 —
 
-#### Etc
+#### 기타
 
-##### Workshops
+##### 워크샵
 
 [AAD Workshop](https://artsactsdays.kr/product/8540/)
-[[Internet Art Timeline\|Internet Art Timeline]] 2024
+[[Internet Art Timeline\|Internet Art Timeline]] 참여 2024
 
 [whitespreadsheet.online](https://whitespreadsheet.online)
-[[WIP projects & workshops/《SECRET TEXTS》\|《SECRET TEXTS》]] 2023
+[[WIP projects & workshops/《SECRET TEXTS》\|《SECRET TEXTS》]] 참여 2023
 
-##### Studies
+##### 스터디
 
 [[three.js\|three.js]]
 2024 ~ now
 
 [[study archives\|study archives]]
 2021 ~ now
+
+
+
