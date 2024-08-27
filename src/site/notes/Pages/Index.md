@@ -2,11 +2,7 @@
 {"dg-publish":true,"permalink":"/pages/index/"}
 ---
 
-| File                                  | 🗓️                       |
-| ------------------------------------- | ------------------------- |
-| [[Pages/handwriting\|handwriting]] | 8:27 PM - August 24, 2024 |
-| [[Pages/links\|links]]             | 8:24 PM - August 24, 2024 |
-| [[Pages/Welcome\|Welcome]]         | 8:24 PM - August 24, 2024 |
-| [[Pages/Index\|Index]]             | 7:01 PM - August 24, 2024 |
-
-{ .block-language-dataview}
+```dataview 
+table file.mtime as 🗓️ from "Pages" 
+sort file.mtime DESC
+```

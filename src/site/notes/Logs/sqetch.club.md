@@ -9,8 +9,7 @@ GitHub
 https://github.com/SqetchClub
 
 Worklogs
-| File                                                                                     | 🗓️                       |
-| ---------------------------------------------------------------------------------------- | ------------------------- |
-| [[WIP projects & workshops/SqetchClub/Worklogs/p5.js stroke test\|p5.js stroke test]] | 8:21 PM - August 24, 2024 |
-
-{ .block-language-dataview}
+```dataview 
+table file.mtime as 🗓️ from "WIP projects & workshops/SqetchClub/Worklogs" 
+sort file.mtime DESC
+```
