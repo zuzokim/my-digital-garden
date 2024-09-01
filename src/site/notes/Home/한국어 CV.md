@@ -40,7 +40,7 @@ Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap
 
 ##### 프로젝트
 
-###### [[Logs/sqetch.club\|sqetch.club]]
+###### [[Projects/WIP projects & workshops/SqetchClub/sqetch.club\|sqetch.club]]
 프로젝트 기획, 프론트엔드 개발 2024 ~ 현재
 
  ###### [[Projects/cognosco.online\|cognosco.online]]
@@ -85,7 +85,7 @@ Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap
 [[Internet Art Timeline\|Internet Art Timeline]] 참여 2024
 
 [whitespreadsheet.online](https://whitespreadsheet.online)
-[[WIP projects & workshops/《SECRET TEXTS》\|《SECRET TEXTS》]] 참여 2023
+[[Projects/WIP projects & workshops/《SECRET TEXTS》\|《SECRET TEXTS》]] 참여 2023
 
 ##### 스터디
 
