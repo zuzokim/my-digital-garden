@@ -742,6 +742,10 @@ body.backlinks-note-icon .backlink[data-note-icon="3"]::before {
         gap: 3px;
         align-items: center;
     }
+
+    svg {
+        display: none;
+    }
 }
 
 .align-icon {
