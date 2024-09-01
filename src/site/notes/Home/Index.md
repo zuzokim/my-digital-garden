@@ -4,7 +4,7 @@
 
 | Pages                                                                                                                 | 🗓️                           |
 | --------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| [[Pages/Next.js Pages router, App router & SvelteKit routes\|Next.js Pages router, App router & SvelteKit routes]] | 10:57 PM - September 01, 2024 |
+| [[Pages/Next.js Pages router, App router & SvelteKit routes\|Next.js Pages router, App router & SvelteKit routes]] | 11:34 PM - September 01, 2024 |
 | [[Pages/handwriting\|handwriting]]                                                                                 | 9:51 PM - September 01, 2024  |
 
 { .block-language-dataview}
@@ -14,12 +14,12 @@
 
 | Projects                                                                                          | 🗓️                |
 | ------------------------------------------------------------------------------------------------- | ------------------ |
-| [[Projects/당신2 9하던 삶\|당신2 9하던 삶]]                                                              | May 09, 2022       |
-| [[Projects/cognosco.online\|cognosco.online]]                                                  | September 24, 2023 |
-| [[Projects/open studio\|open studio]]                                                          | September 24, 2023 |
 | [[Projects/space matter architects\|space matter architects]]                                  | November 24, 2023  |
-| [[Projects/WIP projects & workshops/SqetchClub/Worklogs/p5.js stroke test\|p5.js stroke test]] | \-                 |
+| [[Projects/당신2 9하던 삶\|당신2 9하던 삶]]                                                              | May 09, 2022       |
+| [[Projects/open studio\|open studio]]                                                          | September 24, 2023 |
+| [[Projects/cognosco.online\|cognosco.online]]                                                  | September 24, 2023 |
 | [[Projects/WIP projects & workshops/SqetchClub/sqetch.club\|sqetch.club]]                      | August 19, 2024    |
+| [[Projects/WIP projects & workshops/SqetchClub/Worklogs/p5.js stroke test\|p5.js stroke test]] | \-                 |
 | [[Projects/WIP projects & workshops/whitespreadsheet.online/《SECRET TEXTS》\|《SECRET TEXTS》]]   | October 24, 2023   |
 
 { .block-language-dataview}

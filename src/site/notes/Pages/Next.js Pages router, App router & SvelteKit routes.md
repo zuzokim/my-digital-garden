@@ -64,7 +64,7 @@ app/logs/page.js -> `/logs`
 	- Pages router와 다른 점은 괄호로 감싼 Route Groups인데, 파일구조가 URL 구조에 영향을 미치지 않도록 하고 싶을 때 사용할 수 있습니다. 예를 들어, `(marketing)` 과 `(shop)` 은 같은 레벨의 URL 구조를 가지지만 하위에 `layout.js`를 따로 작성해 각기 다른 레이아웃을 별도로 적용할 수 있습니다.
 		 ![Screen Shot 2024-09-01 at 6.31.26 PM.png](/img/user/Screen%20Shot%202024-09-01%20at%206.31.26%20PM.png)![Screen Shot 2024-09-01 at 7.01.55 PM.png](/img/user/Screen%20Shot%202024-09-01%20at%207.01.55%20PM.png)
 
-	- 만약, root 레이아웃을 아예 상속받고 싶지 않은 경우에는 `app/`하위의 루트경로에 괄호로 감싼 route groups를 따로 만들고, 각기 다른 root layout을 만들면 된다. 대신 위에서 말했던 것처럼 각각 `html` 과 `body`태그가 포함되어있어야 합니다.
+	- 만약, root 레이아웃을 아예 상속받고 싶지 않은 경우에는 `app/`하위의 루트경로에 괄호로 감싼 route groups를 따로 만들고, 각기 다른 root layout을 만들면 됩니다. 대신 위에서 말했던 것처럼 각각 `html` 과 `body`태그가 포함되어있어야 합니다.
 	- Layout은 기본적으로 Server Component이며, Client Component로 세팅할 수 있습니다.
 
 
@@ -78,7 +78,7 @@ src/routes/logs/+page.svelte -> `/logs`
 - 동적 라우팅
 ```js
 src/routes/home/+page.svelte -> `/home`
-arc/routes/logs/[]/+page.svelte -> `/logs/digital-garden-log`
+arc/routes/logs/[slug]/+page.svelte -> `/logs/digital-garden-log`
 ```
  - Layouts and Nested Routing
 	 -  app router처럼 네이티브 레이아웃을 제공합니다. `+layout.svelte` 파일을 원하는 디렉토리 하위로 작성하면 해당 디렉토리의 모든 경로에 레이아웃을 적용할 수 있습니다.
@@ -88,13 +88,13 @@ arc/routes/logs/[]/+page.svelte -> `/logs/digital-garden-log`
 	- SvelteKit는 기본적으로 서버에서 컴포넌트를 먼저 렌더 혹은 pre-render한 후 HTML로 클라이언트에 보내줍니다. 그리고 hydration[^hydration]을 거쳐 브라우저에서 컴포넌트가 상호작용 가능하도록 다시 렌더하게 됩니다. 모든 페이지가 server 혹은 client에서 동작할 수 있게 해야하는데 이를 page option을 통해 조정할 수 있습니다.
 - `+page.server.js`로 작성한 페이지의 `load` function은 서버에서 실행됩니다. (db에서 데이터를 fetching하거나 하는 경우)
 	- client side 네비게이션을 하는 동안에 SvelteKit는 서버에서 해당 데이터를 가져오게 됩니다.
-	- 예를 들어 `npm create svelte`로 만든 스타터앱의 `sverdle/page.server.ts` 파일에 보면 서버에서 실행되는 actions를 export하고 있는 걸 볼 수 있습니다. [^page.server.ts]
+	- 예를 들어 `npm create svelte`로 만든 스타터앱의 `sverdle/+page.server.ts` 파일에 보면 서버에서 실행되는 actions를 export하고 있는 걸 볼 수 있습니다. [^page.server.ts]
 		![Screen Shot 2024-09-01 at 9.20.43 PM.png](/img/user/Screen%20Shot%202024-09-01%20at%209.20.43%20PM.png)
-		그리고 `page.svelte` 파일에도 동일한 keypress 이벤트를 받는 action 로직이 있는 걸 볼 수 있습니다. [^page.svelte]
+		그리고 `+page.svelte` 파일에도 동일한 keypress 이벤트를 받는 action 로직이 있는 걸 볼 수 있습니다. [^page.svelte]
 		![Screen Shot 2024-09-01 at 9.23.34 PM.png](/img/user/Screen%20Shot%202024-09-01%20at%209.23.34%20PM.png)
-		크롬브라우저 개발자 도구 - Settings - Debugger - Disable Javascript를 체크하고 js hydration을 막아둔 뒤 sverdle을 플레이하면 `page.svelte` 의 update 액션은 실행되지 않고, 서버의 update 액션이 실행되는 것을 볼 수 있습니다. 대신 URL 경로가 `http://localhost:5173/sverdle?/update` 로 변경되어 보이면서 keypress 이벤트가 발생할 때마다 서버 요청이 발생하는 것을 발견할 수 있습니다. 
-		- SvelteKit에서 form이 제출되면 해당 form에 해당하는 action이 실행되고, URL은 action을 query parameter로 포함합니다. 
-		- 따라서 클라이언트 환경이 좋지 못할 때에도 플레이 기능이 fallback으로 동작할 수 있는 이점이 생겨납니다.
+		크롬브라우저 개발자 도구 - Settings - Debugger - Disable Javascript를 체크하고 js hydration을 막아둔 뒤 sverdle을 플레이하면 `+page.svelte` 의 update 액션은 실행되지 않고, 서버의 update 액션이 실행되는 것을 볼 수 있습니다. URL 경로가 `http://localhost:5173/sverdle?/update` 로 변경되어 보이면서 keypress 이벤트가 발생할 때마다 서버 요청이 발생하는 것을 발견할 수 있습니다. 
+		- SvelteKit에서 form이 제출되면 form에 해당하는 action이 실행되고, URL은 action을 query parameter로 포함합니다. 
+		- 클라이언트 환경이 좋지 못할 때에도 플레이 기능이 fallback으로 동작할 수 있는 이점이 생겨납니다.
 	
 - +layout.js & +layout.server.js
 	- `+layout.server.js`로 작성한 레이아웃도 마찬가지로 서버에서 실행됩니다. 클라이언트에 노출되면 안되는 보안api나 서버사이드 인증이 필요할 때 사용할 수 있습니다.
