@@ -107,7 +107,7 @@ arc/routes/logs/[slug]/+page.svelte -> `/logs/digital-garden-log`
 	![Screen Shot 2024-09-01 at 9.42.40 PM.png](/img/user/Screen%20Shot%202024-09-01%20at%209.42.40%20PM.png)
 
 
-[^sqetchclub]: [[Projects/WIP projects & workshops/SqetchClub/sqetch.club\|sqetch.club]]
+[^sqetchclub]: [[Projects/SqetchClub/sqetch.club\|sqetch.club]]
 [^hydration]: https://kit.svelte.dev/docs/glossary#hydration
 [^page.server.ts]: https://github.com/sveltejs/kit/blob/108cb127eb0a4c3655aeff1f749bcbd98b70324e/packages/create-svelte/templates/default/src/routes/sverdle/%2Bpage.server.ts#L29-#L49
 [^page.svelte]: https://github.com/sveltejs/kit/blob/108cb127eb0a4c3655aeff1f749bcbd98b70324e/packages/create-svelte/templates/default/src/routes/sverdle/%2Bpage.svelte#L60-#L76

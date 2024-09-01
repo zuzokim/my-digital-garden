@@ -40,13 +40,13 @@ Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap
 
 ##### Projects
 
-###### [[Projects/WIP projects & workshops/SqetchClub/sqetch.club\|sqetch.club]]
+###### [[Projects/SqetchClub/sqetch.club\|sqetch.club]]
 project management, web development 2024 ~ now
 
  ###### [[Projects/cognosco.online\|cognosco.online]]
  creative directing, web development & design 2023
 
-###### [[Martha\|Martha]]
+###### [[Projects/Martha\|Martha]]
 web development 2023
 
 ###### [[Projects/open studio\|open studio]]
@@ -87,7 +87,7 @@ Bachelor's Degree in Fine Arts , School of Visual Arts 2014 ~ 2019.02
 [[Internet Art Timeline\|Internet Art Timeline]] 2024
 
 [whitespreadsheet.online](https://whitespreadsheet.online)
-[[Projects/WIP projects & workshops/whitespreadsheet.online/《SECRET TEXTS》\|《SECRET TEXTS》]] 2023
+[[Projects/whitespreadsheet.online/《SECRET TEXTS》\|《SECRET TEXTS》]] 2023
 
 ##### Studies
 
