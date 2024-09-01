@@ -9,6 +9,6 @@
 | [[Projects/cognosco.online\|cognosco.online]]     | September 24, 2023 |
 | [[Projects/openstudio.info\|openstudio.info]]     | September 24, 2023 |
 | [[Projects/spacematter.co.kr\|spacematter.co.kr]] | November 24, 2023  |
-| [[Projects/당신2 9하던 삶\|당신2 9하던 삶]]                 | \-                 |
+| [[Projects/당신2 9하던 삶\|당신2 9하던 삶]]                 | May 09, 2022       |
 
 { .block-language-dataview}
