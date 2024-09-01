@@ -89,6 +89,13 @@ app/logs/page.js -> `/logs`
 - `+page.server.js`로 작성한 페이지의 `load` function은 서버에서 실행됩니다. (db에서 데이터를 fetching하거나 하는 경우)
 	- client side 네비게이션을 하는 동안에 SvelteKit는 서버에서 해당 데이터를 가져오게 됩니다.
 	- 예를 들어 `npm create svelte`로 만든 스타터앱의 `sverdle/page.server.ts` 파일에 보면 서버에서 실행되는 actions를 export하고 있는 걸 볼 수 있습니다. [^page.server.ts]
+		![Screen Shot 2024-09-01 at 9.20.43 PM.png](/img/user/Screen%20Shot%202024-09-01%20at%209.20.43%20PM.png)
+		그리고 `page.svelte` 파일에도 동일한 keypress 이벤트를 받는 action 로직이 있는 걸 볼 수 있습니다. [^page.svelte]
+		![Screen Shot 2024-09-01 at 9.23.34 PM.png](/img/user/Screen%20Shot%202024-09-01%20at%209.23.34%20PM.png)
+		크롬브라우저 개발자 도구 - Settings - Debugger - Disable Javascript를 체크하고 js hydration을 막아둔 뒤 sverdle을 플레이하면 `page.svelte` 의 update 액션은 실행되지 않고, 서버의 update 액션이 실행되는 것을 볼 수 있습니다. 대신 URL 경로가 `http://localhost:5173/sverdle?/update` 로 변경되어 보이면서 keypress 이벤트가 발생할 때마다 서버 요청이 발생하는 것을 발견할 수 있습니다. 
+		- SvelteKit에서 form이 제출되면 해당 form에 해당하는 action이 실행되고, URL은 action을 query parameter로 포함합니다. 
+		- 따라서 클라이언트 환경이 좋지 못할 때에도 플레이 기능이 fallback으로 동작할 수 있는 이점이 생겨납니다.
+	
 - +layout.js & +layout.server.js
 	- `+layout.server.js`로 작성한 레이아웃도 마찬가지로 서버에서 실행됩니다. 클라이언트에 노출되면 안되는 보안api나 서버사이드 인증이 필요할 때 사용할 수 있습니다.
 	- SvelteKit는 두 가지 레이아웃을 다 사용할 수 있는데, 서버사이드 레이아웃의 로직을 먼저 실행하고나서 클라이언트 사이드 로직을 추가적으로 실행합니다.
@@ -106,4 +113,5 @@ app/logs/page.js -> `/logs`
 
 [^sqetchclub]: [[Projects/WIP projects & workshops/SqetchClub/sqetch.club\|sqetch.club]]
 [^hydration]: https://kit.svelte.dev/docs/glossary#hydration
-[^page.server.ts]: https://github.com/sveltejs/kit/blob/108cb127eb0a4c3655aeff1f749bcbd98b70324e/packages/create-svelte/templates/default/src/routes/sverdle/%2Bpage.server.ts
+[^page.server.ts]: https://github.com/sveltejs/kit/blob/108cb127eb0a4c3655aeff1f749bcbd98b70324e/packages/create-svelte/templates/default/src/routes/sverdle/%2Bpage.server.ts#L29-#L49
+[^page.svelte]: https://github.com/sveltejs/kit/blob/108cb127eb0a4c3655aeff1f749bcbd98b70324e/packages/create-svelte/templates/default/src/routes/sverdle/%2Bpage.svelte#L60-#L76
