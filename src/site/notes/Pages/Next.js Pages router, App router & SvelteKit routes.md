@@ -71,14 +71,14 @@ app/logs/page.js -> `/logs`
 ### SvelteKit routes
 - Svelte의 동시성(reactive) 패러다임을 기반으로한 file based 라우팅 시스템입니다.
 	- `src/routes/` 하위로 파일을 만들면 경로가 됩니다.
-	```js
-	src/routes/+page.svelte -> `/`
-	src/routes/logs/+page.svelte -> `/logs`
+```js
+src/routes/+page.svelte -> `/`
+src/routes/logs/+page.svelte -> `/logs`
 ```
 - 동적 라우팅
 ```js
 src/routes/home/+page.svelte -> `/home`
-arc/routes/logs/[slug]/+page.svelte -> `/logs/digital-garden-log`
+arc/routes/logs/[]/+page.svelte -> `/logs/digital-garden-log`
 ```
  - Layouts and Nested Routing
 	 -  app router처럼 네이티브 레이아웃을 제공합니다. `+layout.svelte` 파일을 원하는 디렉토리 하위로 작성하면 해당 디렉토리의 모든 경로에 레이아웃을 적용할 수 있습니다.
