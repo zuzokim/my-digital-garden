@@ -57,44 +57,14 @@ app/logs/page.js -> `/logs`
 
 - Layouts and Nested Routing
 	- 경로에 `layout.js` 파일을 만들면 페이지마다 공유하는 레이아웃을 다룰 수 있습니다. 
-		- 중첩된 디렉토리 하위로도 layout을 만들 수 있습니다.   
-	- root 레이아웃은 app 디렉토리 최상위 레벨의 layout.js `app/layout.js` 에 필수로 정의하고, 모든 디렉토리와 경로에 적용됩니다.
-		- 서버에서 반환한 초기 html을 수정할 수 있도록 이 layout은 반드시 `html` 과 `body`태그가 포함되어야 합니다.
-	- 기본적으로 부모 레이아웃을 자식 레이아웃이 상속받습니다.
-	```
-	app/
-	|
-	├── layout.js                 // Root layout (applies to all routes)
-	│
-	├── dashboard/
-	│   ├── layout.js             // Dashboard-specific layout (inherits root layout)
-	│   ├── page.js               // Dashboard page
-	│
-	├── special/
-	│   ├── (custom-group)/
-	│   │   ├── layout.js         // Special layout (inherits root layout)
-	│   │   ├── page.js           // Special page
-	│
-	└── ...
-	
-	```
+		- root 레이아웃은 app 디렉토리 최상위 레벨의 layout.js `app/layout.js` 에 필수로 정의하고, 모든 페이지, 컴포넌트와 레이아웃에 적용됩니다.
+		- 서버에서 반환한 초기 html을 수정할 수 있도록 root layout은 반드시 `html` 과 `body`태그가 포함되어있어야 합니다.
+	- 중첩된 디렉토리 하위로도 layout을 만들 수 있고, 기본적으로 부모 레이아웃을 자식 레이아웃이 상속받습니다. 
+		![Screen Shot 2024-09-01 at 6.49.54 PM.png](/img/user/Screen%20Shot%202024-09-01%20at%206.49.54%20PM.png)
+	- Pages router와 다른 점은 괄호로 감싼 Route Groups인데, 파일구조가 URL 구조에 영향을 미치지 않도록 하고 싶을 때 사용할 수 있습니다. 예를 들어, `(marketing)` 과 `(shop)` 은 같은 레벨의 URL 구조를 가지지만 하위에 `layout.js`를 따로 작성해 각기 다른 레이아웃을 별도로 적용할 수 있습니다.
+		 ![Screen Shot 2024-09-01 at 6.31.26 PM.png](/img/user/Screen%20Shot%202024-09-01%20at%206.31.26%20PM.png)![Screen Shot 2024-09-01 at 7.01.55 PM.png](/img/user/Screen%20Shot%202024-09-01%20at%207.01.55%20PM.png)
 
-
-	- Pages router와 다른 점은 괄호로 감싼 Route Groups인데, 파일구조가 URL 구조에 영향을 미치지 않도록 하고 싶을 때 사용할 수 있습니다.
-			 ![Screen Shot 2024-09-01 at 6.31.26 PM.png|400](/img/user/Screen%20Shot%202024-09-01%20at%206.31.26%20PM.png)
-			 예를 들어, `(marketing)` 과 `(shop)` 은 같은 레벨의 URL 구조를 가지지만 하위에 `layout.js`를 따로 작성해 각기 다른 레이아웃을 적용할 수 있습니다.
-
-```
-app/ 
-│ 
-├── special/ 
-│   ├── layout.js // This layout will not inherit from `app/layout.js` │   ├── (custom-group)/ 
-│   │   ├── page.js // Uses `special/layout.js` and not the root layout 
-│ 
-└── ...
-
-```
-
+	- 만약, root 레이아웃을 아예 상속받고 싶지 않은 경우에는 `app/`하위의 루트경로에 괄호로 감싼 route groups를 따로 만들고, 각기 다른 root layout을 만들면 된다. 대신 위에서 말했던 것처럼 각각 `html` 과 `body`태그가 포함되어있어야 합니다.
 	- Layout은 기본적으로 Server Component이며, Client Component로 세팅할 수 있습니다.
 
 
