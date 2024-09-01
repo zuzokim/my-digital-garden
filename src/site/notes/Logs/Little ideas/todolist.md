@@ -17,7 +17,8 @@
 	- [ ] 방명록 페이지 만들기
 	- [ ] 기타 스타일 꾸준히 다듬기
 		- [ ] selection style
-		- [ ] 못생긴 아이콘 변경
+		- [x] 못생긴 아이콘 변경
+		- [x] unpublished 404 페이지 문구
 	- [ ] ..to be continued
 
 ---
