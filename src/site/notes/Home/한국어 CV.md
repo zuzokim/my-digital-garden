@@ -87,7 +87,7 @@ Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap
 [[Internet Art Timeline\|Internet Art Timeline]] 참여 2024
 
 [whitespreadsheet.online](https://whitespreadsheet.online)
-[[Projects/WIP projects & workshops/《SECRET TEXTS》\|《SECRET TEXTS》]] 참여 2023
+[[Projects/WIP projects & workshops/whitespreadsheet.online/《SECRET TEXTS》\|《SECRET TEXTS》]] 참여 2023
 
 ##### 스터디
 
