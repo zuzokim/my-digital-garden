@@ -33,7 +33,7 @@ Linktree | [link.tree](https://linktr.ee/zuzokim)
 
 #### Skills & Tools
 
-Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap, Prosemirror, Excalidraw, Three.js, p5.js, Matter.js, Node.js, Socket.IO, Express.js, Git
+Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap, Prosemirror, Excalidraw, Three.js, p5.js, Matter.js, Svelte, Node.js, Express.js, Git
  
  —
 #### Other Experience
