@@ -49,7 +49,7 @@ Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap
 ###### [[Martha\|Martha]]
 프론트엔드, 백엔드 개발 2023
 
-###### [[Projects/openstudio.info\|openstudio.info]]
+###### [[Projects/open studio\|open studio]]
 프로젝트 기획, 프론트엔드 개발 2022, 2023
 
 ###### [[recollect.today\|recollect.today]]
@@ -60,7 +60,7 @@ Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap
 ###### [[imzizi.com\|imzizi.com]]
 웹 개발 도움 2024
 
-###### [[Projects/spacematter.co.kr\|spacematter.co.kr]]
+###### [[Projects/space matter architects\|space matter architects]]
 웹 개발 및 디자인 2023
 
 ###### [[Projects/당신2 9하던 삶\|당신2 9하던 삶]]
