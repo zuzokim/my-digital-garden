@@ -76,8 +76,7 @@ app/logs/page.js -> `/logs`
 	src/routes/logs/+page.svelte -> `/logs`
 ```
 - 동적 라우팅
-
-```js
+	```js
 	src/routes/home/+page.svelte -> `/home`
 	arc/routes/logs/[slug]/+page.svelte -> `/logs/digital-garden-log`
 ```
@@ -104,12 +103,8 @@ app/logs/page.js -> `/logs`
 
 
 ## Outro
-사이드프로젝트 세팅 초기단계에서 프로젝트 스트럭쳐를 잡기로 하면서 각 프레임워크의 구조를 알아봐야겠다고 생각해서 간단하게 세 가지 라우팅 방식을 비교해봤습니다. 각자 다르면서 닮은 방식을 가지고 있는데, 특히나 App router와 SvelteKit의 라우팅 방식이 멘탈모델이 비슷한 결을 가지고 있다는 느낌을 받았네요. 더 자세한 스펙과 라우팅 - data fetching, error, pre-render, optimization, middleware... - 에 관해서는 다른 포스트로 또 다뤄보면 좋겠네요.
-![Screen Shot 2024-09-01 at 9.42.40 PM.png](/img/user/Screen%20Shot%202024-09-01%20at%209.42.40%20PM.png)
-
-
-
-
+사이드 프로젝트 초기 스트럭쳐를 잡기로 하면서 SvelteKit 기본 구조를 보면서 Nextjs 라우팅 구조와 자연스럽게 비교하게 됐습니다. 공부도 할겸 간단하게 세 가지 라우팅 방식을 비교 정리해봤습니다. 각자 다르면서 닮은 방식을 가지고 있는데, 특히나 App router와 SvelteKit의 라우팅 방식이 멘탈모델이 비슷한 결을 가지고 있다는 느낌을 받았네요. 더 자세한 스펙과 라우팅 - data fetching, error, pre-render, optimization, middleware... - 에 관해서는 나중에 다른 포스트로 또 다뤄보도록 하겠습니다.
+	![Screen Shot 2024-09-01 at 9.42.40 PM.png](/img/user/Screen%20Shot%202024-09-01%20at%209.42.40%20PM.png)
 
 
 [^sqetchclub]: [[Projects/WIP projects & workshops/SqetchClub/sqetch.club\|sqetch.club]]
