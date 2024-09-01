@@ -33,55 +33,67 @@ Linktree | [link.tree](https://linktr.ee/zuzokim)
 
 #### Skills & Tools
 
-Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap, Prosemirror, Excalidraw, Three.js, p5.js, Matter.js, Node.js, Express.js, Git
+Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap, Prosemirror, Excalidraw, Three.js, p5.js, Matter.js, Node.js, Socket.IO, Express.js, Git
  
  —
 #### Other Experience
 
 ##### 프로젝트
 
-###### [[Logs/sqetch.club\|sqetch.club]] | 프로젝트 기획, 프론트엔드 개발 2024 ~ 현재
+###### [[Logs/sqetch.club\|sqetch.club]]
+프로젝트 기획, 프론트엔드 개발 2024 ~ 현재
 
- ###### [[Projects/cognosco.online\|cognosco.online]] | 크리에이티브 디렉팅, 프론트엔드 개발 및 디자인 2023
+ ###### [[Projects/cognosco.online\|cognosco.online]]
+ 크리에이티브 디렉팅, 프론트엔드 개발 및 디자인 2023
 
-###### [[Martha\|Martha]] | 프론트엔드, 백엔드 개발 2023
+###### [[Martha\|Martha]]
+프론트엔드, 백엔드 개발 2023
 
-###### [[Projects/openstudio.info\|openstudio.info]] | 프로젝트 기획, 프론트엔드 개발 2022, 2023
+###### [[Projects/openstudio.info\|openstudio.info]]
+프로젝트 기획, 프론트엔드 개발 2022, 2023
 
-###### [[recollect.today\|recollect.today]] | 프로젝트 기획, 프론트엔드 개발 및 디자인 2021
+###### [[recollect.today\|recollect.today]]
+프로젝트 기획, 프론트엔드 개발 및 디자인 2021
 
 ##### 커미션
 
-###### [[imzizi.com\|imzizi.com]] | 웹 개발 도움 2024
+###### [[imzizi.com\|imzizi.com]]
+웹 개발 도움 2024
 
-###### [[Projects/spacematter.co.kr\|spacematter.co.kr]] | 웹 개발 및 디자인 2023
+###### [[Projects/spacematter.co.kr\|spacematter.co.kr]]
+웹 개발 및 디자인 2023
 
-###### [[당신2 9하던 삶\|당신2 9하던 삶]] | 웹 개발 2022
+###### [[Projects/당신2 9하던 삶\|당신2 9하던 삶]]
+웹 개발 2022
 
 —
 
 #### Education
 
-###### 코드스테이츠 | 소프트웨어 엔지니어링 코스28',  프론트엔드 심화 코스 2' 2020.12 ~ 2021.09
+###### 코드스테이츠 | 소프트웨어 엔지니어링 코스 28',  프론트엔드 심화 코스 2' 2020.12 ~ 2021.09
 
-###### 한국예술종합학교 | 미술원 조형예술과 예술사(학사) 졸업 2014 ~ 2019.02
+###### 한국예술종합학교| 미술원 조형예술과 예술사(학사) 졸업 2014 ~ 2019.02
 
 
 —
 
-#### 기타
+#### Etc
 
 ##### 워크샵
 
-[AAD Workshop](https://artsactsdays.kr/product/8540/) | [[Internet Art Timeline\|Internet Art Timeline]] 참여 2024
+[AAD Workshop](https://artsactsdays.kr/product/8540/)
+[[Internet Art Timeline\|Internet Art Timeline]] 참여 2024
 
-[whitespreadsheet.online](https://whitespreadsheet.online) | [[WIP projects & workshops/《SECRET TEXTS》\|《SECRET TEXTS》]] 참여 2023
+[whitespreadsheet.online](https://whitespreadsheet.online)
+[[WIP projects & workshops/《SECRET TEXTS》\|《SECRET TEXTS》]] 참여 2023
 
 ##### 스터디
 
-[[three.js\|three.js]] | 2024 ~ now
+[[three.js\|three.js]]
+2024 ~ now
 
-[[study archives\|study archives]] | 2021 ~ now
+[[Logs/study archives\|study archives]]
+2021 ~ now
 
 
 

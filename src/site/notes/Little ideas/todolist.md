@@ -25,7 +25,7 @@
  - [ ] #blog 
 	- [ ] 3년차 회고
 	- [ ] react lazy import
-	- [x] 음.. 그동안 읽은 책 리스트 wiki [[Logs/books wiki\|books wiki]]
+	- [x] 음.. 그동안 읽은 책 리스트 wiki [[Logs/engineering books wiki\|engineering books wiki]]
 	- [ ] useRef, useEffect cleanup func, why useEffect called twice?
 
 
