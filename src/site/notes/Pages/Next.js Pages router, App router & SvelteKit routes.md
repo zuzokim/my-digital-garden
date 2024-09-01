@@ -76,7 +76,8 @@ app/logs/page.js -> `/logs`
 	src/routes/logs/+page.svelte -> `/logs`
 ```
 - 동적 라우팅
-	```js
+
+```js
 	src/routes/home/+page.svelte -> `/home`
 	arc/routes/logs/[slug]/+page.svelte -> `/logs/digital-garden-log`
 ```
