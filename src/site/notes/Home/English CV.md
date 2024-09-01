@@ -26,7 +26,8 @@ Linktree | [link.tree](https://linktr.ee/zuzokim)
 
 #### Work Experience
 
-##### [I Hate Flying Bugs Inc.](https://www.ihateflyingbugs.com/en/main-en/) | R&D Frontend Engineer 2021.11 ~ now
+##### [I Hate Flying Bugs Inc.](https://www.ihateflyingbugs.com/en/main-en/) 
+R&D Frontend Engineer 2021.11 ~ now
 
  —
 
