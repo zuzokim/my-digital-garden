@@ -15,13 +15,14 @@
 
 
 ### Next.js Pages Router
-- 전통적인 file-based 라우팅 시스템입니다.
+- #### 전통적인 file-based 라우팅 시스템입니다.
 - `pages/` 디렉토리 하위로 파일을 만들면 경로가 됩니다.
 ```js
-pages/home.js -> `/home`
-pages/logs.js -> `/logs`
+pages/home/page.js -> `/home`
+pages/logs/page.js -> `/logs`
 ```
-- 동적 라우팅(Dynamic Segments)은 폴더/파일명을 대괄호로 감싸서 만들면 됩니다.
+#### 동적 라우팅(Dynamic Segments)
+- 폴더/파일명을 대괄호로 감싸서 만들면 됩니다.
 ```js
 pages/logs/[slug]/page.js -> `/logs/1` , `logs/2`, `logs/digital-garden-logs`
 ```
@@ -38,9 +39,19 @@ pages/shop/[...slug].js -> `/pages/shop/clothes`, `/pages/shop/clothes/tops` , `
 ```js
 pages/shop/[[...slug]].js -> `/pages/shop`, `/pages/shop/clothes`, , `/pages/shop/clothes/tops` , `pages/shop/clothes/tops/t-shirts`
 ```
+- #### Layouts and Nested Routing
+- <Layout /> 컴포넌트를 만들고 children으로 page들을 넣어서 공통 레이아웃을 다룰 수 있습니다.
+- 네이티브한 방식으로 중첩된 레이아웃을 지원하지는 않습니다.
 
 
-
-
+### Next.js App Router
+- #### Next.js 13부터 도입된 라우팅 시스템입니다. React Server Components를 기반으로 보다 유연한 접근 방식을 염두에 두고 만들어졌습니다.
+- `app/` 디렉토리 하위의 파일 구조가 URL 구조를 반영합니다. 
+```js
+app/home/page.js -> `/home`
+app/logs/page.js -> `/logs`
+```
+- #### 동적 라우팅(Dynamic Segments)
+	- App router에서 동적 라우팅 작성법은 Pages Router에서와 동일합니다.
 
 [^sqetchclub]: [[Projects/WIP projects & workshops/SqetchClub/sqetch.club\|sqetch.club]]
