@@ -9,8 +9,8 @@
 
 세 가지 라우팅 방식 다 공식 문서에 아주 자세히 설명되어 있어서 따라가면서 배우기 좋은데 비슷한 점도 많고 다른 점도 있어서 각각 보기보다는 서로 비교하면서 이해하면 더 도움이 될 것 같아 정리해보기로 했습니다.
 
-- Next.js Pages router
-- Next.js App router
+- [Next.js Pages router](https://nextjs.org/docs/pages/building-your-application/routing)
+- [Next.js App router](https://nextjs.org/docs/app/building-your-application/routing)
 - Sveltekit routes
 
 
@@ -18,20 +18,25 @@
 - 전통적인 file-based 라우팅 시스템입니다.
 - `pages/` 디렉토리 하위로 파일을 만들면 경로가 됩니다.
 ```js
-`pages/home.js` -> `/home`
-`pages/logs.js` -> `/logs`
+pages/home.js -> `/home`
+pages/logs.js -> `/logs`
 ```
 - 동적 라우팅(Dynamic Segments)은 폴더/파일명을 대괄호로 감싸서 만들면 됩니다.
 ```js
-	`pages/logs/[slug]/page.js` -> `/logs/1` , `logs/2`, `logs/digital-garden-logs`
+pages/logs/[slug]/page.js -> `/logs/1` , `logs/2`, `logs/digital-garden-logs`
 ```
-	
-	- Catch-all Segments
-	- Optional Catch-all Segments
 
+- Catch-all Segments 
+	- ... 를 사용하면 여러 segments를 모두 매칭시키는 경로도 만들 수 있습니다.
+```js
+pages/shop/[...slug].js -> `/pages/shop/clothes`, `/pages/shop/clothes/tops` , `pages/shop/clothes/tops/t-shirts`
+```
+- Optional Catch-all Segments
+	- 대괄호 두개를 중첩해 작성하면 여러 segments를 일부만 매칭시키는 경로도 만들 수 있습니다.
+	- Catch-all Segments와 다르게 slug가 undefined일 때 pages/shop에 대한 페이지도 유효한 경로로 만들 수 있습니다.  
 
 ```js
-
+pages/shop/[[...slug]].js -> `/pages/shop`, `/pages/shop/clothes`, , `/pages/shop/clothes/tops` , `pages/shop/clothes/tops/t-shirts`
 ```
 
 
