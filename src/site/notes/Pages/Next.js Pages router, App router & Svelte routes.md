@@ -22,11 +22,13 @@
 `pages/logs.js` -> `/logs`
 ```
 - 동적 라우팅(Dynamic Segments)은 폴더/파일명을 대괄호로 감싸서 만들면 됩니다.
+```js
+	`pages/logs/[slug]/page.js` -> `/logs/1` , `logs/2`, `logs/digital-garden-logs`
+```
+	
 	- Catch-all Segments
 	- Optional Catch-all Segments
-```js
-`pages/logs/[slug]/page.js` -> `/logs/1` , `logs/2`, `logs/digital-garden-logs`
-```
+
 
 ```js
 
