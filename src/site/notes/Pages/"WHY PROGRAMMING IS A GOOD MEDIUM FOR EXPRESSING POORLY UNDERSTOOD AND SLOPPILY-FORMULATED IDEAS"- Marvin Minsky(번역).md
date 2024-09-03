@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/pages/why-programming-is-a-good-medium-for-expressing-poorly-understood-and-sloppily-formulated-ideas-marvin-minsky/","tags":["MarvinMinsky","translation","blog","programming"],"created":"2024-09-03","updated":"2024-09-03T19:47:00"}
+{"dg-publish":true,"permalink":"/pages/why-programming-is-a-good-medium-for-expressing-poorly-understood-and-sloppily-formulated-ideas-marvin-minsky/","tags":["MarvinMinsky","programming","번역"],"created":"2024-09-03","updated":"2024-09-03T21:23:00"}
 ---
 
 ## Intro
