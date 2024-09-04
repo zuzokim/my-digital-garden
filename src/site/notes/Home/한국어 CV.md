@@ -52,7 +52,7 @@ Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap
 ###### [[Projects/open studio\|open studio]]
 프로젝트 기획, 프론트엔드 개발 2022, 2023
 
-###### [[recollect.today\|recollect.today]]
+###### [[Projects/recollect.today\|recollect.today]]
 프로젝트 기획, 프론트엔드 개발 및 디자인 2021
 
 ##### 커미션
