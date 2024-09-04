@@ -1,6 +1,15 @@
 ---
-{"dg-publish":true,"permalink":"/home/index/"}
+{"dg-publish":true,"permalink":"/home/index/","pinned":true,"tags":["gardenEntry"],"updated":"2024-09-04T22:53:00"}
 ---
+
+
+| About                              |
+| ---------------------------------- |
+| [[Home/English CV\|English CV]] |
+| [[Home/한국어 CV\|한국어 CV]]         |
+
+{ .block-language-dataview}
+
 
 | Pages                                                                                                                                                                                                                                       | 🗓️                           |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
@@ -9,7 +18,6 @@
 | [[Pages/handwriting\|handwriting]]                                                                                                                                                                                                       | 9:51 PM - September 01, 2024  |
 
 { .block-language-dataview}
-
 
 
 

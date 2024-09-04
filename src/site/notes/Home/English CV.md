@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/home/english-cv/","pinned":true,"tags":["gardenEntry"],"created":"2024-08-20","updated":"2024-08-27T23:18:00"}
+{"dg-publish":true,"permalink":"/home/english-cv/","created":"2024-08-20","updated":"2024-08-27T23:18:00"}
 ---
 
 [[Home/한국어 CV\|한국어 CV]]
