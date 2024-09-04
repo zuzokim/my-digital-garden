@@ -4,11 +4,6 @@ body {
       IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
    ***/
 
-
-    .notelink svg{
-      display: none !important;
-    }
-
    --h1-size: 24px !important;
    --h2-size: 22px !important;
    --h3-size: 20px !important;
@@ -71,6 +66,7 @@ body {
     .search-button {
       border: none !important;
       padding: 0 16px;
+      background-color: var(--background-secondary);
     }
 
     .search-box {
