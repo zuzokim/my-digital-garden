@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/pages/type-safe-api/","tags":["git","type-safe"],"created":"2024-09-09","updated":"2024-09-09T17:24:00"}
+{"dg-publish":true,"permalink":"/pages/type-safe-api/","tags":["git","type-safe"],"created":"2024-09-09","updated":"2024-09-09T23:15:00"}
 ---
 
 현재 [[Projects/SqetchClub/sqetch.club\|sqetch.club]] 프로젝트는 phoenix [Socket](https://hexdocs.pm/phoenix/js/#socket) , [Channel](https://hexdocs.pm/phoenix/js/#channel) 을 이용해서 Sveltekit app과 소켓통신을 하는 구조입니다. 프로젝트 poc단계에서 임시로 만들어둔 endpoint이긴 하지만 모든 타입들이 any 혹은 Object 타입인 상태로, 어떤 api에 어떤 payload data가 전송되는지 알 수가 없는 상태입니다.
