@@ -28,7 +28,7 @@ swagger 같은 솔루션으로 일부 자동화하거나, wiki 나 gitbook, docu
 - share할 디렉토리를 git submodule로 만들고 remote와 싱크하는 식의 일반적인 git pull, push 방식으로 코드를 동기화할 수 있기 때문에 위의 1,2방식보다 비교적 리소스를 덜 들이고 필요한 파일들이나 설정들을 공유할 수 있다.
 - 대신 업데이트가 있으면 꼭 remote에 push를 해서 싱크를 맞춰야한다. 근데 이건 단점이라고는 할 수 없는게 피쳐 브랜치에서 충분히 테스트한 버전을 main 브랜치로 병합하는 식으로 일종의 버저닝을 할 수도 있을 듯 하다. 
 
-```sh
+```bash
 # Create a new directory for the shared repository
 mkdir shared-code
 cd shared-code
@@ -65,7 +65,7 @@ git commit -m "Add shared code submodule"
 import { SharedType } from '../shared/types';
 ```
 
-```sh
+```bash
 # Navigate to the server repository
 cd path/to/server-repo
 
@@ -84,7 +84,7 @@ git commit -m "Add shared code submodule"
 - submodule은 별도로 git history가 관리되기 때문에 api 체인지만 관리한다는 차원에서 격리시켜두고 사용하기 좋아보임.
 - subtree는 커맨드 자체는 더 단순해지지만 git history가 parent repository와 섞이게 된다는 단점이 있다.
 
-```sh
+```bash
 git subtree add --prefix=<path> <repository-url> <branch> --squash
 
 git subtree pull --prefix=<path> <repository-url> <branch> --squash
