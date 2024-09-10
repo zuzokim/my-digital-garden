@@ -47,7 +47,7 @@ git commit -m "Initial commit"
 git remote add origin <remote-repository-url>
 git push -u origin master
 ```
-```sh
+```bash
 # Navigate to the client repository
 cd path/to/client-repo
 
@@ -57,7 +57,6 @@ git submodule add <remote-repository-url> shared
 # Commit the changes
 git add .
 git commit -m "Add shared code submodule"
-
 ```
 
 ```ts
