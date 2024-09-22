@@ -23,5 +23,62 @@
 2. 시작점과 끝점을 선으로 이어주기
 	1. canvas 2d stroke으로 직접 그려주기
 	2. svg line 엘리먼트를 그려주기
-먼저 각 카드의 중앙지점 찾기를 해볼까요.
 
+
+먼저 각 카드의 중앙지점 찾기를 해볼까요. 수도코드로 작성을 해보겠습니다.
+
+```js
+const handleStart = (e: MouseEvent<HTMLElement>) => {
+	const target = e.target as HTMLElement;
+	const rect = target.getBoundingClientRect();
+
+	const newStartPos: Anchor = {
+		x: rect.x,
+		y: rect.y,
+	};
+}
+
+...
+
+jsx
+//왼쪽에 배치되는 시작카드
+<div onClick={handleStart}>a</div>
+<div onClick={handleStart}>b</div>
+
+//우측에 배치되는 끝카드
+<div onClick={handleEnd}>ㄱ</div>
+<div onClick={handleEnd}>ㄴ</div>
+
+```
+
+우선 div element로 만들어진 카드에 클릭핸들러를 부착합니다. 그리고 parameter로 넘겨받은 event 객체의 target에 접근합니다. 위 수도코드는 실제로는 react 컴포넌트로 작성되었기 때문에 e.target이 HTMLElement 타입임을 as로 알려주어야 합니다. 타입적으로 react의 MouseEvent 제네릭이 target이 항상 HTMLElement임을 보장할 수 없기 때문입니다.
+
+target 그러니까 element에 직접 접근이 되면 [getBoundingClientRect()](https://developer.mozilla.org/ko/docs/Web/API/Element/getBoundingClientRect) 메서드를 사용할 수 있는데, 이 메서드가 바로 element의 크기 정보를 담고있는 DOMRect 객체를 반환해줍니다. 
+
+![Screen Shot 2024-09-22 at 10.44.59 PM.png|300](/img/user/Screen%20Shot%202024-09-22%20at%2010.44.59%20PM.png)
+
+위에서 작성한 수도코드에서 rect는 DOMRect 객체를 말하며 여기서 rect.x, rect.y 값으로 element의 좌측상단 시작점에 접근할 수 있습니다. 그런데 시작카드는 좌측에 배치되고, 끝카드는 우측에 배치되어야하고 구현하고자하는 시작과 끝지점은 시작카드는 우측중앙, 끝카드는 좌측중앙입니다. 그래야 두 카드 사이를 자연스럽게 선으로 이어줄 수 있으니까요.
+```js
+const handleStart = (e: MouseEvent<HTMLElement>) => {
+	const target = e.target as HTMLElement;
+	const rect = target.getBoundingClientRect();
+
+	const newStartPos: Anchor = {
+		id: target.id,
+		x: rect.x + target.clientWidth,
+		y: rect.y - target.clientHeight / 2,
+	};
+}
+
+...
+
+jsx
+//왼쪽에 배치되는 시작카드
+<div onClick={handleStart}>a</div>
+<div onClick={handleStart}>b</div>
+
+//우측에 배치되는 끝카드
+<div onClick={handleEnd}>ㄱ</div>
+<div onClick={handleEnd}>ㄴ</div>
+
+```
