@@ -149,13 +149,18 @@ root 스타일로 position: relative를, svg는 position: absolute을 주어서 
 		//왼쪽에 배치되는 시작카드
 		<div onClick={handleStart}>a</div>
 		<div onClick={handleStart}>b</div>
+		<div onClick={handleStart}c</div>
 	</div>
 	<div>
 		//우측에 배치되는 끝카드
 		<div onClick={handleEnd}>ㄱ</div>
 		<div onClick={handleEnd}>ㄴ</div>
+		<div onClick={handleEnd}>ㄷ</div>
 	</div>
 
 </div>
 ```
 
+![Screen Shot 2024-09-22 at 11.28.57 PM.png|560](/img/user/Screen%20Shot%202024-09-22%20at%2011.28.57%20PM.png)
+
+poc해본 결과물입니다. 두개의 좌표(시작점x,y, 끝점x,y)를 담은 line정보는 state로 관리하고 한 쌍이 될 때마다 둘 사이를 이어줄 수 있습니다. svg [line](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line) 엘리먼트의 attribute로 x1,y1,x2,y2를 line state 데이터로 채워줄 수 있습니다. 
