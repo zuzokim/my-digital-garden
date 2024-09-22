@@ -3,12 +3,7 @@
 ---
 
 
-| About                              |
-| ---------------------------------- |
-| [[Home/English CV\|English CV]] |
-| [[Home/한국어 CV\|한국어 CV]]         |
 
-{ .block-language-dataview}
 
 
 | Pages                                                                                                                                                                                                                                       | 🗓️                           |
