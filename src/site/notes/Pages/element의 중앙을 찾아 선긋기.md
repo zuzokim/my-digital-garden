@@ -59,7 +59,7 @@ target 그러니까 element에 직접 접근이 되면 [getBoundingClientRect()]
 
 위에서 작성한 수도코드에서 rect는 DOMRect 객체를 말하며 여기서 rect.x, rect.y 값으로 element의 좌측상단 시작 좌표에 접근할 수 있습니다. 그런데 시작카드는 좌측에 배치되고, 끝카드는 우측에 배치되어야하고 구현하고자하는 시작과 끝지점은 시작카드는 우측중앙, 끝카드는 좌측중앙입니다. 그래야 두 카드 사이를 자연스럽게 선으로 이어줄 수 있으니까요.
 
-시작카드 element들의 오른쪽은 x좌표로부터 element의 width만큼을 더해주면 됩니다. 중앙은 y좌표에 element의 height / 2 만큼을 더해주면 되겠네요. 그러려면 element의 위치좌표는 구했으니 element의 크기인 width, height도 알아올 수 있어야 합니다. 크기정보는 [clientWidth](https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth) 로 바로 가져올 수 있습니다. 그렇게하면 아래와 같이 코드를 수정할 수 있습니다. 
+시작카드 element들의 오른쪽은 x좌표로부터 element의 width만큼을 더해주면 됩니다. 중앙은 y좌표에 element의 height / 2 만큼을 더해주면 되겠네요. 그러려면 element의 위치좌표는 구했으니 element의 크기인 width, height도 알아올 수 있어야 합니다. 크기정보는 rect.width, rect.height 혹은 [clientWidth](https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth) 로도 바로 가져올 수 있습니다. 그렇게하면 아래와 같이 코드를 수정할 수 있습니다. 끝카드는 어차피 왼쪽중앙에 좌표를 찍어야하니 width는 더해주지 않아도 되겠네요.
 
 ```js
 const handleStart = (e: MouseEvent<HTMLElement>) => {
@@ -67,8 +67,18 @@ const handleStart = (e: MouseEvent<HTMLElement>) => {
 	const rect = target.getBoundingClientRect();
 
 	const newStartPos: Anchor = {
-		x: rect.x + target.clientWidth,
-		y: rect.y - target.clientHeight / 2,
+		x: rect.x + rect.width or target.clientWidth,
+		y: rect.y - rect.height or target.clientHeight / 2,
+	};
+}
+
+const handleEnd = (e: MouseEvent<HTMLElement>) => {
+	const target = e.target as HTMLElement;
+	const rect = target.getBoundingClientRect();
+
+	const newStartPos: Anchor = {
+		x: rect.x,
+		y: rect.y - rect.height or target.clientHeight / 2,
 	};
 }
 
@@ -84,3 +94,11 @@ jsx
 <div onClick={handleEnd}>ㄴ</div>
 
 ```
+
+
+이제 좌표를 구했으니 두 좌표를 잇는 선을 그려보겠습니다. 
+canvas로 stroke을 그려줘도 되고 svg 엘리먼트를 렌더해도 되는데, 저는 그리는 선의 갯수만큼 svg를 렌더하는 방법을 선택해봤습니다.
+
+아이디어는 카드들의 뒤쪽 레이어에 svg를 그려줄 컨테이너를 겹쳐그리는 것입니다. 
+
+한 가지 주의해야할 점은 x,y좌표는 viewport에 상대적인 위치정보이기 때문에 기준이 되는 대지를 지정해야합니다. 
