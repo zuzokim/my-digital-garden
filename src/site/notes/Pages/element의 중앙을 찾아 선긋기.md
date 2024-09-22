@@ -57,14 +57,16 @@ target 그러니까 element에 직접 접근이 되면 [getBoundingClientRect()]
 
 ![Screen Shot 2024-09-22 at 10.44.59 PM.png|300](/img/user/Screen%20Shot%202024-09-22%20at%2010.44.59%20PM.png)
 
-위에서 작성한 수도코드에서 rect는 DOMRect 객체를 말하며 여기서 rect.x, rect.y 값으로 element의 좌측상단 시작점에 접근할 수 있습니다. 그런데 시작카드는 좌측에 배치되고, 끝카드는 우측에 배치되어야하고 구현하고자하는 시작과 끝지점은 시작카드는 우측중앙, 끝카드는 좌측중앙입니다. 그래야 두 카드 사이를 자연스럽게 선으로 이어줄 수 있으니까요.
+위에서 작성한 수도코드에서 rect는 DOMRect 객체를 말하며 여기서 rect.x, rect.y 값으로 element의 좌측상단 시작 좌표에 접근할 수 있습니다. 그런데 시작카드는 좌측에 배치되고, 끝카드는 우측에 배치되어야하고 구현하고자하는 시작과 끝지점은 시작카드는 우측중앙, 끝카드는 좌측중앙입니다. 그래야 두 카드 사이를 자연스럽게 선으로 이어줄 수 있으니까요.
+
+시작카드 element들의 오른쪽은 x좌표로부터 element의 width만큼을 더해주면 됩니다. 중앙은 y좌표에 element의 height / 2 만큼을 더해주면 되겠네요. 그러려면 element의 위치좌표는 구했으니 element의 크기인 width, height도 알아올 수 있어야 합니다. 크기정보는 [clientWidth](https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth) 로 바로 가져올 수 있습니다. 그렇게하면 아래와 같이 코드를 수정할 수 있습니다. 
+
 ```js
 const handleStart = (e: MouseEvent<HTMLElement>) => {
 	const target = e.target as HTMLElement;
 	const rect = target.getBoundingClientRect();
 
 	const newStartPos: Anchor = {
-		id: target.id,
 		x: rect.x + target.clientWidth,
 		y: rect.y - target.clientHeight / 2,
 	};
