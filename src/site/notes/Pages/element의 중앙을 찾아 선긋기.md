@@ -99,6 +99,63 @@ jsx
 이제 좌표를 구했으니 두 좌표를 잇는 선을 그려보겠습니다. 
 canvas로 stroke을 그려줘도 되고 svg 엘리먼트를 렌더해도 되는데, 저는 그리는 선의 갯수만큼 svg를 렌더하는 방법을 선택해봤습니다.
 
-아이디어는 카드들의 뒤쪽 레이어에 svg를 그려줄 컨테이너를 겹쳐그리는 것입니다. 
+아이디어는 카드들의 뒤쪽 레이어에 svg를 그려줄 컨테이너를 겹쳐그리는 것입니다. 아래처럼 카드들의 컨테이너와 똑같은 사이즈의 svg 컨테이너 레이어를 뒤쪽에 깔고, 거기에 2개의 좌표를 이용해 선을 그리를 방식입니다.
+![Screen Shot 2024-09-22 at 11.16.48 PM.png|300](/img/user/Screen%20Shot%202024-09-22%20at%2011.16.48%20PM.png)
 
-한 가지 주의해야할 점은 x,y좌표는 viewport에 상대적인 위치정보이기 때문에 기준이 되는 대지를 지정해야합니다. 
+root 스타일로 position: relative를, svg는 position: absolute을 주어서 겹치게한 뒤, svg가 카드 클릭을 막지 않도록 z-index를 -1로 낮춰줍니다. 그러면 카드의 실제 x,y좌표와 뒤쪽 레이어의 svg line이 시각적으로 동일한 x,y좌표에 그려질 수 있습니다. 
+```js
+
+<div 
+	style={{
+		padding: '20px',
+		margin: '100px 0',
+		width: '100%',
+		height: '100%',
+		display: 'flex',
+		justifyContent: 'space-between',
+		position: 'relative',
+	}}
+>
+	<svg
+		ref={svgRef}
+		style={{
+		display: 'block',
+		position: 'absolute',
+		top: 0,
+		left: 0,
+		height: '100%',
+		width: '100%',
+		zIndex: -1,
+		}}
+>	
+	{lines.map((line, index) => {
+		if (!line?.start || !line?.end) {
+			return null;
+		}
+		return (
+		<line
+			key={index}
+			x1={line?.start?.x}
+			y1={line?.start?.y}
+			x2={line?.end?.x}
+			y2={line?.end?.y}
+			stroke="green"
+			strokeWidth="2"
+		/>);
+	})}
+	</svg>
+	
+	<div>
+		//왼쪽에 배치되는 시작카드
+		<div onClick={handleStart}>a</div>
+		<div onClick={handleStart}>b</div>
+	</div>
+	<div>
+		//우측에 배치되는 끝카드
+		<div onClick={handleEnd}>ㄱ</div>
+		<div onClick={handleEnd}>ㄴ</div>
+	</div>
+
+</div>
+```
+
