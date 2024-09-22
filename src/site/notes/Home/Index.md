@@ -13,6 +13,7 @@
 
 | Pages                                                                                                                                                                                                                                       | 🗓️                           |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| [[Pages/엘리먼트의 중앙을 찾아 선긋기\|엘리먼트의 중앙을 찾아 선긋기]]                                                                                                                                                                                             | 10:25 PM - September 22, 2024 |
 | [[Pages/type-safe하게 API 만들기\|type-safe하게 API 만들기]]                                                                                                                                                                                       | 10:29 AM - September 10, 2024 |
 | [[Pages/WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY FORMULATED IDEAS, Marvin Minsky\|WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY FORMULATED IDEAS, Marvin Minsky]] | 9:23 PM - September 03, 2024  |
 | [[Pages/Next.js Pages router, App router & SvelteKit routes\|Next.js Pages router, App router & SvelteKit routes]]                                                                                                                       | 11:34 PM - September 01, 2024 |
@@ -25,14 +26,14 @@
 | Projects                                                                 | 🗓️                |
 | ------------------------------------------------------------------------ | ------------------ |
 | [[Projects/Martha\|Martha]]                                           | September 02, 2023 |
-| [[Projects/SqetchClub/Worklogs/p5.js stroke test\|p5.js stroke test]] | \-                 |
 | [[Projects/SqetchClub/Worklogs/socket\|socket]]                       | \-                 |
+| [[Projects/SqetchClub/Worklogs/p5.js stroke test\|p5.js stroke test]] | \-                 |
 | [[Projects/SqetchClub/sqetch.club\|sqetch.club]]                      | August 19, 2024    |
 | [[Projects/cognosco.online\|cognosco.online]]                         | September 24, 2023 |
 | [[Projects/open studio\|open studio]]                                 | September 24, 2023 |
-| [[Projects/recollect.today\|recollect.today]]                         | \-                 |
 | [[Projects/space matter architects\|space matter architects]]         | November 24, 2023  |
 | [[Projects/whitespreadsheet.online/《SECRET TEXTS》\|《SECRET TEXTS》]]   | October 24, 2023   |
+| [[Projects/recollect.today\|recollect.today]]                         | \-                 |
 | [[Projects/당신2 9하던 삶\|당신2 9하던 삶]]                                     | May 09, 2022       |
 
 { .block-language-dataview}

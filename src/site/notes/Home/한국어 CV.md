@@ -28,12 +28,15 @@ Linktree | [link.tree](https://linktr.ee/zuzokim)
 
 ##### [I Hate Flying Bugs Inc.](https://www.ihateflyingbugs.com/en/main-en/)
  R&D FE팀 프론트엔드 개발자 2021.11 ~ 현재
+ 초,중,고 민간/공교육 밀착 학습관리를 제공하는 AI에듀테크 서비스
+ - storybook, Chromatic 기반 사내 디자인시스템 구축, 유지보수
+ - 
 
  —
 
 #### Skills & Tools
 
-Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap, Prosemirror, Excalidraw, Three.js, p5.js, Matter.js, Svelte, Node.js, Express.js, Git
+Javascript, Typescript, React, Next.js, Graphql, Apollo, Zustand, XState, Tiptap, Prosemirror, Excalidraw, Emotion, Panda, SCSS, Three.js, p5.js, Matter.js, Svelte, Node.js, Express.js, Git
  
  —
 #### Other Experience
