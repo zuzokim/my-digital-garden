@@ -16,7 +16,7 @@
 
 <span style="background:rgba(5, 117, 197, 0.2)"><font color="#245bdb">파란색 보기카드 레이어</font></span> 보다 뒤에 있는 <span style="background:rgba(140, 140, 140, 0.12)"><font color="#646a73">회색 svg 선 레이어</font></span> 를 클릭할 수 있게 해보겠습니다. 앞에 가로막힌 <span style="background:rgba(5, 117, 197, 0.2)"><font color="#245bdb">파란색 보기카드 레이어</font></span> 에 `pointer-events: none` css 속성을 주면 해당 레이어를 통과해 클릭 이벤트를 전달할 수 있습니다. 아래 수도코드로 작성해보겠습니다.
 
-```js
+```html
 <div 
 	style={{
 		position: 'relative';	  
@@ -62,27 +62,40 @@
 
 parent의 `pointer-events`만 비활성화하고 children의 이벤트는 호출하고 싶다면 children에 초깃값인 `pointer-events: auto`를 주어 속성을 상속받지 않도록 리셋해줄 수 있습니다. 실제 회사 프로덕션 코드에서는 아래 수도코드보다는 마크업 tree가 복잡해서 좀 더 많은 elements를 리셋해주어야 했네요. 
 
-```js
+```html
 
-	//보기카드 레이어
-	<div
+//보기카드 레이어
+<div
+	style={{
+		pointer-events: 'none'
+	}}
+>
+	
+	//좌측에 배치되는 시작카드
+	<div 
+		onClick={handleStart} 		
 		style={{
-			pointer-events: 'none'
-		}}
-	>
-		
-		//좌측에 배치되는 시작카드
-		<div 
-			onClick={handleStart} 		
-			style={{
-			//// ** reset to be clickable*/
-			pointer-events: 'auto'
-		}}>a</div>
-		...생략
-	<div>
+		//// ** reset to be clickable*/
+		pointer-events: 'auto'
+	}}>a</div>
+	...생략
+<div>
 ```
 ##### 2. svg line들을 개별적으로 클릭 가능하게 하기
 
 ![svglines.png|400](/img/user/svglines.png)
 
-자 그럼 이제 첫 번째 태스크는 해결을 했으니 두 번째 태스크를 해결해볼까요.
+자 그럼 이제 첫 번째 태스크는 해결을 했으니 두 번째 태스크를 해결해볼까요. 유저가 line을 잇는 순서대로 마크업tree가 만들어질 겁니다. 즉, 3번->2번->1번 순서대로 선을 이었다면 아래와 같이 elements가 만들어집니다. 
+```html
+<svg>
+	<lines /> 3번
+	<lines /> 2번
+	<lines /> 1번
+	...
+</svg>
+
+```
+첫 번째 태스크의 경우와 다르게 z-index 조절을 별도로 하지 않았더라도 마크업의 순서상 가장 위에 쌓일 <span style="background:rgba(255, 183, 139, 0.55)"><font color="#d83931">1번 line</font></span>에만 클릭이벤트가 호출될 것입니다.
+
+![Screen Shot 2024-09-29 at 6.38.01 PM.png|200](/img/user/Screen%20Shot%202024-09-29%20at%206.38.01%20PM.png)
+
