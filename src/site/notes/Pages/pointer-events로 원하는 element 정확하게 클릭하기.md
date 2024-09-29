@@ -2,9 +2,9 @@
 {"dg-publish":true,"permalink":"/pages/pointer-events-element/","tags":["CSS"],"created":"2024-09-29","updated":"2024-09-29T19:43:00"}
 ---
 
-지난 포스트 [[Pages/element의 중앙을 찾아 선긋기\|element의 중앙을 찾아 선긋기]] 에서 svg 레이어를 보기카드 레이어보다 낮은 z-index로 겹쳐 그려 보기카드의 위치와 선이 그려지는 위치를 일치시키는 방식으로 '선긋기'를 완성했었습니다. 그런데 만약 svg로 그려진 선을 직접 클릭해서 이어진 두 카드의 연결을 끊는 인터랙션을 만들기 위해서는 어떻게 할 수 있을까요? 
+지난 포스트 [[Pages/element의 중앙을 찾아 선긋기\|element의 중앙을 찾아 선긋기]] 에서 svg 레이어를 보기카드 레이어보다 낮은 z-index로 겹쳐 보기카드와 선이 그려지는 위치를 일치시키는 방식으로 '선긋기'를 완성했었습니다. 그런데 만약 svg로 그려진 선을 직접 클릭해서 이어진 두 카드의 연결을 끊는 인터랙션을 구현하려면 어떻게 할 수 있을까요? 
 
-기본적으로 모든 elements는 z-index상 가장 위에 배치된 element만 클릭이벤트를 호출할 수 있습니다. 지금까지의 구현으로는 가장 위에 배치된 보기카드만 클릭이 가능하고, 뒤 쪽에 그려진 svg line들은 클릭이 어렵습니다. 또, x자로 line들이 겹쳐그려진 경우 line들도 겹쳐진 상태이기 때문에 개별적으로 클릭이 어렵습니다.
+기본적으로 모든 elements는 z-index상 가장 위에 배치된 element만 클릭이벤트를 호출할 수 있습니다. 지금까지의 구현으로는 가장 위에 배치된 보기카드만 클릭이 가능하고, 뒤 쪽에 그려진 svg line들은 클릭이 어렵습니다. 또, x자로 line들이 겹쳐그려진 경우 각각의 line들도 겹쳐진 상태이기 때문에 개별적으로 클릭이 어렵습니다.
 
 정리하면 아래 두 가지 태스크를 해결해야 합니다.
 1. 보기카드 레이어보다 낮은 z-index의 svg 레이어를 클릭 가능하게 하기
@@ -119,8 +119,8 @@ pointer-events: all;
 
 ````
 
-`pointer-events: stroke;`을 사용하면 stroke attribute로 그린 line, 즉 정확히 선이 그어진 <font color="#c00000">빨간색 stroke영역</font>의 클릭 이벤트만을 호출할 수 있습니다. `visible` 이나 `visibleStorke` 로 element의 [visibility](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility)
- 상태에 따라 조건을 넣어줄 수도 있습니다.
+`pointer-events: stroke;`을 사용하면 stroke attribute로 그린 line, 즉 정확히 선이 그어진 <font color="#c00000">빨간색 stroke영역</font>에서만 클릭 이벤트를 호출할 수 있습니다. 필요하다면 `visible` 이나 `visibleStorke` 로 element의 [visibility](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility)
+ 상태에 따라 조건을 넣어줄 수도 있겠습니다.
 ```html
 <line
 	style={{pointer-events: 'stroke'}}
@@ -167,6 +167,7 @@ line element 2개를 겹쳐서 하나는 두꺼운 stroke를 이용해 클릭영
 
 ```
 ![Screen Shot 2024-09-29 at 7.29.49 PM.png|200](/img/user/Screen%20Shot%202024-09-29%20at%207.29.49%20PM.png)
+
 이때 <span style="background-color: #FF7002"><font color="#fff">클릭 영역</font></span>이 <span style="background:#ff4d4f"><font color="#fff">실제 선</font></span>보다 뒤쪽에 그려져야 했는데 svg에는 z-index를 사용할 수 없다는 걸 알게 됐습니다. 그럼 어떻게 해야할까요? 단순합니다. 마크업의 기본 규칙대로 element의 마크업 순서를 바꿔주면 됩니다.
 
 ```html
@@ -195,7 +196,7 @@ line element 2개를 겹쳐서 하나는 두꺼운 stroke를 이용해 클릭영
 ```
 
 svg의 [렌더링 순서 스펙](https://www.w3.org/TR/SVG11/render.html#RenderingOrder)을 좀 더 자세히 보면 다음과 같습니다.
-*"svg elements는 암시적인 그리기 순서가 있으며, 첫 번째 element 가 먼저 페인트 됩니다. 후속 elementssms 이전에 그려진 element 위에 그려집니다."*
+*"svg elements는 암시적인 그리기 순서가 있으며, 첫 번째 element 가 먼저 페인트 됩니다. 후속 elements는 이전에 그려진 element 위에 그려집니다."*
 
 
 
