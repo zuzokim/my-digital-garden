@@ -70,14 +70,15 @@ parent의 `pointer-events`만 비활성화하고 children의 이벤트는 호출
 		pointer-events: 'none'
 	}}
 >
-	
 	//좌측에 배치되는 시작카드
 	<div 
 		onClick={handleStart} 		
 		style={{
-		//// ** reset to be clickable*/
-		pointer-events: 'auto'
-	}}>a</div>
+		pointer-events: 'auto';
+		}}
+	>
+	a
+	</div>
 	...생략
 <div>
 ```
@@ -121,14 +122,13 @@ pointer-events: all;
 `pointer-events: stroke;`을 사용하면 stroke attribute로 그린 line, 즉 정확히 선이 그어진 <font color="#c00000">빨간색 stroke영역</font>의 클릭 이벤트만을 호출할 수 있습니다. `visible` 이나 `visibleStorke` 로 element의 [visibility](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility)
  상태에 따라 조건을 넣어줄 수도 있습니다.
 ```html
-
 <line
 	style={{pointer-events: 'stroke'}}
 	x1={line?.start?.x}
 	y1={line?.start?.y}
 	x2={line?.end?.x}
 	y2={line?.end?.y}
-	stroke="red" //
+	stroke="red"
 	strokeWidth="2"
 />
 ```
@@ -144,6 +144,7 @@ line stroke가 2px 이다보니 마우스 커서를 2px 영역 안으로 매우 
 line element 2개를 겹쳐서 하나는 두꺼운 stroke를 이용해 클릭영역으로 만들고, 그 중앙에 시각적으로 보이는 기존의 line을 그려주는 방식입니다. 
 
 ```html
+//클릭영역
 <line
 	style={{pointer-events: 'stroke'}}
 	x1={line?.start?.x}
@@ -151,16 +152,17 @@ line element 2개를 겹쳐서 하나는 두꺼운 stroke를 이용해 클릭영
 	x2={line?.end?.x}
 	y2={line?.end?.y}
 	stroke="red"
-	strokeWidth="2" //실제 선
+	strokeWidth="2"
 />
+//실제 선
 <line
 	style={{pointer-events: 'stroke'}}
 	x1={line?.start?.x}
 	y1={line?.start?.y}
 	x2={line?.end?.x}
 	y2={line?.end?.y}
-	stroke=""
-	strokeWidth="12" //클릭영역
+	stroke="orange"
+	strokeWidth="12"
 />
 
 ```
@@ -168,15 +170,17 @@ line element 2개를 겹쳐서 하나는 두꺼운 stroke를 이용해 클릭영
 이때 <span style="background-color: #FF7002"><font color="#fff">클릭 영역</font></span>이 <span style="background:#ff4d4f"><font color="#fff">실제 선</font></span>보다 뒤쪽에 그려져야 했는데 svg에는 z-index를 사용할 수 없다는 걸 알게 됐습니다. 그럼 어떻게 해야할까요? 단순합니다. 마크업의 기본 규칙대로 element의 마크업 순서를 바꿔주면 됩니다.
 
 ```html
+//클릭영역
 <line
 	style={{pointer-events: 'stroke'}}
 	x1={line?.start?.x}
 	y1={line?.start?.y}
 	x2={line?.end?.x}
 	y2={line?.end?.y}
-	stroke=""
-	strokeWidth="12" //클릭영역
+	stroke="orange"
+	strokeWidth="12"
 />
+ //실제 선
 <line
 	style={{pointer-events: 'stroke'}}
 	x1={line?.start?.x}
@@ -184,7 +188,8 @@ line element 2개를 겹쳐서 하나는 두꺼운 stroke를 이용해 클릭영
 	x2={line?.end?.x}
 	y2={line?.end?.y}
 	stroke="red"
-	strokeWidth="2" //실제 선
+	
+	strokeWidth="2"
 />
 
 ```
