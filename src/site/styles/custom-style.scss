@@ -106,9 +106,12 @@ body {
       outline: 1px solid var(--color-accent) !important;
     }
 
-    #disqus_thread  {
-     opacity: 0.8;
-     padding-top: 36px
+    .giscus {
+      max-width: 620px;
+      margin-top: 120px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
     }
 }
  
