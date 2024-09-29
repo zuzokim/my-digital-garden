@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/pages/pointer-events-element/","tags":["CSS"],"created":"2024-09-29","updated":"2024-09-29T16:19:00"}
+{"dg-publish":true,"permalink":"/pages/pointer-events-element/","tags":["CSS"],"created":"2024-09-29","updated":"2024-09-29T19:43:00"}
 ---
 
 지난 포스트 [[Pages/element의 중앙을 찾아 선긋기\|element의 중앙을 찾아 선긋기]] 에서 svg 레이어를 보기카드 레이어보다 낮은 z-index로 겹쳐 그려 보기카드의 위치와 선이 그려지는 위치를 일치시키는 방식으로 '선긋기'를 완성했었습니다. 그런데 만약 svg로 그려진 선을 직접 클릭해서 이어진 두 카드의 연결을 끊는 인터랙션을 만들기 위해서는 어떻게 할 수 있을까요? 
