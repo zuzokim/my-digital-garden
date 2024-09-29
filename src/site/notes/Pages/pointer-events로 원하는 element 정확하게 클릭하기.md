@@ -103,7 +103,7 @@ parent의 `pointer-events`만 비활성화하고 children의 이벤트는 호출
 
 그럼 뒤쪽에 있는 <span style="background:#d3f8b6">2번 line</span> 과 <span style="background:#fdbfff">3번 line</span> 도 클릭 가능하려면 어떻게 해야할까요? 매번 자신의 위쪽에 오버랩된 element에 `pointer-events: none`을 줄 수도 없고, 설령 가능하다 하더라도 겹쳐진 좌표상 마우스가 어느 element를 타겟팅하는지 구분할 수도 없습니다. 또, 정확하게 element를 클릭하려면 점선으로 그려진 line element의 bounding-box가 아니라 실제로 그려진 <font color="#c00000">빨간색 line stroke</font> 영역을 구분해서 타겟팅할 수 있어야 합니다. 유저는 투명한 bounding-box는 클릭이 가능한 영역이라고 기대하지 않을테니까요.
 
-`pointer-events` 속성의 다른 값을 사용해서 해결할 수 있습니다. svg element에 적용할 수 있는 여러 값 중 하나를 사용할 수 있습니다.[^pointer-events-syntax]
+`pointer-events` 속성의 다른 값을 사용해서 해결할 수 있습니다. 아래와 같은 svg element에 적용할 수 있는 여러 값 중 하나를 사용할 수 있습니다.[^pointer-events-syntax]
 `
 ```css
 /* Values used in SVGs */
@@ -119,7 +119,7 @@ pointer-events: all;
 
 ````
 
-`pointer-events: stroke;`을 사용하면 stroke attribute로 그린 line, 즉 정확히 선이 그어진 <font color="#c00000">빨간색 stroke영역</font>에서만 클릭 이벤트를 호출할 수 있습니다. 필요하다면 `visible` 이나 `visibleStorke` 로 element의 [visibility](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility)
+`pointer-events: stroke;`을 사용하면 stroke attribute로 그린 line, 즉 정확히 선이 그어진 <font color="#c00000">빨간색 stroke영역</font>에서만 클릭 이벤트를 호출할 수 있습니다. 필요하다면 `visible` 이나 `visibleStroke` 로 element의 [visibility](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility)
  상태에 따라 조건을 넣어줄 수도 있겠습니다.
 ```html
 <line
