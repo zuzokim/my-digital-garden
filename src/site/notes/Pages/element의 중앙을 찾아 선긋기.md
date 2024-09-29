@@ -55,7 +55,7 @@ jsx
 
 target 그러니까 element에 직접 접근이 되면 [getBoundingClientRect()](https://developer.mozilla.org/ko/docs/Web/API/Element/getBoundingClientRect) 메서드를 사용할 수 있는데, 이 메서드가 바로 element의 크기 정보를 담고있는 DOMRect 객체를 반환해줍니다. 
 
-![Screen Shot 2024-09-22 at 10.44.59 PM.png|300](/img/user/Screen%20Shot%202024-09-22%20at%2010.44.59%20PM.png)
+![Screen Shot 2024-09-22 at 10.44.59 PM.png|400](/img/user/Screen%20Shot%202024-09-22%20at%2010.44.59%20PM.png)
 
 위에서 작성한 수도코드에서 rect는 DOMRect 객체를 말하며 여기서 rect.x, rect.y 값으로 element의 좌측상단 시작 좌표에 접근할 수 있습니다. 그런데 시작카드는 좌측에 배치되고, 끝카드는 우측에 배치되어야하고 구현하고자하는 시작과 끝지점은 시작카드는 우측중앙, 끝카드는 좌측중앙입니다. 그래야 두 카드 사이를 자연스럽게 선으로 이어줄 수 있으니까요.
 
@@ -100,7 +100,7 @@ jsx
 canvas로 stroke을 그려줘도 되고 svg 엘리먼트를 렌더해도 되는데, 저는 그리는 선의 갯수만큼 svg를 렌더하는 방법을 선택해봤습니다.
 
 아이디어는 카드들의 뒤쪽 레이어에 svg를 그려줄 컨테이너를 겹쳐그리는 것입니다. 아래처럼 카드들의 컨테이너와 똑같은 사이즈의 svg 컨테이너 레이어를 뒤쪽에 깔고, 거기에 2개의 좌표를 이용해 선을 그리를 방식입니다.
-![Screen Shot 2024-09-22 at 11.16.48 PM.png|300](/img/user/Screen%20Shot%202024-09-22%20at%2011.16.48%20PM.png)
+![Screen Shot 2024-09-22 at 11.16.48 PM.png|400](/img/user/Screen%20Shot%202024-09-22%20at%2011.16.48%20PM.png)
 
 root 스타일로 position: relative를, svg는 position: absolute을 주어서 겹치게한 뒤, svg가 카드 클릭을 막지 않도록 z-index를 -1로 낮춰줍니다. 그러면 카드의 실제 x,y좌표와 뒤쪽 레이어의 svg line이 시각적으로 동일한 x,y좌표에 그려질 수 있습니다. 
 ```js

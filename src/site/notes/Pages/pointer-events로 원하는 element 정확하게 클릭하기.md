@@ -14,6 +14,6 @@
 
 ![layers.png|400](/img/user/layers.png)
 
-###### 2. svg line들을 개별적으로 클릭 가능하게 하기
+##### 2. svg line들을 개별적으로 클릭 가능하게 하기
 
 ![svglines.png|400](/img/user/svglines.png)
