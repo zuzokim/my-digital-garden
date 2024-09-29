@@ -10,7 +10,7 @@
 1. 보기카드 레이어보다 낮은 z-index의 svg 레이어를 클릭 가능하게 하기
 2. svg 레이어에 그려질 line들을 개별적으로 클릭 가능하게 하기
 
-##### 1. 낮은 z-index elements를 클릭 가능하게 하기
+#### 1. 낮은 z-index elements를 클릭 가능하게 하기
 
 ![layers.png|400](/img/user/layers.png)
 
@@ -81,7 +81,7 @@ parent의 `pointer-events`만 비활성화하고 children의 이벤트는 호출
 	...생략
 <div>
 ```
-##### 2. svg line들을 개별적으로 클릭 가능하게 하기
+#### 2. svg line들을 개별적으로 클릭 가능하게 하기
 
 자 그럼 이제 첫 번째 태스크는 해결을 했으니 두 번째 태스크를 해결해볼까요. 유저가 line을 잇는 순서대로 마크업tree가 만들어질 겁니다. 즉, 3번->2번->1번 순서대로 선을 이었다면 아래와 같이 elements가 만들어집니다. 
 
@@ -104,7 +104,7 @@ parent의 `pointer-events`만 비활성화하고 children의 이벤트는 호출
 
 `pointer-events` 속성의 다른 값을 사용해서 해결할 수 있습니다. svg element에 적용할 수 있는 여러 값 중 하나를 사용할 수 있습니다.[^pointer-events-syntax]
 `
-```
+```css
 /* Values used in SVGs */
 pointer-events: visiblePainted;
 pointer-events: visibleFill;
@@ -115,6 +115,7 @@ pointer-events: fill;
 pointer-events: stroke;
 pointer-events: bounding-box;
 pointer-events: all;
+
 ````
 
 `pointer-events: stroke;`을 사용하면 stroke attribute로 그린 line, 즉 정확히 선이 그어진 <font color="#c00000">빨간색 stroke영역</font>의 클릭 이벤트만을 호출할 수 있습니다. `visible` 이나 `visibleStorke` 로 element의 [visibility](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility)
@@ -129,13 +130,13 @@ pointer-events: all;
 	y2={line?.end?.y}
 	stroke="red" //
 	strokeWidth="2"
-/>);
+/>
 ```
 
 가장 위쪽에 그려진 선이나 겹치지 않은 선만 클릭이 가능했는데 이제 z-index와 무관하게, 그리고 x자로 겹쳐진 line 사이 좁은 영역을 타겟팅하더라도 원하는 선을 정확하게 클릭할 수 있게 되었습니다. 
 
 
-##### 클릭 사용성 개선
+#### 클릭 사용성 개선
 추가로 조금 더 사용성을 높이기 위해 UI를 디자인해준 디자이너에게 제안한 내용과 구현하면서 더 알게 된 내용도 붙여보겠습니다.
 
 line stroke가 2px 이다보니 마우스 커서를 2px 영역 안으로 매우 정확히 가져다놓고 클릭해야만 클릭 이벤트가 호출되고 Remove 툴팁을 띄워줄 수 있습니다. 작은 화면 유저나 저시력자, 마우스 사용이 미숙한 어린 학생 유저에게는 다소 어려운 사용성이 될겁니다. 클릭영역을 line 좌우로 더 넓히는 아이디어로 이를 보완해보겠습니다. 
@@ -151,7 +152,7 @@ line element 2개를 겹쳐서 하나는 두꺼운 stroke를 이용해 클릭영
 	y2={line?.end?.y}
 	stroke="red"
 	strokeWidth="2" //실제 선
-/>);
+/>
 <line
 	style={{pointer-events: 'stroke'}}
 	x1={line?.start?.x}
@@ -160,7 +161,7 @@ line element 2개를 겹쳐서 하나는 두꺼운 stroke를 이용해 클릭영
 	y2={line?.end?.y}
 	stroke=""
 	strokeWidth="12" //클릭영역
-/>);
+/>
 
 ```
 ![Screen Shot 2024-09-29 at 7.29.49 PM.png|200](/img/user/Screen%20Shot%202024-09-29%20at%207.29.49%20PM.png)
@@ -175,7 +176,7 @@ line element 2개를 겹쳐서 하나는 두꺼운 stroke를 이용해 클릭영
 	y2={line?.end?.y}
 	stroke=""
 	strokeWidth="12" //클릭영역
-/>);
+/>
 <line
 	style={{pointer-events: 'stroke'}}
 	x1={line?.start?.x}
@@ -184,7 +185,7 @@ line element 2개를 겹쳐서 하나는 두꺼운 stroke를 이용해 클릭영
 	y2={line?.end?.y}
 	stroke="red"
 	strokeWidth="2" //실제 선
-/>);
+/>
 
 ```
 
