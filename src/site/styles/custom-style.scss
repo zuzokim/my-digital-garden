@@ -110,5 +110,30 @@ body {
      opacity: 0.8;
      padding-top: 36px
     }
+
+    .giscus {
+      max-width: 620px;
+      margin-top: 120px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .giscus > body {
+      --color-accent-muted: transparent;
+      border-color: red;
+    }
+
+    .giscus-frame {
+      .gsc-main {
+          gap: 16px !important;
+        }
+    
+      .gsc-reactions {
+        align-items: flex-end;
+      }
+    }
+
+
 }
  
