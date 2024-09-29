@@ -13,13 +13,32 @@ body {
 
 
     .navbar {
-      z-index: 9999;
+      z-index: 4;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .filetree-sidebar {
+      padding: 24px 4px;
+    }
+
+    .notelink {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 1;
     }
 
     .content {
       font-size: 14px !important;
       max-width: 620px !important;
       --h6-weight: 400 !important;
+    }
+
+    @media (max-width: 1400px) {
+      .sidebar {
+        max-width: 620px !important;
+        right: 0;
+      }
     }
 
     .toc {
@@ -67,6 +86,24 @@ body {
       border: none !important;
       padding: 0 16px;
       background-color: var(--background-secondary);
+      margin: 10px 20px;
+    }
+
+    @media (max-width: 800px) {
+      .filetree-sidebar .search-button {
+        width: 80%;
+        margin: 2px;
+        justify-content: inherit;
+      }
+    }
+
+
+    .fullpage-overlay {
+      background-color: rgba(0, 0, 0, 0.2) !important;
+    } 
+
+    .search-container {
+      background-color: rgba(0, 0, 0, 0.2) !important;
     }
 
     .search-box {

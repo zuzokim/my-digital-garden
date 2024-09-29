@@ -7140,6 +7140,15 @@ body {
     text-overflow: ellipsis;
     overflow: hidden;
   }
+
+  //custom style
+  .markdown-rendered tbody > tr > td > a {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+  }
+
   .markdown-rendered tbody tr {
     background-color: var(--table-background);
   }
@@ -7167,6 +7176,8 @@ body {
   }
   .markdown-rendered tbody tr > td:last-child {
     border-right-width: var(--table-column-last-border-width);
+    //custom style
+    width: 144px;
   }
   .markdown-rendered thead tr {
     background-color: var(--table-header-background);
