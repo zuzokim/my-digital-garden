@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/pages/github-actions-fork/","created":"2024-09-09","updated":"2024-10-05T22:03:00"}
+{"dg-publish":true,"permalink":"/pages/github-actions-fork/","created":"2024-09-16","updated":"2024-10-05T22:03:00"}
 ---
 
 사이드 프로젝트 [[Projects/SqetchClub/sqetch.club\|sqetch.club]] 를 하는 중에 팀 레포지토리를 organization으로 야심차게 만들었습니다. FE는 Vercel을 연동해 main 브랜치에 머지되면 배포가 되도록 해두었는데, 개인 레포지토리가 아니라 organization 레포지토리는 유료로 배포가 되는 걸 뒤늦게 알아버렸습니다. ^^; 사실 쫌쫌따리 작고 조그마한 사이드 프로젝트를 출시도 전에 유료 배포로 사용한다는게 좀 부담스러워서 organization 레포지토리를 개인 레포지토리로 fork하고 이 레포지토리를 Vercel에 연동해 우회하는 방법을 사용하기로 했습니다. 
