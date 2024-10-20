@@ -16,7 +16,7 @@ React 처음 배울때 제일 먼저 배우는 것
 
 최근에 화이트보드 컴포넌트 안에 리치에디터를 활용한 학습 콘텐츠 컴포넌트를 자식 컴포넌트로 그리고 또 다시 그 학습 콘텐츠 컴포넌트가 화이트보드 컴포넌트를 자식으로 가지고 있는 다소 복잡한 구조의 기능을 개발했습니다.
 
-이때, excalidraw content prop으로 넘긴 '화이트보드를 품은 리치에디터 컴포넌트' 자체가 너무 무거운 컴포넌트가 되어버려 화이트보드 canvas에 조금만 선을 그리더라도 onUpdate가 호출되면서 content 컴포넌트가 깜빡깜빡거리는 리렌더링 현상이 생겨났습니다. 
+이때, excalidraw content prop으로 넘긴 '화이트보드를 품은 리치에디터 컴포넌트' 자체가 너무 무거운 컴포넌트가 되어버려 화이트보드 canvas에 조금만 선을 그리더라도 onUpdate가 호출되면서 content 컴포넌트가 <span style="background:#9254de"><font color="#ddd">깜</font></span>빡<span style="background:#9254de"><font color="#ddd">깜</font></span>빡거리는 리렌더링 현상이 생겨났습니다. 
 
 사실상 화이트보드에 선을 그릴때 canvas 뒤쪽에 깔린 '화이트보드를 품은 리치에디터 컴포넌트'는 정적인 콘텐츠이므로, 이 컴포넌트의 state, prop 그 어떤 것도 변경될 가능성이 없습니다. (유저의 인터랙션도 발생하지 않는 readonly 상태)
 
