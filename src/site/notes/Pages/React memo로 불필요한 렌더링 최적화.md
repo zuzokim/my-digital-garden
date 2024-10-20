@@ -14,7 +14,7 @@ React 처음 배울때 제일 먼저 배우는 것
 
 그러나 excalidraw의 특성상 appState와 elements가 변경되면 전체 excalidraw app 컴포넌트가 렌더됩니다. 그럼 위에서 설명한 '부모 컴포넌트가 리렌더링되면 자식 컴포넌트도 리렌더링 된다' 는 조건에 따라 content prop으로 넘긴 자식 학습 컨텐츠 컴포넌트도 리렌더됩니다. (내부에서 static canvas는 리렌더를 방지하거나 좀더 정교하게 렌더링 성능을 최적화해둔 부분이 있는 걸로 아는데 코드를 자세히 뜯어보진 못했습니다.) 
 
-최근에 화이트보드 컴포넌트 안에 리치에디터를 활용한 학습 콘텐츠 컴포넌트를 자식 컴포넌트로 그리고 또 다시 그 학습 콘텐츠 컴포넌트가 화이트보드 컴포넌트를 자식으로 가지고 있는 다소 복잡한 구조의 기능을 개발했습니다.
+최근에 화이트보드 컴포넌트 안에 리치에디터를 활용한 학습 콘텐츠 컴포넌트를 자식 컴포넌트로 그리고 또 다시 그 학습 콘텐츠 컴포넌트가 화이트보드 컴포넌트를 자식으로 가지고 있는 다소 복잡한 구조의 기능을 개발하게 됐습니다.
 
 이때, excalidraw content prop으로 넘긴 '화이트보드를 품은 리치에디터 컴포넌트' 자체가 너무 무거운 컴포넌트가 되어버려 화이트보드 canvas에 조금만 선을 그리더라도 onUpdate가 호출되면서 content 컴포넌트가 <span style="background:#9254de"><font color="#ddd">깜</font></span><span style="background:#d2cbff">빡</span><span style="background:#9254de"><font color="#ddd">깜</font></span><span style="background:#d2cbff">빡</span>거리는 리렌더링 현상이 생겨났습니다. 
 
