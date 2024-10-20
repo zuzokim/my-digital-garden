@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/pages/react-memo/","created":"2024-10-20","updated":"2024-10-20T20:49:00"}
+{"dg-publish":true,"permalink":"/pages/react-memo/","created":"2024-10-20","updated":"2024-10-21T00:20:00"}
 ---
 
 React 처음 배울때 제일 먼저 배우는 것
