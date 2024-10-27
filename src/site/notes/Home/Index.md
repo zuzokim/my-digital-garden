@@ -8,6 +8,7 @@
 
 | Pages                                                                                                                                                                                                                                       | 🗓️                |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| [[Pages/토스 프론트엔드 파이트클럽 참여\|토스 프론트엔드 파이트클럽 참여]]                                                                                                                                                                                           | October 27, 2024   |
 | [[Pages/React memo로 불필요한 렌더링 최적화\|React memo로 불필요한 렌더링 최적화]]                                                                                                                                                                             | October 20, 2024   |
 | [[Pages/데브콘2024 다녀와서\|데브콘2024 다녀와서]]                                                                                                                                                                                                     | October 13, 2024   |
 | [[Pages/pointer-events로 원하는 element 정확하게 클릭하기\|pointer-events로 원하는 element 정확하게 클릭하기]]                                                                                                                                                   | September 29, 2024 |
@@ -23,16 +24,16 @@
 
 | Projects                                                                 | 🗓️                |
 | ------------------------------------------------------------------------ | ------------------ |
-| [[Projects/space matter architects\|space matter architects]]         | November 24, 2023  |
-| [[Projects/당신2 9하던 삶\|당신2 9하던 삶]]                                     | May 09, 2022       |
 | [[Projects/Martha\|Martha]]                                           | September 02, 2023 |
 | [[Projects/SqetchClub/sqetch.club\|sqetch.club]]                      | August 19, 2024    |
 | [[Projects/SqetchClub/Worklogs/p5.js stroke test\|p5.js stroke test]] | \-                 |
 | [[Projects/SqetchClub/Worklogs/socket\|socket]]                       | \-                 |
-| [[Projects/recollect.today\|recollect.today]]                         | \-                 |
-| [[Projects/open studio\|open studio]]                                 | September 24, 2023 |
-| [[Projects/whitespreadsheet.online/《SECRET TEXTS》\|《SECRET TEXTS》]]   | October 24, 2023   |
 | [[Projects/cognosco.online\|cognosco.online]]                         | September 24, 2023 |
+| [[Projects/open studio\|open studio]]                                 | September 24, 2023 |
+| [[Projects/recollect.today\|recollect.today]]                         | \-                 |
+| [[Projects/space matter architects\|space matter architects]]         | November 24, 2023  |
+| [[Projects/whitespreadsheet.online/《SECRET TEXTS》\|《SECRET TEXTS》]]   | October 24, 2023   |
+| [[Projects/당신2 9하던 삶\|당신2 9하던 삶]]                                     | May 09, 2022       |
 
 { .block-language-dataview}
 
