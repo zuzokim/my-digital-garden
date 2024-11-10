@@ -53,7 +53,7 @@ Vercel은 기본적으로 정적 파일을 제공하며, 단일 페이지 애플
 ```json
 {
 
-"routes": [{ "src": ㅊ, "dest": "/", "status": 200 }]
+"routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
 
 }
 
