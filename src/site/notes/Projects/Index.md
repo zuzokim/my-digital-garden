@@ -5,10 +5,10 @@
 
 | Project                                                                  | 🗓️                |
 | ------------------------------------------------------------------------ | ------------------ |
-| [[Projects/Martha\|Martha]]                                           | September 02, 2023 |
-| [[Projects/SqetchClub/sqetch.club\|sqetch.club]]                      | August 19, 2024    |
-| [[Projects/SqetchClub/Worklogs/p5.js stroke test\|p5.js stroke test]] | \-                 |
 | [[Projects/SqetchClub/Worklogs/socket\|socket]]                       | \-                 |
+| [[Projects/SqetchClub/Worklogs/p5.js stroke test\|p5.js stroke test]] | \-                 |
+| [[Projects/SqetchClub/sqetch.club\|sqetch.club]]                      | August 19, 2024    |
+| [[Projects/Martha\|Martha]]                                           | September 02, 2023 |
 | [[Projects/cognosco.online\|cognosco.online]]                         | September 24, 2023 |
 | [[Projects/open studio\|open studio]]                                 | September 24, 2023 |
 | [[Projects/recollect.today\|recollect.today]]                         | \-                 |

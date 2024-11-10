@@ -8,6 +8,7 @@
 
 | Pages                                                                                                                                                                                                                                       | 🗓️                |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| [[Pages/vercel에 배포만 하면 라우팅 안되는 이슈 왜?\|vercel에 배포만 하면 라우팅 안되는 이슈 왜?]]                                                                                                                                                                     | November 10, 2024  |
 | [[Pages/슬로우 워크Slow Productivity(1)\|슬로우 워크Slow Productivity(1)]]                                                                                                                                                                         | November 03, 2024  |
 | [[Pages/toss 프론트엔드 파이트 클럽 참여\|toss 프론트엔드 파이트 클럽 참여]]                                                                                                                                                                                     | October 27, 2024   |
 | [[Pages/React memo로 불필요한 렌더링 최적화\|React memo로 불필요한 렌더링 최적화]]                                                                                                                                                                             | October 20, 2024   |
@@ -25,10 +26,10 @@
 
 | Projects                                                                 | 🗓️                |
 | ------------------------------------------------------------------------ | ------------------ |
-| [[Projects/Martha\|Martha]]                                           | September 02, 2023 |
-| [[Projects/SqetchClub/sqetch.club\|sqetch.club]]                      | August 19, 2024    |
-| [[Projects/SqetchClub/Worklogs/p5.js stroke test\|p5.js stroke test]] | \-                 |
 | [[Projects/SqetchClub/Worklogs/socket\|socket]]                       | \-                 |
+| [[Projects/SqetchClub/Worklogs/p5.js stroke test\|p5.js stroke test]] | \-                 |
+| [[Projects/SqetchClub/sqetch.club\|sqetch.club]]                      | August 19, 2024    |
+| [[Projects/Martha\|Martha]]                                           | September 02, 2023 |
 | [[Projects/cognosco.online\|cognosco.online]]                         | September 24, 2023 |
 | [[Projects/open studio\|open studio]]                                 | September 24, 2023 |
 | [[Projects/recollect.today\|recollect.today]]                         | \-                 |
