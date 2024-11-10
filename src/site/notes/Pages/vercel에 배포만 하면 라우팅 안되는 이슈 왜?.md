@@ -65,3 +65,36 @@ react-router-dom의 문제라면 로컬에서도 에러가 발생해야하는데
 최초 index.html에서 main.tsx 스크립트를 로드하고 main.tsx는 App.tsx를 로드 그 후에 App.tsx에서 작성한 클라이언트 사이드 라우트를 통해 각 page들을 로드합니다.
 
 이렇게 하면 모든 경로가 index.html 루트경로로부터 서빙되어 404 라우팅에러를 해결할 수 있습니다. 
+
+작성하다보니 든 생각이 나머지 유효하지 않은 라우트 /1, /2, /3 외에 다른 라우트에 대한 404페이지도 만들어야겠네요. /asdf 를 URL에 입력했을 때 아무것도 보여주지 못하니까요.
+
+```js
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import First from "./pages/First";
+import Second from "./pages/Second";
+import Third from "./pages/Third";
+import Footer from "./components/Footer";
+
+function App() {
+
+	return (
+	<Router>
+		<Header />
+		<Routes>
+			<Route path="/" Component={First} />
+			<Route path="/1" Component={First} />
+			<Route path="/2" Component={Second} />
+			<Route path="/3" Component={Third} />
+			<Route path="/*" Component={NotFound} />
+		</Routes>
+		<Footer />
+	</Router>
+	);
+
+}
+
+  
+export default App;
+
+```
