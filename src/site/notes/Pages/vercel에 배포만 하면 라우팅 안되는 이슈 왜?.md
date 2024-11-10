@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/pages/vercel/","created":"2024-11-10","updated":"2024-11-10T21:25:00"}
+{"dg-publish":true,"permalink":"/pages/vercel/","tags":["client-side-rendering","vercel"],"created":"2024-11-10","updated":"2024-11-10T21:25:00"}
 ---
 
 최근에 새로운 프로젝트를 하나 의뢰받아 vite react ts 로 개발하던 중 만난 문제를 기록해보고자 합니다. 
