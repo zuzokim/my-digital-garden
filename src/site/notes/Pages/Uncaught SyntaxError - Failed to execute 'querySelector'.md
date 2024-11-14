@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/pages/uncaught-syntax-error-failed-to-execute-query-selector/","tags":["HTML","CSS","javascript"],"created":"2024-11-14","updated":"2024-11-14T17:55:00"}
+{"dg-publish":true,"permalink":"/pages/uncaught-syntax-error-failed-to-execute-query-selector/","tags":["HTML","CSS","javascript"],"created":"2024-11-14","updated":"2024-11-14T19:07:00"}
 ---
 
 최근 리치에디터 기능 개발을 하면서 div 요소에 id indentifier를 랜덤으로 제너레이트해서 부여하고 해당 id를 querySelector로 찾아 DOM을 업데이트해줄 일이 있었습니다.
@@ -61,5 +61,7 @@ HTML attributes와 CSS identifier의 스펙이 다른 이유는 일단 이 둘�
 HTML, CSS 기본 스펙을 잘 아는 것이 중요하겠지만, 적어도 코드를 작성할 때 주의할 수 있다면 좋을 것 같습니다.
 
 
+
 [^w3.org]: https://www.w3.org/TR/CSS21/syndata.html#characters
 [^html.spec]: https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute
+[^참고] : https://stackoverflow.com/questions/37270787/uncaught-syntaxerror-failed-to-execute-queryselector-on-document
