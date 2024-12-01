@@ -8,6 +8,7 @@
 
 | Pages                                                                                                                                                                                                                                       | 🗓️                |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| [[Pages/getComputedStyle + CSS zoom or transform\|getComputedStyle + CSS zoom or transform]]                                                                                                                                             | December 01, 2024  |
 | [[Pages/슬로우 워크Slow Productivity(2)\|슬로우 워크Slow Productivity(2)]]                                                                                                                                                                         | November 24, 2024  |
 | [[Pages/Uncaught SyntaxError - Failed to execute 'querySelector'\|Uncaught SyntaxError - Failed to execute 'querySelector']]                                                                                                             | November 14, 2024  |
 | [[Pages/vercel에 배포만 하면 라우팅 안되는 이슈 왜?\|vercel에 배포만 하면 라우팅 안되는 이슈 왜?]]                                                                                                                                                                     | November 10, 2024  |
@@ -28,15 +29,15 @@
 
 | Projects                                                                 | 🗓️                |
 | ------------------------------------------------------------------------ | ------------------ |
-| [[Projects/SqetchClub/Worklogs/socket\|socket]]                       | \-                 |
-| [[Projects/SqetchClub/Worklogs/p5.js stroke test\|p5.js stroke test]] | \-                 |
-| [[Projects/SqetchClub/sqetch.club\|sqetch.club]]                      | August 19, 2024    |
 | [[Projects/Martha\|Martha]]                                           | September 02, 2023 |
 | [[Projects/cognosco.online\|cognosco.online]]                         | September 24, 2023 |
 | [[Projects/open studio\|open studio]]                                 | September 24, 2023 |
-| [[Projects/recollect.today\|recollect.today]]                         | \-                 |
 | [[Projects/space matter architects\|space matter architects]]         | November 24, 2023  |
+| [[Projects/SqetchClub/Worklogs/socket\|socket]]                       | \-                 |
+| [[Projects/SqetchClub/Worklogs/p5.js stroke test\|p5.js stroke test]] | \-                 |
+| [[Projects/SqetchClub/sqetch.club\|sqetch.club]]                      | August 19, 2024    |
 | [[Projects/whitespreadsheet.online/《SECRET TEXTS》\|《SECRET TEXTS》]]   | October 24, 2023   |
+| [[Projects/recollect.today\|recollect.today]]                         | \-                 |
 | [[Projects/당신2 9하던 삶\|당신2 9하던 삶]]                                     | May 09, 2022       |
 
 { .block-language-dataview}
