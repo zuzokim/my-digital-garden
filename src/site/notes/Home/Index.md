@@ -8,6 +8,7 @@
 
 | Pages                                                                                                                                                                                                                                       | 🗓️                |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| [[Pages/3일간의 미니프로젝트 - 105+1 탄핵타자연습\|3일간의 미니프로젝트 - 105+1 탄핵타자연습]]                                                                                                                                                                         | December 15, 2024  |
 | [[Pages/2024.12.03 - 2024.12.08\|2024.12.03 - 2024.12.08]]                                                                                                                                                                               | December 03, 2024  |
 | [[Pages/getComputedStyle + CSS zoom or transform\|getComputedStyle + CSS zoom or transform]]                                                                                                                                             | December 01, 2024  |
 | [[Pages/슬로우 워크Slow Productivity(2)\|슬로우 워크Slow Productivity(2)]]                                                                                                                                                                         | November 24, 2024  |
@@ -30,16 +31,16 @@
 
 | Projects                                                                 | 🗓️                |
 | ------------------------------------------------------------------------ | ------------------ |
-| [[Projects/space matter architects\|space matter architects]]         | November 24, 2023  |
-| [[Projects/당신2 9하던 삶\|당신2 9하던 삶]]                                     | May 09, 2022       |
-| [[Projects/Martha\|Martha]]                                           | September 02, 2023 |
-| [[Projects/SqetchClub/sqetch.club\|sqetch.club]]                      | August 19, 2024    |
 | [[Projects/SqetchClub/Worklogs/p5.js stroke test\|p5.js stroke test]] | \-                 |
 | [[Projects/SqetchClub/Worklogs/socket\|socket]]                       | \-                 |
-| [[Projects/recollect.today\|recollect.today]]                         | \-                 |
-| [[Projects/open studio\|open studio]]                                 | September 24, 2023 |
-| [[Projects/whitespreadsheet.online/《SECRET TEXTS》\|《SECRET TEXTS》]]   | October 24, 2023   |
+| [[Projects/SqetchClub/sqetch.club\|sqetch.club]]                      | August 19, 2024    |
 | [[Projects/cognosco.online\|cognosco.online]]                         | September 24, 2023 |
+| [[Projects/Martha\|Martha]]                                           | September 02, 2023 |
+| [[Projects/recollect.today\|recollect.today]]                         | \-                 |
+| [[Projects/space matter architects\|space matter architects]]         | November 24, 2023  |
+| [[Projects/whitespreadsheet.online/《SECRET TEXTS》\|《SECRET TEXTS》]]   | October 24, 2023   |
+| [[Projects/open studio\|open studio]]                                 | September 24, 2023 |
+| [[Projects/당신2 9하던 삶\|당신2 9하던 삶]]                                     | May 09, 2022       |
 
 { .block-language-dataview}
 
