@@ -51,7 +51,6 @@
 | [[Logs/recollect-logs\|recollect-logs]]           | 11:40 PM - September 04, 2024 |
 | [[Logs/study archives\|study archives]]           | 3:02 PM - August 28, 2024     |
 | [[Logs/engineering books\|engineering books]]     | 8:45 PM - August 24, 2024     |
-| [[Logs/Little ideas/todolist\|todolist]]          | 12:46 AM - August 23, 2024    |
 | [[Logs/digital-garden-logs/Analytics\|Analytics]] | 12:37 AM - August 23, 2024    |
 
 { .block-language-dataview}
