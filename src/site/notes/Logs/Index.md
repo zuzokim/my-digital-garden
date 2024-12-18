@@ -10,6 +10,5 @@
 | [[Logs/study archives\|study archives]]           | September 01, 2024 |
 | [[Logs/engineering books\|engineering books]]     | \-                 |
 | [[Logs/digital-garden-logs/Analytics\|Analytics]] | \-                 |
-| [[Logs/Little ideas/1\|1]]                        | \-                 |
 
 { .block-language-dataview}
