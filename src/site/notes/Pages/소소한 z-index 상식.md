@@ -21,5 +21,5 @@ https://csshell.dev/posts/z-index-hell/ 을 읽고 다시 한번 z-index가 제�
 글로벌하게 전체 화면을 덮는 형태의 모달은 현재 화면에 보이는 컴포넌트들과 상관없이 그려지는 독립적인 UI이므로, 마크업 순서와 stacking context에 영향받지 않는 형태로 렌더할 수 있습니다. 이를 위해 react의 createPortal로 모달 컴포넌트를 만들었습니다. 이렇게 하니 어느 위치에서 렌더하더라도 전체 화면을 덮는 모달을 보여줄 수 있게 되었습니다.
 
 createPortal을 쓰면 좋은 점 한 가지 더, 
-z-index가 아무리 높아도 stacking context에 포함된다면 부모 컴포넌트에 `overflow:hidden` 처리가 되어있을 때 함께 hidden됩니다. createPortal로 컴포넌트를 렌더하면 상위 jsx 요소에 영향 받지 않기 때문에 문제가 되지 않습니다.
+z-index가 아무리 높아도 stacking context에 포함된다면 부모 컨테이너 컴포넌트에 `overflow:hidden` 처리가 되어있다면 자식 컴포넌트는 hidden됩니다. 하지만 createPortal로 컴포넌트를 렌더하면 상위 jsx 요소에 영향 받지 않기 때문에 이런 문제를 피할 수 있습니다. 
 https://react.dev/reference/react-dom/createPortal#rendering-a-modal-dialog-with-a-portal
