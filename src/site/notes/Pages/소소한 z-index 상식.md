@@ -11,6 +11,9 @@
 
 원인은 다음과 같았습니다. 헤더는 마크업 순서상, 그리고 dom tree상 모달 컴포넌트보다 먼저 그려지고, 푸터는 모달보다 다음에 그려집니다. 따라서 아무리 모달 UI의 z-index를 높여도 모달이 푸터보다 위쪽에 올 수 없습니다. 헤더, 모달, 푸터 컴포넌트를 모두 같은 플로우 레이아웃, [stacking context](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context)에 두는 게 아니라면요.
 
-https://csshell.dev/posts/z-index-hell/ 을 읽고 다시 한번 z-index가 제대로 동작하기 위한 조건들을 상기시켜 봤습니다. 그리고 소소하지만 새로운 사실도 알게됐네요. 
+https://csshell.dev/posts/z-index-hell/ 을 읽고 다시 한번 z-index가 제대로 동작하기 위한 조건들을 상기시켜 봤습니다. 그리고 소소하지만 새로운 사실도 알게됐네요. 개발하다보면 가끔 마주하게 되는 z-index: 99999; ㅋㅋ 가 떠올랐는데 z-index의 최댓값에 대해서는 생각해보지 않았었거든요. 
 
 1. z-index는 `absolute`, `fixed`, `relative` or `sticky` `positions`에만 사용할 수 있습니다.
+2. z-index의 최대값은 2147483648, 즉 계산 시 32비트 부호 있는 이진 정수의 최대 양수 값입니다.
+3. 콘텐츠의 z축 값에서 아무것도 변경하지 않는 경우 2 또는 3을 추가하면 100 또는 10000과 동일한 효과가 있습니다. 큰 숫자를 추가하면 유지 관리가 어려워질 수 있습니다.
+4. z-index가 전혀 필요하지 않을 수도 있습니다. DOM 요소를 </body> 태그 쪽으로 조금 더 밀면 그 앞의 같은 레이어에 있는 요소보다 늦게 렌더링되어 해당 요소를 덮을 수 있습니다.
