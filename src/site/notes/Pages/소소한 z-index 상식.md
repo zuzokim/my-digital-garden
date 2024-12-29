@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/pages/z-index/","tags":["CSS"],"created":"2024-12-22","updated":"2024-12-22T23:23:00"}
+{"dg-publish":true,"permalink":"/pages/z-index/","tags":["CSS","React"],"created":"2024-12-22","updated":"2024-12-22T23:23:00"}
 ---
 
 최근 모달 컴포넌트를 개발하고 해당 컴포넌트를 헤더에서 한 번, 푸터에서 한 번 열도록 한 케이스가 있었습니다.
