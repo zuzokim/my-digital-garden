@@ -8,6 +8,7 @@
 
 | Pages                                                                                                                                                                                                                                       | 🗓️                |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| [[Pages/2025 벅뚜벅뚜\|2025 벅뚜벅뚜]]                                                                                                                                                                                                           | January 01, 2025   |
 | [[Pages/React의 Portal과 이벤트 전파 원리 draft\|React의 Portal과 이벤트 전파 원리 draft]]                                                                                                                                                                 | December 29, 2024  |
 | [[Pages/소소한 z-index 상식\|소소한 z-index 상식]]                                                                                                                                                                                                 | December 22, 2024  |
 | [[Pages/3일간의 미니프로젝트 - 105+1 탄핵타자연습\|3일간의 미니프로젝트 - 105+1 탄핵타자연습]]                                                                                                                                                                         | December 15, 2024  |
@@ -34,25 +35,20 @@
 | Projects                                                                 | 🗓️                |
 | ------------------------------------------------------------------------ | ------------------ |
 | [[Projects/SqetchClub/Worklogs/p5.js stroke test\|p5.js stroke test]] | \-                 |
-| [[Projects/SqetchClub/Worklogs/socket\|socket]]                       | \-                 |
 | [[Projects/SqetchClub/sqetch.club\|sqetch.club]]                      | August 19, 2024    |
 | [[Projects/cognosco.online\|cognosco.online]]                         | September 24, 2023 |
 | [[Projects/open studio\|open studio]]                                 | September 24, 2023 |
-| [[Projects/recollect.today\|recollect.today]]                         | \-                 |
-| [[Projects/space matter architects\|space matter architects]]         | November 24, 2023  |
 | [[Projects/whitespreadsheet.online/《SECRET TEXTS》\|《SECRET TEXTS》]]   | October 24, 2023   |
-| [[Projects/Martha\|Martha]]                                           | September 02, 2023 |
 | [[Projects/당신2 9하던 삶\|당신2 9하던 삶]]                                     | May 09, 2022       |
+| [[Projects/Martha\|Martha]]                                           | September 02, 2023 |
 
 { .block-language-dataview}
 
 
 
-| Logs                                                 | 🗓️                           |
-| ---------------------------------------------------- | ----------------------------- |
-| [[Logs/recollect-logs\|recollect-logs]]           | 11:40 PM - September 04, 2024 |
-| [[Logs/study archives\|study archives]]           | 3:02 PM - August 28, 2024     |
-| [[Logs/engineering books\|engineering books]]     | 8:45 PM - August 24, 2024     |
-| [[Logs/digital-garden-logs/Analytics\|Analytics]] | 12:37 AM - August 23, 2024    |
+| Logs                                             | 🗓️                       |
+| ------------------------------------------------ | ------------------------- |
+| [[Logs/study archives\|study archives]]       | 3:02 PM - August 28, 2024 |
+| [[Logs/engineering books\|engineering books]] | 8:45 PM - August 24, 2024 |
 
 { .block-language-dataview}
