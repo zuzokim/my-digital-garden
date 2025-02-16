@@ -178,11 +178,10 @@ export default defineConfig({
 이렇게 설정후 브라우저에서 요청을 날려보면 
 
 ```http
-// 브라우저 요청
-GET http://localhost:5173/api/data
 
-// Vite가 변환한 요청 (백엔드로 전달)
-GET https://api.backend.com/api/data
+GET http://localhost:5173/api/data // 브라우저 요청
+
+GET https://api.backend.com/api/data // Vite가 변환한 요청 (백엔드로 전달)
 ```
 
 Vite가 자동으로 `https://api.backend.com/data`로 요청을 전달해주는 방식으로 동작하는 걸 볼 수 있습니다.
@@ -278,3 +277,5 @@ const config: StorybookConfig = {
 
 스토리북은 기본적으로 Webpack을 사용하여 개발서버를 실행합니다. 그러나 Vite를 사용할 때는 framework에 Vite를 사용한다고 패키지를 설치한 후 명시해줘야합니다. 그리고 viteFinal을 사용하여 최종적으로 Webpack -> Vite 설정으로 변경해줄 수 있습니다.
 
+
+그럼 스토리북에서도 CORS 해결!
