@@ -20,16 +20,16 @@ CORS(Cross-Origin Resource Sharing)는 이러한 제한을 완화하기 위한 �
 
 ✅ **출처가 같은 경우 (CORS 에러 없음)**
 
-> 프론트엔드: `http://example.com`  
-> 백엔드: `http://example.com`  
+프론트엔드: `http://example.com`  
+백엔드: `http://example.com`  
 
 ❌ **출처가 다른 경우 (CORS 에러 발생 가능)**
 
-> 프론트엔드: `http://example.com` 
-> 백엔드: `http://api.example.com` (서브도메인 다름) 
-> 
-> 프론트엔드: `http://localhost:3000` 
-> 백엔드: `http://localhost:5000` (포트 번호 다름)
+프론트엔드: `http://example.com` 
+백엔드: `http://api.example.com` (서브도메인 다름) 
+
+프론트엔드: `http://localhost:3000` 
+백엔드: `http://localhost:5000` (포트 번호 다름)
 
 ---
 
@@ -52,7 +52,7 @@ Host: frontend.com
 서버의 응답(HTML 문서 반환)
 ```http
 HTTP/1.1 200 OK
-Content-Type: text/html
+Content-Type: application/json
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -106,6 +106,8 @@ Origin: https://frontend.com
 
 보통은 백엔드(`https://api.backend.com`)가 응답을 보낼 때, 브라우저가 해당 요청을 허용할지 결정할 수 있도록 **CORS 헤더를 추가합니다.**
 
+
+node.js express ex. 
 ```js
 const cors = require('cors');
 const express = require('express');
@@ -148,9 +150,9 @@ on the requested resource.
 
 ### Proxy로 우회하기
 
-두괄식으로 해결한 방법을 먼저 작성해봤습니다. 백엔드 코드를 수정할 수 없는 경우 프론트엔드에서 **프록시 서버 설정**으로 CORS 에러를 우회할 수 있는데요, 이는 브라우저가 백엔드 API가 아닌 프록시 서버를 대상으로 요청하도록 만들어서 CORS 정책을 피하는 접근방식입니다.
+두괄식으로 해결한 방법을 먼저 작성해봤습니다. 백엔드 코드를 수정할 수 없는 경우 프론트엔드에서 **프록시 서버 설정**으로 CORS 에러를 우회할 수 있습니다. 이는 브라우저가 백엔드 API가 아닌 프록시 서버를 대상으로 요청하도록 만들어서 CORS 정책을 피하는 접근방식입니다.
 
-일단 제가 작업하던 개발 환경을 기준으로 과정을 설명해보겠습니다.
+제가 작업하던 개발 환경을 기준으로 과정을 설명해보겠습니다.
 
 프로젝트는 Vite + React로 생성해 작업중이었고, `vite.config.ts` 설정 파일에 프록시 서버를 설정할 수 있었습니다.
 
@@ -179,9 +181,12 @@ export default defineConfig({
 
 ```http
 
-GET http://localhost:5173/api/data // 브라우저 요청
+//브라우저 요청
+GET http://localhost:5173/api/data 
 
-GET https://api.backend.com/api/data // Vite가 변환한 요청 (백엔드로 전달)
+
+// Vite가 변환한 요청 (백엔드로 전달)
+GET https://api.backend.com/api/data 
 ```
 
 Vite가 자동으로 `https://api.backend.com/data`로 요청을 전달해주는 방식으로 동작하는 걸 볼 수 있습니다.
@@ -217,7 +222,7 @@ GET https://api.backend.com/data
 
 ##### **✅ SSL/TLS란? (HTTPS와의 관계)**
 
-SSL(Secure Sockets Layer)과 TLS(Transport Layer Security)는 **인터넷에서 데이터를 암호화하여 안전하게 주고받기 위한 보안 프로토콜**입니다.  우리가 흔히 사용하는 **HTTPS(보안 HTTP)**가 이 SSL/TLS를 이용하여 데이터를 보호합니다.
+SSL(Secure Sockets Layer)과 TLS(Transport Layer Security)는 **인터넷에서 데이터를 암호화하여 안전하게 주고받기 위한 보안 프로토콜**입니다.  우리가 흔히 사용하는 **HTTPS(보안 HTTP)** 가 이 SSL/TLS를 이용하여 데이터를 보호합니다.
 
 브라우저에서 `https://`로 시작하는 웹사이트에 접속하면, 그 사이트는 **SSL/TLS 인증서를 가지고 있다**는 의미입니다.
 
