@@ -186,6 +186,30 @@ console.log("5"); // 동기 코드 실행
 
 ```
 
+아래와 같은 경우는 출력 순서 : 1 -> 5 -> 3 -> 4 -> 2 -> 3-1 이 됩니다.
+
+```js
+
+console.log("1"); // 동기 코드 실행
+
+setTimeout(() => {
+	console.log("2 (매크로태스크)");
+}, 0);
+
+
+Promise.resolve().then(() => {
+	console.log("3 (마이크로태스크 1)");
+	setTimeout(() => {
+		console.log("3-1 (매크로태스크 2)");
+	}, 0);
+});
+
+Promise.resolve().then(() => {
+	console.log("4 (마이크로태스크 3)");
+});
+
+console.log("5"); // 동기 코드 실행
+```
 
 ### 결론
 
