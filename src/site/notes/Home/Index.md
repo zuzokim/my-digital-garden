@@ -37,9 +37,10 @@
 { .block-language-dataview}
 
 
-| Logs                                             | 🗓️                       |
-| ------------------------------------------------ | ------------------------- |
-| [[Logs/study archives\|study archives]]       | 3:02 PM - August 28, 2024 |
-| [[Logs/engineering books\|engineering books]] | 8:45 PM - August 24, 2024 |
+| Logs                                                                                                                                                                                                                         | 🗓️                       |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| [[Logs/Cascading Spy Sheets - Exploiting the Complexity of Modern CSS for Email and Browser Fingerprinting(번역)\|Cascading Spy Sheets - Exploiting the Complexity of Modern CSS for Email and Browser Fingerprinting(번역)]] | 11:18 PM - March 02, 2025 |
+| [[Logs/study archives\|study archives]]                                                                                                                                                                                   | 3:02 PM - August 28, 2024 |
+| [[Logs/engineering books\|engineering books]]                                                                                                                                                                             | 8:45 PM - August 24, 2024 |
 
 { .block-language-dataview}
