@@ -6,32 +6,37 @@
 
 ---
 
-## `combine` 미들웨어의 타입 추론 방식
+## `combine`미들웨어의 타입 추론 방식
 
-Zustand의 `combine` 미들웨어는 아래와 같은 형태로 사용된다:
+Zustand의 `combine` 미들웨어 함수 자체 구현은 매우 단순하다.
 
-```
-combine<T, U>(initialState: T, create: (set, get) => U): T & U
+소스코드 : https://github.com/pmndrs/zustand/blob/main/src/middleware/combine.ts#L3
+
+```ts
+import type { StateCreator, StoreMutatorIdentifier } from '../vanilla.ts'
+
+type Write<T, U> = Omit<T, keyof U> & U
+
+export function combine<
+  T extends object,
+  U extends object,
+  Mps extends [StoreMutatorIdentifier, unknown][] = [],
+  Mcs extends [StoreMutatorIdentifier, unknown][] = [],
+>(
+  initialState: T,
+  create: StateCreator<T, Mps, Mcs, U>,
+): StateCreator<Write<T, U>, Mps, Mcs> {
+  return (...args) => Object.assign({}, initialState, (create as any)(...args))
+}
 ```
 
 여기서 중요한 타입 유틸이 하나 있다:
 
-```
+```ts
 type Write<T, U> = Omit<T, keyof U> & U
 ```
 
 이 타입은 `T`와 `U`의 충돌되는 키를 제거하고, `U`로 덮어씌우는 역할을 한다. 결국 최종적으로 반환되는 상태는 `T & U` 타입이지만, `U`의 메서드가 우선시된다.
-
-`combine` 함수 자체 구현은 단순하다:
-
-```
-export function combine<T, U>(
-  initialState: T,
-  create: (set, get) => U
-): () => T & U {
-  return (set, get, api) => Object.assign({}, initialState, create(set, get, api))
-}
-```
 
 Zustand의 타입 시스템은 이 `combine`을 활용할 때 초기 상태와 메서드를 명확히 구분하고 타입을 추론하기 때문에, 별도의 수동 타입 선언 없이도 IDE 자동완성과 타입 검사를 완벽히 지원한다.
 
@@ -91,7 +96,7 @@ const removeProduct = (product: Product) => {
 - 비동기 로직 추가 시 훨씬 복잡해
 - 테스트/디버깅/분리 어려움
 
-zustand와 combine 미들웨어를 사용해 다시 구현해보면 이렇게 된다.
+Zustand와 combine 미들웨어를 사용해 다시 구현해보면 이렇게 된다.
 ```js
 // cartStore.ts
 import { create } from 'zustand';
@@ -114,3 +119,8 @@ export const useCartStore = create(
   }))
 );
 ```
+
+Zustand의 `combine` 미들웨어를 활용하면, 상태와 로직을 분리하면서도 타입 안정성을 유지할 수 있다. 특히 `React Context`로 관리하던 전역 상태를 리팩토링할 때 매우 강력한 선택지다.
+
+Zustand가 제공하는 `persist`, `immer`, `devtools` 등과 조합하면 더 확장성 있는 상태 관리를 할 수 있다는 장점도 갖는다.
+
