@@ -83,3 +83,34 @@ const removeProduct = (product: Product) => {
 
 };
 ```
+
+이 코드는 `React Context`로 전역 상태를 관리하고 있지만, 다음과 같은 단점이 있다:
+
+- `useState` 기반이라 비즈니스 로직이 `CartProvider` 내부에 갇힘
+- `setProducts`가 여러 메서드에서 반복 사용됨
+- 비동기 로직 추가 시 훨씬 복잡해
+- 테스트/디버깅/분리 어려움
+
+zustand와 combine 미들웨어를 사용해 다시 구현해보면 이렇게 된다.
+```js
+// cartStore.ts
+import { create } from 'zustand';
+import { combine } from 'zustand/middleware';
+import { Product } from '../products';
+
+export const useCartStore = create(
+  combine({ products: [] as Product[] }, (set, get) => ({
+    addProduct: (product: Product) => {
+      set({ products: [...get().products, product] });
+    },
+    removeProduct: (product: Product) => {
+      const index = get().products.findIndex((p) => p.id === product.id);
+      if (index !== -1) {
+        const newProducts = [...get().products];
+        newProducts.splice(index, 1);
+        set({ products: newProducts });
+      }
+    },
+  }))
+);
+```
