@@ -13,7 +13,7 @@ Zustand의 `combine` 미들웨어 구현 코드는 정말 짧다. 무려 15줄�
 
 소스코드 : https://github.com/pmndrs/zustand/blob/main/src/middleware/combine.ts#L1~#L15
 ![Screenshot 2025-04-14 at 1.19.16 AM.png](/img/user/Screenshot%202025-04-14%20at%201.19.16%20AM.png)
-##### 핵심 유틸리티: `Write<T, U>`
+##### 📌 핵심 유틸리티: `Write<T, U>`
 여기서 중요한 타입 유틸이 하나 있다. 이 타입은 `T`와 `U`의 충돌되는 키를 제거하고, `U`로 덮어씌우는 역할을 한다. 결국 최종적으로 반환되는 상태는 `T & U` 타입이지만, `U`가 우선시된다.
 ```ts
 // T와 U를 합치되, U에 있는 키는 T에서 덮어쓴다
@@ -29,7 +29,7 @@ Write<{ count: number }, { count: () => void }>
 - `Omit<T, keyof U>`는 `U`와 겹치는 키를 `T`에서 제거
 - 최종적으로는 `T & U` 와 비슷하지만, **`U`가 우선**인 타입
 
-##### `combine`의 타입 구조
+##### 📌 `combine`의 타입 구조
 
 함수 내부는 단순히 `Object.assign`으로 병합하고 끝. 하지만 타입 레벨에선 꽤 많은 일이 일어난다.
 ```ts
@@ -46,7 +46,7 @@ export function combine<
 }
 ```
 
-##### 타입 추론의 핵심: `StateCreator`
+##### 📌 타입 추론의 핵심: `StateCreator`
 ```ts
 type StateCreator<
   T,
@@ -69,7 +69,7 @@ type StateCreator<
 		- 사용자는 `initialState`와 `create`에서 정의한 상태를 모두 사용할 수 있고, 타입도 자동 추론됨
 
 
-##### 미들웨어 체이닝
+##### 📌 미들웨어 체이닝
 
 여기서 미들웨어 체이닝(Pipe, Compose)을 할 수 있다는 말이 처음에 좀 이해가 안됐는데, 설명해보면 이렇다.
 -  `Mps`, `Mcs`: 미들웨어 파이프를 추적하기 위한 타입 체이닝 시스템이다.
