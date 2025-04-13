@@ -98,20 +98,22 @@ createStore 할때 매번 타입을 정의해서 사용했던 나는 스터디�
 
 ![Screenshot 2025-04-14 at 12.03.39 AM.png](/img/user/Screenshot%202025-04-14%20at%2012.03.39%20AM.png)
 
+
+---
+
 기존에 나는 최대한 간결하게 서트파티 라이브러리 없이 구현하고자 했기 때문에 React Context를 사용해서 아래와 같이 구현했었다.
 
-```js
+```ts
+//기존 CartContext.ts
 import { ReactNode, useState, createContext } from 'react';
 import { Product } from '../products';
 
-  
 export interface CartContext {
 	products: Product[];
 	addProduct: (product: Product) => void;
 	removeProduct: (product: Product) => void;
 }
 
-  
 export const CartContext = createContext<CartContext>({
 	products: [],
 	addProduct: (product) => {},
@@ -126,10 +128,8 @@ const addProduct = (product: Product) => {
 	setProducts((prev) => [...prev, product]);
 };
 
-
 const removeProduct = (product: Product) => {
 	const index = products.findIndex((p) => p.id === product.id);
-	
 	if (index !== -1) {
 		setProducts((prev) => [
 		...prev.slice(0, index),
@@ -138,24 +138,23 @@ const removeProduct = (product: Product) => {
 	}
 };
 
-  
-
 	return ( <CartContext.Provider value={{ products, addProduct, removeProduct }}>{children}</CartContext.Provider>
 	);
 
 };
 ```
 
-이 코드는 `React Context`로 전역 상태를 관리하고 있지만, 다음과 같은 단점이 있다:
+이 코드는 다음과 같은 단점이 발생할 가능성이 있다:
 
 - `useState` 기반이라 비즈니스 로직이 `CartProvider` 내부에 갇힘
 - `setProducts`가 여러 메서드에서 반복 사용됨
-- 비동기 로직 추가 시 훨씬 복잡해
+- 비동기 로직 추가 시 훨씬 복잡해짐
 - 테스트/디버깅/분리 어려움
 
 Zustand와 combine 미들웨어를 사용해 다시 구현해보면 이렇게 된다.
+
 ```js
-// cartStore.ts
+// 리팩토링해본 cartStore.ts
 import { create } from 'zustand';
 import { combine } from 'zustand/middleware';
 import { Product } from '../products';
