@@ -239,7 +239,7 @@ export const useCartStore = create(
 );
 ```
 
-물론 기존에 interface로 타입을 명시적으로 작성할 수도 있을 것이다. 이런식으로..
+물론 명시적인 interface로 타입을 작성할 수도 있을 것이다. 이런식으로..
 
 ```ts
 interface CartState {
