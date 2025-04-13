@@ -236,6 +236,25 @@ export const useCartStore = create(
 );
 ```
 
+물론 기존에 interface로 타입을 명시적으로 작성할 수도 있을 것이다. 이런식으로..
+
+```ts
+interface CartState {
+  products: Product[]
+}
+
+interface CartActions {
+  addProduct: (product: Product) => void
+  removeProduct: (product: Product) => void
+}
+
+type CartStore = CartState & CartActions
+
+
+export const useCartStore = create<CartStore>((set, get) => ({
+...
+```
+
 Zustand의 `combine` 미들웨어를 활용하면, 상태와 로직을 분리하면서도 타입 안정성을 유지할 수 있다. 특히 `React Context`로 관리하던 전역 상태를 리팩토링할 때 매우 강력한 선택지다.
 
 필요한 상태만 구독해 불필요한 렌더를 방지할 수도 있고, Zustand가 제공하는 `persist`, `immer`, `devtools` 등과 조합하면 더 확장성 있는 상태 관리를 할 수 있다는 장점도 갖는다.
