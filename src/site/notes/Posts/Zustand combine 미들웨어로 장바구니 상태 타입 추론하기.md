@@ -87,10 +87,10 @@ type StateCreator<
 
 결론적으로 타입이 추론되는 구조를 정리해보면 이렇다.
 
-함수 시그니처를 보면 `combine`이 반환하는 건 `StateCreator<Write<T, U>, Mps, Mcs>`다.
-이 덕분에 `create(...)` 함수 내부에서는:
-- `set`과 `get`이 `T & U`를 기준으로 타입이 잡힘
-- 사용자는 `initialState`와 `create`에서 정의한 상태를 모두 사용할 수 있고, 타입도 자동 추론됨
+- 타입스크립트의 강력한 제네릭 + 유틸리티 타입(`Omit`) + intersection을 조합해서 만들어진 고급 API다.
+	- 함수 시그니처를 보면 `combine`이 반환하는 건 `StateCreator<Write<T, U>, Mps, Mcs>`다. 이 덕분에 `create(...)` 함수 내부에서는:
+		- `set`과 `get`이 `T & U`를 기준으로 타입이 잡힘
+		- 사용자는 `initialState`와 `create`에서 정의한 상태를 모두 사용할 수 있고, 타입도 자동 추론됨
 
 Zustand의 타입 시스템은 이 `combine`을 활용할 때 초기 상태와 메서드를 명확히 구분하고 타입을 추론하기 때문에, 별도의 수동 타입 선언 없이도 IDE 자동완성과 타입 검사를 완벽히 지원하게 되는 것이다. 
 
