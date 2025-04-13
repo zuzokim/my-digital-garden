@@ -198,7 +198,10 @@ const removeProduct = (product: Product) => {
 	}
 };
 
-	return ( <CartContext.Provider value={{ products, addProduct, removeProduct }}>{children}</CartContext.Provider>
+	return ( 
+		<CartContext.Provider value={{ products, addProduct, removeProduct }}>
+		{children}
+		</CartContext.Provider>
 	);
 
 };
