@@ -7,30 +7,14 @@
 그 과정에서 전역적으로 상태를 관리해야할 때 많은 스터디원들이 Zustand를 사용했는데, 나도 회사에서 Zustand를 애용하고 있던 와중 스터디원이 소개해준 덕에 새로운 미들웨어를 알게 돼서 알게 된 내용을 정리해본다. 인터널 소스코드도 Typescript를 활용한 굉장히 짧은 코드여서 어떤식으로 스토어의 타입을 추론하는지 뜯어보았다.
 
 ---
-
 ## **combine** 미들웨어의 타입 추론 방식
 
 Zustand의 `combine` 미들웨어 함수 자체 구현 코드가 매우 짧아서 놀랐다. 무려 15줄이다! 짧고 단순하지만.. Generic을 활용한 타입 추론 방식이라 나에게는 조금 더 들여다 보고 이해하는 시간이 필요했다.
 
 소스코드 : https://github.com/pmndrs/zustand/blob/main/src/middleware/combine.ts#L3
 
-```ts
-import type { StateCreator, StoreMutatorIdentifier } from '../vanilla.ts'
-
-type Write<T, U> = Omit<T, keyof U> & U
-
-export function combine<
-  T extends object,
-  U extends object,
-  Mps extends [StoreMutatorIdentifier, unknown][] = [],
-  Mcs extends [StoreMutatorIdentifier, unknown][] = [],
->(
-  initialState: T,
-  create: StateCreator<T, Mps, Mcs, U>,
-): StateCreator<Write<T, U>, Mps, Mcs> {
-  return (...args) => Object.assign({}, initialState, (create as any)(...args))
-}
-```
+<iframe src=" https://github.com/pmndrs/zustand/blob/main/src/middleware/combine.ts#L3
+" height="399" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
 
 여기서 중요한 타입 유틸이 하나 있다. 이 타입은 `T`와 `U`의 충돌되는 키를 제거하고, `U`로 덮어씌우는 역할을 한다. 결국 최종적으로 반환되는 상태는 `T & U` 타입이지만, `U`가 우선시된다.
 ```ts
