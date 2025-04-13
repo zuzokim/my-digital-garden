@@ -136,7 +136,7 @@ Zustand의 타입 시스템은 이 `combine`을 활용할 때 초기 상태와 �
 📌 **combine** 미들웨어는 <span style="background:rgba(240, 200, 0, 0.2)">TypeScript의 강력한 제네릭 + 유틸리티 타입(`Omit`) + intersection을 조합해서 만들어진 고급 API</span> 라는 생각이 들었다! 멋져! 
 
 ---
-### 코드 리뷰
+## 코드 리뷰
 
 그리고 그동안 create 할때 매번 타입을 interface로 정의해서 사용했던 나는 스터디원의 코드를 보고 매우 편리할 것 같다는 리뷰를 남겼었다. ㅎㅎ
 
