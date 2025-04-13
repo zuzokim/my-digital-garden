@@ -129,9 +129,9 @@ const useStore = create(
 ```
 
 여기서 일어나는 일:
-1. `immer` 미들웨어가 먼저 실행됨
-    - `set`을 `immer` 버전으로 바꿈 (`set((state) => { state.count++ })` 가능해짐)
-2. `persist`가 그 위에 얹힘
+1 . `immer` 미들웨어가 먼저 실행됨
+    -`set`을 `immer` 버전으로 바꿈 (`set((state) => { state.count++ })` 가능해짐)
+2 . `persist`가 그 위에 얹힘
     - 로컬스토리지에 상태를 저장하도록 `set`/`get`/`api`를 감쌈
 즉, `immer → persist → zustand core` 이렇게 **순차적으로 체인(chain)** 됨
 
