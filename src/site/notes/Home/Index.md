@@ -8,6 +8,7 @@
 
 | Posts                                                                                                                                                                                                                                       | 🗓️                |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| [[Posts/zustand combine 미들웨어로 장바구니 상태 타입추론하기\|zustand combine 미들웨어로 장바구니 상태 타입추론하기]]                                                                                                                                                     | April 13, 2025     |
 | [[Posts/Dialog vs Modal\|Dialog vs Modal]]                                                                                                                                                                                               | April 06, 2025     |
 | [[Posts/2025.03 프리랜서 예술가 백수는 왜 엔지니어가 됐나?\|2025.03 프리랜서 예술가 백수는 왜 엔지니어가 됐나?]]                                                                                                                                                             | March 30, 2025     |
 | [[Posts/How long is a second in JavaScript?(번역)\|How long is a second in JavaScript?(번역)]]                                                                                                                                               | March 23, 2025     |
@@ -41,10 +42,11 @@
 { .block-language-dataview}
 
 
-| Logs                                                                                                                             | 🗓️                       |
-| -------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
-| [[Logs/How to Design a GoodAPI and Why it Matters - Joshua Bloch\|How to Design a GoodAPI and Why it Matters - Joshua Bloch]] | 3:07 PM - March 09, 2025  |
-| [[Logs/study archives\|study archives]]                                                                                       | 3:02 PM - August 28, 2024 |
-| [[Logs/engineering books\|engineering books]]                                                                                 | 8:45 PM - August 24, 2024 |
+| Logs                                                                                                                                                                                                                 | 🗓️                       |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| [[Logs/How to Design a GoodAPI and Why it Matters - Joshua Bloch\|How to Design a GoodAPI and Why it Matters - Joshua Bloch]]                                                                                     | 3:07 PM - March 09, 2025  |
+| [[Logs/Cascading Spy Sheets - Exploiting the Complexity of Modern CSS for Email and Browser Fingerprinting\|Cascading Spy Sheets - Exploiting the Complexity of Modern CSS for Email and Browser Fingerprinting]] | 11:18 PM - March 02, 2025 |
+| [[Logs/study archives\|study archives]]                                                                                                                                                                           | 3:02 PM - August 28, 2024 |
+| [[Logs/engineering books\|engineering books]]                                                                                                                                                                     | 8:45 PM - August 24, 2024 |
 
 { .block-language-dataview}
