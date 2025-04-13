@@ -12,10 +12,7 @@
 Zustand의 `combine` 미들웨어 구현 코드는 정말 짧다. 무려 15줄이다! 그런데도 Generic을 활용한 타입 추론이 제법 정교하게 작동한다. 그래서 처음 봤을 땐 잠깐 멈춰서 이해해야 했다.
 
 소스코드 : https://github.com/pmndrs/zustand/blob/main/src/middleware/combine.ts#L1~#L15
-
-<iframe src=" https://github.com/pmndrs/zustand/blob/main/src/middleware/combine.ts#L1~#L15
-" height="600" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
-
+![Screenshot 2025-04-14 at 1.19.16 AM.png](/img/user/Screenshot%202025-04-14%20at%201.19.16%20AM.png)
 ##### 핵심 유틸리티: `Write<T, U>`
 여기서 중요한 타입 유틸이 하나 있다. 이 타입은 `T`와 `U`의 충돌되는 키를 제거하고, `U`로 덮어씌우는 역할을 한다. 결국 최종적으로 반환되는 상태는 `T & U` 타입이지만, `U`가 우선시된다.
 ```ts
