@@ -32,19 +32,19 @@ export function combine<
 }
 ```
 
-여기서 중요한 타입 유틸이 하나 있다:
+여기서 중요한 타입 유틸이 하나 있다. 이 타입은 `T`와 `U`의 충돌되는 키를 제거하고, `U`로 덮어씌우는 역할을 한다. 결국 최종적으로 반환되는 상태는 `T & U` 타입이지만, `U`가 우선시된다.
 ```ts
 // T와 U를 합치되, U에 있는 키는 T에서 덮어쓴다
 type Write<T, U> = Omit<T, keyof U> & U
 ```
 
-이 타입은 `T`와 `U`의 충돌되는 키를 제거하고, `U`로 덮어씌우는 역할을 한다. 결국 최종적으로 반환되는 상태는 `T & U` 타입이지만, `U`의 메서드가 우선시된다.
 ```ts
-// 예시
+// 사용 예시
 Write<{ count: number }, { count: () => void }> 
 // 결과: { count: () => void }
 ```
 
+정리 : 
 - `Write<T, U>`
 	- `T`와 `U`를 병합하되, `U`가 `T`의 필드를 덮어쓸 수 있도록 설계됨
 	- `Omit<T, keyof U>`는 `U`와 겹치는 키를 `T`에서 제거
@@ -52,19 +52,19 @@ Write<{ count: number }, { count: () => void }>
 
 ```ts
 export function combine<
-  T extends object,                       // 초기 상태 (InitialState)
-  U extends object,                       // 추가 상태 (AdditionalState)
+  T extends object, // 초기 상태 (InitialState)
+  U extends object, // 추가 상태 (AdditionalState)
   Mps extends [StoreMutatorIdentifier, unknown][] = [], // Middleware Pipe from previous
   Mcs extends [StoreMutatorIdentifier, unknown][] = [], // Middleware Compose for this layer
 >(
   initialState: T,
-  create: StateCreator<T, Mps, Mcs, U>,   // 상태 생성자 함수
-): StateCreator<Write<T, U>, Mps, Mcs> {  // 병합된 타입의 상태 생성자 반환
+  create: StateCreator<T, Mps, Mcs, U>,  // 상태 생성자 함수
+): StateCreator<Write<T, U>, Mps, Mcs> { // 병합된 타입의 상태 생성자 반환
   return (...args) => Object.assign({}, initialState, (create as any)(...args))
 }
 ```
 
-여기서 미들웨어 체이닝을 할 수 있다는 말이 처음에 좀 이해가 안됐는데, 설명해보면 이렇다.
+여기서 미들웨어 Pipe, Compose 와 같은 체이닝을 할 수 있다는 말이 처음에 좀 이해가 안됐는데, 설명해보면 이렇다.
 
 ```ts
 type StateCreator<
@@ -83,8 +83,7 @@ type StateCreator<
 	- 즉, `combine`은 다음과 같은 형태를 가진 상태 생성자를 기대함:
 		- `create` 함수는 `set`, `get`, `api`를 받아서 `U` 타입의 상태 조각을 리턴
 		- 이 상태 조각은 `initialState` (`T`)와 병합될 예정
-- <span style="background:rgba(240, 200, 0, 0.2)">TypeScript의 강력한 제네릭 + 유틸리티 타입(`Omit`) + intersection을 조합해서 만들어진 고급 API다.</span>
-	- 함수 시그니처를 보면 `combine`이 반환하는 건 `StateCreator<Write<T, U>, Mps, Mcs>`다. 이 덕분에 `create(...)` 함수 내부에서는:
+	- 함수 시그니처를 보면 `combine`이 리턴하는 건 `StateCreator<Write<T, U>, Mps, Mcs>`다. 이 덕분에 `create(...)` 함수 내부에서는:
 		- `set`과 `get`이 `T & U`를 기준으로 타입이 잡힘
 		- 사용자는 `initialState`와 `create`에서 정의한 상태를 모두 사용할 수 있고, 타입도 자동 추론됨
 -  `Mps`, `Mcs`: 미들웨어 파이프를 추적하기 위한 타입 체이닝 시스템이다.
@@ -95,6 +94,7 @@ type StateCreator<
 ['zustand/persist', unknown]
 ...
 ```
+
 ```ts
 type StoreMutatorIdentifier = string
 // indentifier를 기반으로 정의한 타입
@@ -103,7 +103,40 @@ type MutatorIdentifier = [StoreMutatorIdentifier, any]
 type MiddlewareStack = [ ['zustand/immer', any], ['zustand/persist', any] ]
 ``` 
 
-Zustand는 내부적으로 이걸 통해 “어떤 미들웨어가 적용됐는지”를 추적하고, 각 미들웨어가 `set`, `get`, `api`에 주입한 기능(예: `setImmer`)이 있는지를 타입 수준에서 안전하게 관리할 수 있다.
+Zustand는 내부적으로 이걸 통해 “어떤 미들웨어가 적용됐는지”를 추적하고, 각 미들웨어가 `set`, `get`, `api`에 주입한 기능이 있는지를 타입 수준에서 안전하게 관리할 수 있다.
+- 각 미들웨어가 독립적으로 구현될 수 있다.
+- 필요한 미들웨어를 조합해서 사용할 수 있다.
+- 타입 추론도 각 미들웨어가 확장한 `set`, `get`, `api`를 전달받아서 풍부하게 활용 가능하다.
+
+예시: 상태에 `persist`랑 `immer`를 같이 쓰고 싶다?
+
+```ts
+import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
+import { immer } from 'zustand/middleware/immer'
+
+const useStore = create(
+  persist(
+    immer((set) => ({
+      count: 0,
+      increase: () => set((state) => { state.count++ }),
+    })),
+    {
+      name: 'my-storage',
+    }
+  )
+)
+```
+
+여기서 일어나는 일:
+1. `immer` 미들웨어가 먼저 실행됨
+    - `set`을 `immer` 버전으로 바꿈 (`set((state) => { state.count++ })` 가능해짐)
+2. `persist`가 그 위에 얹힘
+    - 로컬스토리지에 상태를 저장하도록 `set`/`get`/`api`를 감쌈
+즉, `immer → persist → zustand core` 이렇게 **순차적으로 체인(chain)** 됨
+
+---
+### 결론
 
 결론적으로 타입이 추론되는 구조를 정리해보면 이렇다.
 
@@ -111,14 +144,22 @@ Zustand는 내부적으로 이걸 통해 “어떤 미들웨어가 적용됐는�
 - 상태 조각 U를 만들어 반환하고
 - 이를 initialState T와 병합해서 `Write<T, U>` 반환
 - 미들웨어 체이닝 정보는 `Mps`, `Mcs`로 전달됨
+	- `Mps (Mutator Pipes)` → 이전에 적용된 미들웨어 목록
+	- `Mcs (Mutator Composes)` → 현재 이 함수에서 적용하는 미들웨어 목록
 
 Zustand의 타입 시스템은 이 `combine`을 활용할 때 초기 상태와 메서드를 명확히 구분하고 타입을 추론하기 때문에, 별도의 수동 타입 선언 없이도 IDE 자동완성과 타입 검사를 완벽히 지원하게 되는 것이다. 
 
-createStore 할때 매번 타입을 interface로 정의해서 사용했던 나는 스터디원의 코드를 보고 매우 편리할 것 같다는 리뷰를 남겼었다. ㅎㅎ
+**combine** 미들웨어는 <span style="background:rgba(240, 200, 0, 0.2)">TypeScript의 강력한 제네릭 + 유틸리티 타입(`Omit`) + intersection을 조합해서 만들어진 고급 API</span> 라는 생각이 들었다! 멋져! 
+
+### 코드 리뷰
+
+그리고 그동안 create 할때 매번 타입을 interface로 정의해서 사용했던 나는 스터디원의 코드를 보고 매우 편리할 것 같다는 리뷰를 남겼었다. ㅎㅎ
 
 ![Screenshot 2025-04-14 at 12.03.39 AM.png](/img/user/Screenshot%202025-04-14%20at%2012.03.39%20AM.png)
 
 ---
+
+## 리팩토링
 
 기존에 나는 최대한 간결하게 서트파티 라이브러리 없이 구현하고자 했기 때문에 React Context를 사용해서 아래와 같이 구현했었다.
 
