@@ -31,14 +31,12 @@ export function combine<
 ```
 
 여기서 중요한 타입 유틸이 하나 있다:
-
 ```ts
 // T와 U를 합치되, U에 있는 키는 T에서 덮어쓴다
 type Write<T, U> = Omit<T, keyof U> & U
 ```
 
 이 타입은 `T`와 `U`의 충돌되는 키를 제거하고, `U`로 덮어씌우는 역할을 한다. 결국 최종적으로 반환되는 상태는 `T & U` 타입이지만, `U`의 메서드가 우선시된다.
-
 ```ts
 // 예시
 Write<{ count: number }, { count: () => void }> 
@@ -80,15 +78,13 @@ type StateCreator<
 ```
 
 - `StateCreator`는 위와 같은 시그니처를 가진 Zustand의 상태 생성자 함수 타입이다.
-- 즉, `combine`은 다음과 같은 형태를 가진 상태 생성자를 기대함:
-	- `create` 함수는 `set`, `get`, `api`를 받아서 `U` 타입의 상태 조각을 리턴
-	- 이 상태 조각은 `initialState` (`T`)와 병합될 예정
-
+	- 즉, `combine`은 다음과 같은 형태를 가진 상태 생성자를 기대함:
+		- `create` 함수는 `set`, `get`, `api`를 받아서 `U` 타입의 상태 조각을 리턴
+		- 이 상태 조각은 `initialState` (`T`)와 병합될 예정
 - <span style="background:rgba(240, 200, 0, 0.2)">TypeScript의 강력한 제네릭 + 유틸리티 타입(`Omit`) + intersection을 조합해서 만들어진 고급 API다.</span>
 	- 함수 시그니처를 보면 `combine`이 반환하는 건 `StateCreator<Write<T, U>, Mps, Mcs>`다. 이 덕분에 `create(...)` 함수 내부에서는:
 		- `set`과 `get`이 `T & U`를 기준으로 타입이 잡힘
 		- 사용자는 `initialState`와 `create`에서 정의한 상태를 모두 사용할 수 있고, 타입도 자동 추론됨
-
 -  `Mps`, `Mcs`: 미들웨어 파이프를 추적하기 위한 타입 체이닝 시스템이다.
 	- `StoreMutatorIdentifier`는 특정 미들웨어를 식별하기 위한 타입 태그로 쓰인다. 예를 들면 다음과 같은 튜플 형태로 사용된다.
 ```ts
@@ -104,9 +100,11 @@ type MutatorIdentifier = [StoreMutatorIdentifier, any]
 //전체 미들웨어 스택을 타입으로 표현하면
 type MiddlewareStack = [ ['zustand/immer', any], ['zustand/persist', any] ]
 ``` 
-- Zustand는 내부적으로 이걸 통해 “어떤 미들웨어가 적용됐는지”를 추적하고, 각 미들웨어가 `set`, `get`, `api`에 주입한 기능(예: `setImmer`)이 있는지를 타입 수준에서 안전하게 관리할 수 있다.
+
+Zustand는 내부적으로 이걸 통해 “어떤 미들웨어가 적용됐는지”를 추적하고, 각 미들웨어가 `set`, `get`, `api`에 주입한 기능(예: `setImmer`)이 있는지를 타입 수준에서 안전하게 관리할 수 있다.
 
 결론적으로 타입이 추론되는 구조를 정리해보면 이렇다.
+
 - `create` 함수는 `StateCreator<T, Mps, Mcs, U>` 타입임
 - 상태 조각 U를 만들어 반환하고
 - 이를 initialState T와 병합해서 `Write<T, U>` 반환
@@ -114,10 +112,9 @@ type MiddlewareStack = [ ['zustand/immer', any], ['zustand/persist', any] ]
 
 Zustand의 타입 시스템은 이 `combine`을 활용할 때 초기 상태와 메서드를 명확히 구분하고 타입을 추론하기 때문에, 별도의 수동 타입 선언 없이도 IDE 자동완성과 타입 검사를 완벽히 지원하게 되는 것이다. 
 
-createStore 할때 매번 타입을 정의해서 사용했던 나는 스터디원의 코드를 보고 매우 편리할 것 같다는 리뷰를 남겼었다. ㅎㅎ
+createStore 할때 매번 타입을 interface로 정의해서 사용했던 나는 스터디원의 코드를 보고 매우 편리할 것 같다는 리뷰를 남겼었다. ㅎㅎ
 
 ![Screenshot 2025-04-14 at 12.03.39 AM.png](/img/user/Screenshot%202025-04-14%20at%2012.03.39%20AM.png)
-
 
 ---
 
@@ -198,5 +195,5 @@ export const useCartStore = create(
 
 Zustand의 `combine` 미들웨어를 활용하면, 상태와 로직을 분리하면서도 타입 안정성을 유지할 수 있다. 특히 `React Context`로 관리하던 전역 상태를 리팩토링할 때 매우 강력한 선택지다.
 
-Zustand가 제공하는 `persist`, `immer`, `devtools` 등과 조합하면 더 확장성 있는 상태 관리를 할 수 있다는 장점도 갖는다.
+필요한 상태만 구독해 불필요한 렌더를 방지할 수도 있고, Zustand가 제공하는 `persist`, `immer`, `devtools` 등과 조합하면 더 확장성 있는 상태 관리를 할 수 있다는 장점도 갖는다.
 
