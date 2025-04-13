@@ -64,6 +64,27 @@ export function combine<
 }
 ```
 
+여기서 미들웨어 체이닝을 할 수 있다는 말이 처음에 좀 이해가 안됐는데, 설명해보면 이렇다.
+
+- `StateCreator`는 아래와 같은 시그니처를 가진 타입이다.
+- 즉, `combine`은 다음과 같은 형태를 가진 상태 생성자를 기대함:
+	- `create` 함수는 `set`, `get`, `api`를 받아서 `U` 타입의 상태 조각을 리턴
+	- 이 상태 조각은 `initialState` (`T`)와 병합될 예정
+
+```ts
+type StateCreator<
+  T,
+  Mps extends MutatorIdentifier[] = [],
+  Mcs extends MutatorIdentifier[] = [],
+  U = T
+> = (
+  set: ..., 
+  get: ..., 
+  api: ...
+) => U
+
+```
+
 Zustand의 타입 시스템은 이 `combine`을 활용할 때 초기 상태와 메서드를 명확히 구분하고 타입을 추론하기 때문에, 별도의 수동 타입 선언 없이도 IDE 자동완성과 타입 검사를 완벽히 지원한다.
 
 
