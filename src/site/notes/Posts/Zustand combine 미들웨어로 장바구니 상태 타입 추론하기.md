@@ -66,11 +66,6 @@ export function combine<
 
 여기서 미들웨어 체이닝을 할 수 있다는 말이 처음에 좀 이해가 안됐는데, 설명해보면 이렇다.
 
-- `StateCreator`는 아래와 같은 시그니처를 가진 타입이다.
-- 즉, `combine`은 다음과 같은 형태를 가진 상태 생성자를 기대함:
-	- `create` 함수는 `set`, `get`, `api`를 받아서 `U` 타입의 상태 조각을 리턴
-	- 이 상태 조각은 `initialState` (`T`)와 병합될 예정
-
 ```ts
 type StateCreator<
   T,
@@ -82,15 +77,40 @@ type StateCreator<
   get: ..., 
   api: ...
 ) => U
-
 ```
 
-결론적으로 타입이 추론되는 구조를 정리해보면 이렇다.
+- `StateCreator`는 위와 같은 시그니처를 가진 Zustand의 상태 생성자 함수 타입이다.
+- 즉, `combine`은 다음과 같은 형태를 가진 상태 생성자를 기대함:
+	- `create` 함수는 `set`, `get`, `api`를 받아서 `U` 타입의 상태 조각을 리턴
+	- 이 상태 조각은 `initialState` (`T`)와 병합될 예정
 
-- 타입스크립트의 강력한 제네릭 + 유틸리티 타입(`Omit`) + intersection을 조합해서 만들어진 고급 API다.
+- <span style="background:rgba(240, 200, 0, 0.2)">TypeScript의 강력한 제네릭 + 유틸리티 타입(`Omit`) + intersection을 조합해서 만들어진 고급 API다.</span>
 	- 함수 시그니처를 보면 `combine`이 반환하는 건 `StateCreator<Write<T, U>, Mps, Mcs>`다. 이 덕분에 `create(...)` 함수 내부에서는:
 		- `set`과 `get`이 `T & U`를 기준으로 타입이 잡힘
 		- 사용자는 `initialState`와 `create`에서 정의한 상태를 모두 사용할 수 있고, 타입도 자동 추론됨
+
+-  `Mps`, `Mcs`: 미들웨어 파이프를 추적하기 위한 타입 체이닝 시스템이다.
+	- `StoreMutatorIdentifier`는 특정 미들웨어를 식별하기 위한 타입 태그로 쓰인다. 예를 들면 다음과 같은 튜플 형태로 사용된다.
+```ts
+// 체이닝 할 수 있는 미들웨어
+['zustand/immer', unknown]
+['zustand/persist', unknown]
+...
+```
+```ts
+type StoreMutatorIdentifier = string
+// indentifier를 기반으로 정의한 타입
+type MutatorIdentifier = [StoreMutatorIdentifier, any]
+//전체 미들웨어 스택을 타입으로 표현하면
+type MiddlewareStack = [ ['zustand/immer', any], ['zustand/persist', any] ]
+``` 
+- Zustand는 내부적으로 이걸 통해 “어떤 미들웨어가 적용됐는지”를 추적하고, 각 미들웨어가 `set`, `get`, `api`에 주입한 기능(예: `setImmer`)이 있는지를 타입 수준에서 안전하게 관리할 수 있다.
+
+결론적으로 타입이 추론되는 구조를 정리해보면 이렇다.
+- `create` 함수는 `StateCreator<T, Mps, Mcs, U>` 타입임
+- 상태 조각 U를 만들어 반환하고
+- 이를 initialState T와 병합해서 `Write<T, U>` 반환
+- 미들웨어 체이닝 정보는 `Mps`, `Mcs`로 전달됨
 
 Zustand의 타입 시스템은 이 `combine`을 활용할 때 초기 상태와 메서드를 명확히 구분하고 타입을 추론하기 때문에, 별도의 수동 타입 선언 없이도 IDE 자동완성과 타입 검사를 완벽히 지원하게 되는 것이다. 
 
