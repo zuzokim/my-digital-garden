@@ -51,9 +51,9 @@ AI는 큰 컨텍스트를 파악하기 어려워 하고, 작게 분할된 작업
 
 나는 동료 개발자에게 "AI 툴을 사용하다보면 점점 생각하기 싫어지고, 의존하다보면 바보가 되는 기분이다" 라는 말에 "AI 녀석이 좀 덜 바보같으면 그 기분이 안들텐데" 라고 해서 "아 그런가 ㅋㅋ" 하는 대화를 나누기도 했다.
 
-요즘 AI 시대의 리터러시에 관해 생각이 많아서 읽고 있는 책 [읽지 못하는 사람의 미래](https://product.kyobobook.co.kr/detail/S000214626114?utm_source=google&utm_medium=cpc&utm_campaign=googleSearch&gt_network=g&gt_keyword=&gt_target_id=aud-901091942354:dsa-1544589327323&gt_campaign_id=9979905549&gt_adgroup_id=132556570510&gad_source=1) 도 있는데, 관련해서 또 포스트를 하게 될지도 모르겠다.
+요즘 AI 시대의 리터러시에 관해 생각이 많아서 읽고 있는 책 [읽지 못하는 사람의 미래](https://product.kyobobook.co.kr/detail/S000214626114?utm_source=google&utm_medium=cpc&utm_campaign=googleSearch&gt_network=g&gt_keyword=&gt_target_id=aud-901091942354:dsa-1544589327323&gt_campaign_id=9979905549&gt_adgroup_id=132556570510&gad_source=1) 도 있는데, 관련해서 또 포스트를 하게 될지도 모르겠다. 이 책은 "**돌봄의 읽기**" 에 관해 다루는데, AI로 인해 글을 더 많이 생산하고, 읽고 쓰고 요약하고 가공함에도 "바보가 되는 기분"에 대한 근거들을 설명해주는 느낌이다. 좀 더 읽어볼 예정..
 
-이 책은 "**돌봄의 읽기**" 에 관해 다루는데, AI로 인해 글을 더 많이 생산하고, 읽고 쓰고 요약하고 가공함에도 위에 말한 것과 같은 "바보가 되는 기분"에 대한 근거들을 설명해주는 느낌이다. 좀 더 읽어볼 예정..
+![Screenshot 2025-04-21 at 12.13.36 AM.png](/img/user/Screenshot%202025-04-21%20at%2012.13.36%20AM.png)
 
-
+![독서노트.jpeg](/img/user/%EB%8F%85%EC%84%9C%EB%85%B8%ED%8A%B8.jpeg)
 
