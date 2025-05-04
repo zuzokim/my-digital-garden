@@ -47,7 +47,9 @@ function useDataStorage(
     : [fallbackValue, setFallbackValue] as const;
 }
 
-const [data, setData] = useStorage<(Data & { key: number })[]>(
+...
+
+const [data, setData] = useDataStorage<(Data & { key: number })[]>(
   STORAGE === "local-storage",
   STORAGE_KEY,
   [...DEFAULT_DATA]
