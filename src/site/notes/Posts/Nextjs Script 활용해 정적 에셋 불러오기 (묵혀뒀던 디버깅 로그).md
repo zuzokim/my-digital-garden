@@ -23,10 +23,8 @@ Next 는 에러를 맨날 이런식으로 준다. <font color="#d83931">ChunkLoa
 기존에는 Next 앱에서 이렇게 next/script의 Script 컴포넌트로 에셋 경로를 설정하고 있었다.
 
 ```js
-
 <Script strategy="beforeInteractive" id="excalidraw" >{`window.EXCALIDRAW_ASSET_PATH = '/excalidraw/';`}
 </Script>
-
 ```
 
 next/script의 Script 컴포넌트 : https://nextjs.org/docs/app/guides/scripts
@@ -59,20 +57,16 @@ Next에서 제공해주는 Script는 서트파티 스크립트를 효율적으�
     window.EXCALIDRAW_ASSET_PATH = '/excalidraw/';
   </script>
 </head>
-
-
 ```
 
 그런데 Next는 스크립트를 최적화하기 위해 직접 `<script>` 태그를 쓰지 않고 자체적인 Next 전용 로딩 매커니즘을 통해 로드한다고 한다. 
 (Next 내부 로더 (`next/script`)가 hydrate 시점에 실행을 컨트롤)
 
 ```html
-
 <script id="__NEXT_DATA__">...</script>
 <script>
   // next-script-loader가 동작하면서 script를 삽입
 </script>
-
 ```
 
 
@@ -84,6 +78,7 @@ Next에서 제공해주는 Script는 서트파티 스크립트를 효율적으�
 - excalidraw 컴포넌트가 동적으로 import되거나 lazy load 되는 경우
 - 또는 내부적으로 코드 스플리팅된 번들이 `window.EXCALIDRAW_ASSET_PATH`를 참조할 때 (JS 번들(chunk)이 나눠져 있거나, dynamic import 등으로 로딩 시점이 뒤섞이면 정확히 먼저 실행된다는 보장은 없음)
 - 이 시점에 아직 해당 전역 변수가 정확하게 셋업되지 않았다면, excalidraw는 fallback 경로(excalidraw.com)를 쓰거나 잘못된 경로로 chunk를 요청 → **404 ChunkLoadError** 를 뱉는다.
+
 
 ```js
 const Excalidraw = dynamic(() => import('@my-app/excalidraw'), { ssr: false });
