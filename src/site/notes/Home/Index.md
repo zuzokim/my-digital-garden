@@ -48,10 +48,11 @@
 { .block-language-dataview}
 
 
-| Logs                                                                                                                             | 🗓️                       |
-| -------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
-| [[Logs/How to Design a GoodAPI and Why it Matters - Joshua Bloch\|How to Design a GoodAPI and Why it Matters - Joshua Bloch]] | 3:07 PM - March 09, 2025  |
-| [[Logs/study archives\|study archives]]                                                                                       | 3:02 PM - August 28, 2024 |
-| [[Logs/engineering books\|engineering books]]                                                                                 | 8:45 PM - August 24, 2024 |
+| Logs                                                                                                                                                                                                                 | 🗓️                       |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| [[Logs/How to Design a GoodAPI and Why it Matters - Joshua Bloch\|How to Design a GoodAPI and Why it Matters - Joshua Bloch]]                                                                                     | 3:07 PM - March 09, 2025  |
+| [[Logs/Cascading Spy Sheets - Exploiting the Complexity of Modern CSS for Email and Browser Fingerprinting\|Cascading Spy Sheets - Exploiting the Complexity of Modern CSS for Email and Browser Fingerprinting]] | 11:18 PM - March 02, 2025 |
+| [[Logs/study archives\|study archives]]                                                                                                                                                                           | 3:02 PM - August 28, 2024 |
+| [[Logs/engineering books\|engineering books]]                                                                                                                                                                     | 8:45 PM - August 24, 2024 |
 
 { .block-language-dataview}

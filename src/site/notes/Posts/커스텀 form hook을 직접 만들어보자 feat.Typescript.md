@@ -12,87 +12,32 @@
 
 폼 상태가 중첩된 객체 형태라면, `user.address.street` 같은 경로를 통해 특정 값을 읽거나 업데이트할 수 있어야 한다. 이를 위해 먼저 중첩된 경로를 타입으로 표현할 필요가 있다.
 
-#### 중첩 경로 타입 만들기 — `DotPath<T>`
-
-```
-//중첩 깊이 제한을 위한 배열
-export type PrevArr = [never, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-//중첩 객체 경로 타입 생성기, 배열인 경우: 인덱스에 대한 경로도 허용
-export type DotPath<T, Depth extends number = 5, Prefix extends string = ""> = [
-  Depth
-] extends [never]
-  ? never
-  : Depth extends 0
-  ? never
-  : T extends readonly (infer U)[]
-  ? 
-	| Prefix
-    | `${Prefix}${number}` 
-    | DotPath<U, PrevArr[Depth], `${Prefix}${number}.`>
-  : {
-      [K in keyof T & string]: T[K] extends object
-        ? `${Prefix}${K}` | DotPath<T[K], PrevArr[Depth], `${Prefix}${K}.`>
-        : `${Prefix}${K}`;
-    }[keyof T & string];
-
-```
+#### 1. 중첩 경로 타입 만들기 — `DotPath<T>`
+![Screenshot 2025-05-25 at 11.10.40 PM.png](/img/user/Screenshot%202025-05-25%20at%2011.10.40%20PM.png)
 
 - `DotPath<T>`는 타입 `T` 내에서 접근 가능한 모든 경로 문자열(예: `"user"`, `"user.address"`, `"user.address.street"`)를 만들어낸다.
 - 배열도 지원하여, 예를 들어 `"users.0.name"` 같은 경로도 포함한다.
 - 최대 재귀 깊이를 제한하는 `Depth` 매개변수로 무한 재귀를 방지한다.
 
-#### 경로에 따른 실제 값 타입 추출 — `DotPathValue<T, P>`
+#### 2. 경로에 따른 실제 값 타입 추출 — `DotPathValue<T, P>`
 
-```
-export type DotPathValue<T, P extends string> = T extends readonly (infer U)[]
-  ? P extends `${number}.${infer Rest}`
-    ? DotPathValue<U, Rest>
-    : P extends `${number}`
-    ? U
-    : never
-  : P extends `${infer K}.${infer Rest}`
-  ? K extends keyof T
-    ? DotPathValue<T[K], Rest>
-    : never
-  : P extends keyof T
-  ? T[P]
-  : never;
-```
+![Screenshot 2025-05-25 at 11.11.24 PM.png](/img/user/Screenshot%202025-05-25%20at%2011.11.24%20PM.png)
 
 - `DotPathValue<T, P>`는 경로 문자열 `P`에 해당하는 타입을 `T`에서 찾아낸다.
 - 예를 들어, `T`가 `{ user: { name: string } }`이고, `P`가 `"user.name"`이라면 반환 타입은 `string`이 된다.
 - 이 덕분에 `setValue("user.name", "Alice")` 호출 시 타입 체크가 된다.
 
-#### 경로에 따른 실제 값 타입 추출 — `DotPathValue<T, P>`
+#### 3. 경로에 따른 실제 값 타입 추출 — `DotPathValue<T, P>`
 
-```
-function setNestedValue<T, P extends DotPath<T>>(
-  obj: T,
-  path: P,
-  value: DotPathValue<T, P>
-): T {
-  const keys = path.split(".");
-  const lastKey = keys.pop()!;
-  const newObj = { ...obj };
-  let curr: any = newObj;
-  for (const key of keys) {
-    if (!(key in curr)) curr[key] = {};
-    curr[key] = { ...curr[key] };
-    curr = curr[key];
-  }
-  curr[lastKey] = value;
-  return newObj;
-}
-```
+![Screenshot 2025-05-25 at 11.11.46 PM.png](/img/user/Screenshot%202025-05-25%20at%2011.11.46%20PM.png)
 
 - 불변성을 지키면서 중첩된 객체의 특정 경로에 값을 설정하는 함수다.
 - 경로 문자열을 `.` 기준으로 쪼개고, 단계별로 객체를 복사해가며 새 객체를 만들어낸다.
 - `value` 타입도 `DotPathValue`로 타입 안전하게 받는다.
 
-#### `useForm` 커스텀 훅 구조
+#### 4. `useForm` 커스텀 훅 구조
 
-```
+```ts
 export function useForm<T extends Record<string, unknown>>({
   defaultValues,
   validate,
@@ -145,12 +90,11 @@ export function useForm<T extends Record<string, unknown>>({
     onSubmit: handleSubmit,
   };
 }
-
 ```
 
-#### 실제 사용 케이스
+#### 5. 실제 사용 케이스
 
-```
+```ts
 import React from "react";
 import { useForm } from "./useForm"; // 앞서 작성한 훅
 
