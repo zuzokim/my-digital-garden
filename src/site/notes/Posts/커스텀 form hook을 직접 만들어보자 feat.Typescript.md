@@ -11,3 +11,28 @@
 이렇게 3가지 목표를 중심으로 구현을 했다.
 
 폼 상태가 중첩된 객체 형태라면, `user.address.street` 같은 경로를 통해 특정 값을 읽거나 업데이트할 수 있어야 한다. 이를 위해 먼저 중첩된 경로를 타입으로 표현할 필요가 있다.
+
+1. 중첩 경로 타입 만들기 — `DotPath<T>`
+
+```ts
+
+// 중첩 깊이 제한을 위한 배열
+export type PrevArr = [never, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// 중첩 객체 경로 타입 생성기
+export type DotPath<T, Depth extends number = 5, Prefix extends string = ""> = [Depth] extends [never]
+? never
+: Depth extends 0
+? never
+: T extends readonly (infer U)[]
+? // 배열인 경우: 인덱스에 대한 경로도 허용
+| Prefix
+| `${Prefix}${number}`
+| DotPath<U, PrevArr[Depth], `${Prefix}${number}.`>
+: {
+[K in keyof T & string]: T[K] extends object
+? `${Prefix}${K}` | DotPath<T[K], PrevArr[Depth], `${Prefix}${K}.`>
+: `${Prefix}${K}`;
+}[keyof T & string];
+
+```
