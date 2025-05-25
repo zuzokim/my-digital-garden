@@ -44,5 +44,18 @@ export type DotPath<T, Depth extends number = 5, Prefix extends string = ""> = [
 #### 2. 경로에 따른 실제 값 타입 추출 — `DotPathValue<T, P>`
 
 ```ts
-
+//DotPath 경로에 해당하는 실제 타입 추출
+export type DotPathValue<T, P extends string> = T extends readonly (infer U)[]
+? P extends `${number}.${infer Rest}`
+	? DotPathValue<U, Rest>
+	: P extends `${number}`
+	? U
+	: never
+: P extends `${infer K}.${infer Rest}`
+? K extends keyof T
+	? DotPathValue<T[K], Rest>
+	: never
+: P extends keyof T
+? T[P]
+: never;
 ```
