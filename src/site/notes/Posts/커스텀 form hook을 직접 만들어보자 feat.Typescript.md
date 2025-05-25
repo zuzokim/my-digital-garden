@@ -58,6 +58,7 @@ export type DotPathValue<T, P extends string> = T extends readonly (infer U)[]
 : P extends keyof T
 ? T[P]
 : never;
+
 ```
 
 - `DotPathValue<T, P>`는 경로 문자열 `P`에 해당하는 타입을 `T`에서 찾아낸다.
