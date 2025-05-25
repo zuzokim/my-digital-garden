@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/posts/form-hook-feat-typescript/","tags":["React","type-safe"],"created":"2025-05-25","updated":"2025-05-25T20:59:00"}
+{"dg-publish":true,"permalink":"/posts/form-hook-feat-typescript/","created":"2025-05-25","updated":"2025-05-25T20:59:00"}
 ---
 
 최근에 우연히 form hook을 직접 만들어볼 일이 있었다. 평소에는 주로 react-hook-form 라이브러리를 사용했었는데, 라이브러리의 도움없이 form 데이터와 상태를 다룰 수 있는 추상화된 React 커스텀 훅을 직접 구현해보았다. 사실 react-hook-form 에도 버그가 있고, form 기능 자체도 다루기 까다로운 편이라고 생각해왔어서, 아주 기본적인 기능에 집중하는 대신 타입 안전성을 보장하는 간단한 훅을 만드는 것을 목표로 했다.
