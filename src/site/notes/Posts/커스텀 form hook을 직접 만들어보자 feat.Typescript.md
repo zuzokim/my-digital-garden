@@ -14,7 +14,7 @@
 
 #### 1. 중첩 경로 타입 만들기 — `DotPath<T>`
 
-```js
+```ts
 
 // 중첩 깊이 제한을 위한 배열
 export type PrevArr = [never, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -41,3 +41,4 @@ export type DotPath<T, Depth extends number = 5, Prefix extends string = ""> = [
 - `DotPath<T>`는 타입 `T` 내에서 접근 가능한 모든 경로 문자열(예: `"user"`, `"user.address"`, `"user.address.street"`)를 만들어낸다.
 - 배열도 지원하여, 예를 들어 `"users.0.name"` 같은 경로도 포함한다.
 - 최대 재귀 깊이를 제한하는 `Depth` 매개변수로 무한 재귀를 방지한다.
+
