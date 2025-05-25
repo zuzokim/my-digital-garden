@@ -148,6 +148,7 @@ export function useForm<T extends Record<string, unknown>>({
 ```
 
 #### 5. 실제 사용 케이스
+
 ```js
 import React from "react";
 import { useForm } from "./useForm"; // 앞서 작성한 훅
@@ -227,7 +228,3 @@ const UserForm = () => {
 export default UserForm;
 
 ```
-
-![Screenshot 2025-05-25 at 9.50.16 PM.png](/img/user/Screenshot%202025-05-25%20at%209.50.16%20PM.png)
-![Screenshot 2025-05-25 at 9.50.25 PM.png](/img/user/Screenshot%202025-05-25%20at%209.50.25%20PM.png)
-
