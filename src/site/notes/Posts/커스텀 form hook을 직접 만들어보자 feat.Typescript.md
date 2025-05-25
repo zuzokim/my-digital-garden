@@ -14,12 +14,11 @@
 
 #### 1. 중첩 경로 타입 만들기 — `DotPath<T>`
 
-```ts
-
-// 중첩 깊이 제한을 위한 배열
+```
+//중첩 깊이 제한을 위한 배열
 export type PrevArr = [never, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-// 중첩 객체 경로 타입 생성기 // 배열인 경우: 인덱스에 대한 경로도 허용
+//중첩 객체 경로 타입 생성기, 배열인 경우: 인덱스에 대한 경로도 허용
 export type DotPath<T, Depth extends number = 5, Prefix extends string = ""> = [
   Depth
 ] extends [never]
@@ -45,7 +44,7 @@ export type DotPath<T, Depth extends number = 5, Prefix extends string = ""> = [
 
 #### 2. 경로에 따른 실제 값 타입 추출 — `DotPathValue<T, P>`
 
-```ts
+```
 export type DotPathValue<T, P extends string> = T extends readonly (infer U)[]
   ? P extends `${number}.${infer Rest}`
     ? DotPathValue<U, Rest>
@@ -67,7 +66,7 @@ export type DotPathValue<T, P extends string> = T extends readonly (infer U)[]
 
 #### 3. 경로에 따른 실제 값 타입 추출 — `DotPathValue<T, P>`
 
-```ts
+```
 function setNestedValue<T, P extends DotPath<T>>(
   obj: T,
   path: P,
@@ -92,7 +91,7 @@ function setNestedValue<T, P extends DotPath<T>>(
 - `value` 타입도 `DotPathValue`로 타입 안전하게 받는다.
 
 #### 4. `useForm` 커스텀 훅 구조
-```ts
+```
 export function useForm<T extends Record<string, unknown>>({
   defaultValues,
   validate,
@@ -103,7 +102,7 @@ export function useForm<T extends Record<string, unknown>>({
   const [values, setValues] = useState(defaultValues);
   const [errors, setErrors] = useState<Partial<Record<keyof T, string>>>({});
 
-  // 값 변경 함수
+  //값 변경 함수
   const handleSetValue = <P extends DotPath<T>>(
     path: P,
     value: DotPathValue<T, P>
@@ -119,14 +118,14 @@ export function useForm<T extends Record<string, unknown>>({
     });
   };
 
-  // 유효성 검사 함수
+  //유효성 검사 함수
   const handleValidate = () => {
     const validationErrors = validate?.(values) ?? {};
     setErrors(validationErrors);
     return Object.keys(validationErrors).length === 0;
   };
 
-  // onSubmit 핸들러 생성 함수
+  //onSubmit 핸들러 생성 함수
   function handleSubmit(onValid: (values: T) => void) {
     return (e?: FormEvent) => {
       if (e) e.preventDefault();
@@ -150,7 +149,7 @@ export function useForm<T extends Record<string, unknown>>({
 
 #### 5. 실제 사용 케이스
 
-```ts
+```
 import React from "react";
 import { useForm } from "./useForm"; // 앞서 작성한 훅
 
