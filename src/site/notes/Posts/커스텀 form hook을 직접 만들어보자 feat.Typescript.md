@@ -12,7 +12,7 @@
 
 폼 상태가 중첩된 객체 형태라면, `user.address.street` 같은 경로를 통해 특정 값을 읽거나 업데이트할 수 있어야 한다. 이를 위해 먼저 중첩된 경로를 타입으로 표현할 필요가 있다.
 
-1 . 중첩 경로 타입 만들기 — `DotPath<T>`
+**1 . 중첩 경로 타입 만들기 — `DotPath<T>`**
 
 ```ts
 
@@ -41,7 +41,7 @@ export type DotPath<T, Depth extends number = 5, Prefix extends string = ""> = [
 - 배열도 지원하여, 예를 들어 `"users.0.name"` 같은 경로도 포함한다.
 - 최대 재귀 깊이를 제한하는 `Depth` 매개변수로 무한 재귀를 방지한다.
 
-2 . 경로에 따른 실제 값 타입 추출 — `DotPathValue<T, P>`
+**2 . 경로에 따른 실제 값 타입 추출 — `DotPathValue<T, P>`**
 
 ```ts
 //DotPath 경로에 해당하는 실제 타입 추출
@@ -64,3 +64,196 @@ export type DotPathValue<T, P extends string> = T extends readonly (infer U)[]
 - `DotPathValue<T, P>`는 경로 문자열 `P`에 해당하는 타입을 `T`에서 찾아낸다.
 - 예를 들어, `T`가 `{ user: { name: string } }`이고, `P`가 `"user.name"`이라면 반환 타입은 `string`이 된다.
 - 이 덕분에 `setValue("user.name", "Alice")` 호출 시 타입 체크가 된다.
+
+**3 . 경로에 따른 실제 값 타입 추출 — `DotPathValue<T, P>`**
+
+```ts
+function setNestedValue<T, P extends DotPath<T>>(obj: T, path: P, value: DotPathValue<T, P>): T {
+
+const keys = path.split(".");
+const lastKey = keys.pop()!;
+const newObj = { ...obj };
+
+let curr: any = newObj;
+for (const key of keys) {
+	if (!(key in curr)) curr[key] = {};
+	curr[key] = { ...curr[key] };
+	curr = curr[key];
+}
+
+curr[lastKey] = value;
+
+return newObj;
+
+}
+
+```
+
+- 불변성을 지키면서 중첩된 객체의 특정 경로에 값을 설정하는 함수다.
+- 경로 문자열을 `.` 기준으로 쪼개고, 단계별로 객체를 복사해가며 새 객체를 만들어낸다.
+- `value` 타입도 `DotPathValue`로 타입 안전하게 받는다.
+
+**4 . `useForm` 커스텀 훅 구조**
+
+```ts
+export function useForm<T extends Record<string, unknown>>({
+  defaultValues,
+  validate,
+}: {
+  defaultValues: T;
+  validate?: Validator<T>;
+}) {
+  const [values, setValues] = useState(defaultValues);
+  const [errors, setErrors] = useState<Partial<Record<keyof T, string>>>({});
+
+  // 값 변경 함수
+  const handleSetValue = <P extends DotPath<T>>(
+    path: P,
+    value: DotPathValue<T, P>
+  ) => {
+    setValues((prev) => setNestedValue(prev, path, value));
+    setErrors((prevErrors) => {
+      if (!prevErrors) return prevErrors;
+      const newErrors = { ...prevErrors };
+      if (path in newErrors) {
+        delete newErrors[path as keyof T];
+      }
+      return newErrors;
+    });
+  };
+
+  // 유효성 검사 함수
+  const handleValidate = () => {
+    const validationErrors = validate?.(values) ?? {};
+    setErrors(validationErrors);
+    return Object.keys(validationErrors).length === 0;
+  };
+
+  // onSubmit 핸들러 생성 함수
+  function handleSubmit(onValid: (values: T) => void) {
+    return (e?: FormEvent) => {
+      if (e) e.preventDefault();
+      const isValid = handleValidate();
+      if (isValid) {
+        onValid(values);
+      }
+    };
+  }
+
+  return {
+    values,
+    setValue: handleSetValue,
+    validate: handleValidate,
+    formState: { errors },
+    onSubmit: handleSubmit,
+  };
+}
+
+```
+
+**5 . 실제 사용 케이스**
+
+```ts
+import React from "react";
+import { useForm } from "./useForm"; // 앞서 작성한 훅
+
+type User = {
+	user: {
+		name: string;
+		age: number;
+		address: {
+			street: string;
+			city: string;
+			zipCode: string;
+		};
+	};
+};
+
+const UserForm = () => {
+  const {
+    values: formValues,
+    setValue,
+    validate,
+    onSubmit,
+    formState: { errors },
+  } = useForm<User>({
+    defaultValues: {
+      user: {
+        name: "",
+        age: 0,
+        address: {
+          street: "",
+          city: "",
+          zipCode: "",
+        },
+      },
+    },
+    validate: validateForm,
+  });
+
+  return (
+    <form onSubmit={onSubmit((values) => console.log("폼 제출됨", values))}>
+      <div>
+        <label>이름</label>
+        <input
+          value={formValues.user.name}
+          onChange={(e) => setValue("user.name", e.target.value)}
+        />
+      </div>
+
+      <div>
+        <label>나이</label>
+        <input
+          type="number"
+          value={formValues.user.age}
+          onChange={(e) => setValue("user.age", Number(e.target.value))}
+        />
+      </div>
+
+      <div>
+        <label>도로명 주소</label>
+        <input
+          value={formValues.user.address.street}
+          onChange={(e) => setValue("user.address.street", e.target.value)}
+        />
+      </div>
+
+      <div>
+        <label>도시</label>
+        <input
+          value={formValues.user.address.city}
+          onChange={(e) => setValue("user.address.city", e.target.value)}
+        />
+      </div>
+
+      <div>
+        <label>우편번호</label>
+        <input
+          value={formValues.user.address.zipCode}
+          onChange={(e) => setValue("user.address.zipCode", e.target.value)}
+        />
+      </div>
+
+      {errors.user && <p style={{ color: "red" }}>{errors.user}</p>}
+
+      <button type="submit">제출</button>
+    </form>
+  );
+};
+
+export default UserForm;
+
+```
+
+아래 Codesandbox 에서도 작동해볼 수 있다.
+
+<iframe src="https://codesandbox.io/embed/pmthpm?view=editor+%2B+preview&module=%2Fsrc%2FUserForm.tsx&expanddevtools=1"
+     style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="use-form"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+IDE에서는 이렇게 자동완성이 가능해 편리하다!
+
+![Screenshot 2025-05-25 at 9.50.16 PM 1.png](/img/user/Screenshot%202025-05-25%20at%209.50.16%20PM%201.png)![Screenshot 2025-05-25 at 9.50.25 PM 1.png](/img/user/Screenshot%202025-05-25%20at%209.50.25%20PM%201.png)
