@@ -12,7 +12,7 @@
 
 폼 상태가 중첩된 객체 형태라면, `user.address.street` 같은 경로를 통해 특정 값을 읽거나 업데이트할 수 있어야 한다. 이를 위해 먼저 중첩된 경로를 타입으로 표현할 필요가 있다.
 
-1. 중첩 경로 타입 만들기 — `DotPath<T>`
+#### 1. 중첩 경로 타입 만들기 — `DotPath<T>`
 
 ```ts
 
@@ -34,5 +34,15 @@ export type DotPath<T, Depth extends number = 5, Prefix extends string = ""> = [
 ? `${Prefix}${K}` | DotPath<T[K], PrevArr[Depth], `${Prefix}${K}.`>
 : `${Prefix}${K}`;
 }[keyof T & string];
+
+```
+
+- `DotPath<T>`는 타입 `T` 내에서 접근 가능한 모든 경로 문자열(예: `"user"`, `"user.address"`, `"user.address.street"`)를 만들어낸다.
+- 배열도 지원하여, 예를 들어 `"users.0.name"` 같은 경로도 포함한다.
+- 최대 재귀 깊이를 제한하는 `Depth` 매개변수로 무한 재귀를 방지한다.
+
+#### 2. 경로에 따른 실제 값 타입 추출 — `DotPathValue<T, P>`
+
+```ts
 
 ```
