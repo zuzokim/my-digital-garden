@@ -15,6 +15,7 @@
 #### 1. 중첩 경로 타입 만들기 — `DotPath<T>`
 
 ```ts
+
 // 중첩 깊이 제한을 위한 배열
 export type PrevArr = [never, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -26,9 +27,9 @@ export type DotPath<T, Depth extends number = 5, Prefix extends string = ""> = [
   : Depth extends 0
   ? never
   : T extends readonly (infer U)[]
-  ? // 배열인 경우: 인덱스에 대한 경로도 허용
+  ? 
 	| Prefix
-    | `${Prefix}${number}`
+    | `${Prefix}${number}` // 배열인 경우: 인덱스에 대한 경로도 허용
     | DotPath<U, PrevArr[Depth], `${Prefix}${number}.`>
   : {
       [K in keyof T & string]: T[K] extends object
@@ -147,7 +148,6 @@ export function useForm<T extends Record<string, unknown>>({
 ```
 
 #### 5. 실제 사용 케이스
-
 ```ts
 
 import React from "react";
