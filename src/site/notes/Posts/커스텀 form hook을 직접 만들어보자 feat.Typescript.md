@@ -172,7 +172,7 @@ const UserForm = () => {
     validate,
     onSubmit,
     formState: { errors },
-  } = useForm<TYPE>({
+  } = useForm<User>({
     defaultValues: {
       user: {
         name: "",
