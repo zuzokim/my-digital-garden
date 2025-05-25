@@ -59,3 +59,7 @@ export type DotPathValue<T, P extends string> = T extends readonly (infer U)[]
 ? T[P]
 : never;
 ```
+
+- `DotPathValue<T, P>`는 경로 문자열 `P`에 해당하는 타입을 `T`에서 찾아낸다.
+- 예를 들어, `T`가 `{ user: { name: string } }`이고, `P`가 `"user.name"`이라면 반환 타입은 `string`이 된다.
+- 이 덕분에 `setValue("user.name", "Alice")` 호출 시 타입 체크가 된다.
