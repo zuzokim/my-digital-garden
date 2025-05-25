@@ -186,3 +186,15 @@ export default UserForm;
 
 ```
 
+아래 Codesandbox 에서 작동해볼 수 있다.
+
+<iframe src="https://codesandbox.io/embed/pmthpm?view=editor+%2B+preview&module=%2Fsrc%2FUserForm.tsx&expanddevtools=1"
+     style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="use-form"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+IDE에서는 이렇게 자동완성이 가능해 편리하다!
+
+![Screenshot 2025-05-25 at 9.50.16 PM 1.png](/img/user/Screenshot%202025-05-25%20at%209.50.16%20PM%201.png)![Screenshot 2025-05-25 at 9.50.25 PM 1.png](/img/user/Screenshot%202025-05-25%20at%209.50.25%20PM%201.png)
