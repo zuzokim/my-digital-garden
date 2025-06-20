@@ -94,7 +94,6 @@ useEffect(() => {
 - `queryKey`가 같아도, `queryFn`이 매 렌더마다 새로 생성된다면, `useCallback(queryFn, [...])`은 아무런 의미가 없다.
 - `useCallback`이 효과를 발휘하려면, **첫 번째 인자로 넘기는 함수가 렌더링마다 동일한 참조여야 한다.**  
 - `queryKey`는 그저 의존성 중 하나일 뿐이고, 함수 메모이제이션의 본질엔 영향을 주지 않는다.
-
 - `useCallback` 은 "첫 번째 인자"인 함수 자체가 새로 생성되지 않아야 진짜 메모이제이션 효과가 생긴다.
 	- `useCallback`의 목적은 "함수 인스턴스를 *기억(memoize)*하는 것"
 	- `useCallback(fn, deps)`는 이렇게 작동한다 : "deps가 바뀌지 않았다면, 이전 렌더에서 만든 `fn`을 재사용한다."
