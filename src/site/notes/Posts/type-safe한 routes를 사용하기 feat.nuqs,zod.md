@@ -2,9 +2,9 @@
 {"dg-publish":true,"permalink":"/posts/type-safe-routes-feat-nuqs-zod/","tags":["client-side-rendering","Browser","Nextjs","routes","type-safe"],"created":"2025-07-06","updated":"2025-07-06T21:41:00"}
 ---
 
-Nextjs 14, app router를 사용하는 회사 프로젝트에서 url routes를 활용해 UI를 변경해주거나 페이지 전환을 해주는 케이스를 발견했다. pathname과 querystring을 조합해 경로를 만들거나 조건에 따라 다른 경로로 이동시켜주는 로직이었다.
+Nextjs 14, app router를 사용하는 회사 프로젝트에서 url routes를 활용해 UI를 변경해주거나 페이지 전환을 해주는 케이스를 발견했다. pathname과 querystring을 조합해 경로를 만들거나 조건에 따라 다른 경로로 이동시켜주는 로직이었다. 이참에 좀더 라우트를 type-safe하게 관리하는 방법들을 공부해보기로 했다.
 
-음악 목록을 인기순/최신순, 장르별로 보여주는 예시로 코드를 작성해봤다. (회사 코드와 무관함.. 회사 코드는 더 복잡한 상태였음)
+음악 목록을 인기순/최신순, 장르별로 보여주는 예시 코드를 작성해보자.
 
 ```ts
 
@@ -80,3 +80,127 @@ function MyComponent() {
     - 쿼리 구조 변경 시 테스트 코드도 복잡하게 수정해야 함
 
 
+### Zod를 활용해 리팩토링해보자.
+
+#### Zod란?
+
+**Zod** (https://zod.dev/)는 타입스크립트를 위한 타입 안전하고 선언적인 **런타임 유효성 검사 및 파싱 라이브러리**다.
+
+- TypeScript 타입처럼 `스키마`를 정의하면,
+- 실제 런타임에서 **데이터 구조를 검증하고, 안전하게 파싱**할 수 있게 도와준다.
+
+Zod의 특징은:
+- 타입 추론이 (`z.infer<typeof schema>`)
+- `safeParse()`로 에러 핸들링을 안전하게 처리
+- `.optional()`, `.default()`, `.refine()` 등 유연한 검증 API 제공
+
+```ts
+// constants.ts
+export const FILTER_OPTIONS = ['popular', 'latest'] as const
+export type FilterOption = (typeof FILTER_OPTIONS)[number]
+
+```
+
+```ts
+// schemas.ts
+import { z } from 'zod'
+import { FILTER_OPTIONS } from './constants'
+
+// 쿼리 스키마 정의
+export const QuerySchema = z.object({
+  filter: z.enum(FILTER_OPTIONS).optional(),
+  category: z.string().optional(),
+})
+```
+
+```ts
+import { QuerySchema } from './schemas'
+
+function MyComponent() {
+  const params = new URLSearchParams(window.location.search)
+
+  // zod 안전 검증
+  const rawQuery = {
+    filter: params.get('filter') ?? undefined,
+    category: params.get('category') ?? undefined,
+  }
+
+  const parseResult = QuerySchema.safeParse(rawQuery)
+
+  const filter = parseResult.success ? parseResult.data.filter : 'popular'
+  const category = parseResult.success ? parseResult.data.category : undefined
+
+  const handleClick = () => {
+    const newFilter = 'latest'
+    const newCategory = 'sports'
+
+    // 여전히 문자열 직접 조합
+    const query = `?filter=${encodeURIComponent(newFilter)}&category=${encodeURIComponent(newCategory)}`
+
+    window.location.href = window.location.pathname + query
+  }
+
+  return (
+    <div>
+      <p>Filter: {filter}</p>
+      <p>Category: {category}</p>
+      <button onClick={handleClick}>Change</button>
+      ...
+    </div>
+  )
+}
+```
+
+이렇게 하면 위에서 말한 문제점 일부를 개선할 수 있다.
+
+
+#### ✅ Zod로 개선
+##### type-safe : filter 값이 FILTER_OPTIONS enum에 포함되어야 한다.
+##### 재사용 가능 : API나 form 등에서도 재사용이 가능하다.
+##### 에러 방지 : 유효하지 않은 타입과 값을 검증할 수 있다.
+##### 코드 가독성 향상 : enum을 한 곳에서 관리해서 유지보수가 쉽다.
+
+### Nuqs를 활용해 한 번 더 리팩토링해보자.
+
+##### Nuqs란?
+
+Nuqs(https://nuqs.47ng.com/) 는 
+
+```ts
+import { QuerySchema } from './schemas'
+import { useQueryStates } from 'nuqs'
+import { parseAsZod } from 'nuqs/zod'
+
+export default function MyComponent() {
+  // Nuqs + Zod 통합 parser 사용해 자동 파싱 + 직렬화 + 상태관리
+  const [query, setQuery] = useQueryStates(parseAsZod(QuerySchema))
+
+  const { filter, category } = query
+
+  return (
+    <div>
+      <p>Filter: {filter}</p>
+      <p>Category: {category}</p>
+
+      <button onClick={() => setQuery({ filter: 'latest', category: 'sports' })}>
+        Change
+      </button>
+      ...
+    </div>
+  )
+}
+
+```
+
+##### `parseAsZod(QuerySchema)` 가 해결하는 문제
+- 문자열로만 들어오는 쿼리 파라미터를 Zod 스키마가 타입 명세와 함께 `.parse()`로 자동 파싱
+- `z.enum`, `z.string()`, `z.number()` 등으로 검증 및 기본값 제공
+- Zod 스키마의 `.optional()`, `.default()` 등 사용해 유효성 검증 조건 처리
+- `safeParse`로 런타임에서 쿼리 값이 유효한지 자동 검증
+
+##### `useQueryStates(...)` 가 해결하는 문제
+- `URLSearchParams`를 직접 조작하면 상태관리가 어려운데, React `useState`처럼 쓰게 해줌
+- 쿼리 구조가 복잡할 수록 가독성이 저하되는데, `useQueryStates()`가 선언적으로 구조 관리
+- 라우터 상태 업데이트시 새로고침이 필요한데, `setQuery()`로 soft navigation (history.push) 가능
+- 수동인코딩을 빼먹는 휴먼에러를 방지하고, 내부에서 자동으로 `encodeURIComponent` 처리
+- `useSearchParams()` 기반으로 동기화되어 CSR에서 안정적 동작하므로, SSR/CSR 간 상태 불일치를 방지
