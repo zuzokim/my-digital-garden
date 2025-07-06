@@ -204,3 +204,91 @@ export default function MyComponent() {
 - 라우터 상태 업데이트시 새로고침이 필요한데, `setQuery()`로 soft navigation (history.push) 가능
 - 수동인코딩을 빼먹는 휴먼에러를 방지하고, 내부에서 자동으로 `encodeURIComponent` 처리
 - `useSearchParams()` 기반으로 동기화되어 CSR에서 안정적 동작하므로, SSR/CSR 간 상태 불일치를 방지
+	- `useSearchParams()` 는 Next.js가 **자동으로 "hydration-safe client-only hook"** 로 처리하는 Client 전용 hook 이기 때문에, SSR 단계에서는 호출되지 않음
+	- SSR에서도 쿼리 파라미터가 필요하면 **`searchParams`를 props로 받는 Server Component 구조를 이용** 
+
+### 서버 ↔ 클라이언트 쿼리 구조 일치
+
+서버컴포넌트에서도 쿼리파라미터가 필요하면 searchParams를 props로 받으면 되는데..
+이런 문제가 발생할 수 있다.
+
+서버 컴포넌트 (page.tsx)
+```ts
+const filter = searchParams.filter ?? 'popular' // 문자열 그대로
+```
+
+클라이언트 컴포넌트(client.tsx)
+```ts
+const [query, setQuery] = useQueryStates({
+  filter: parseAsEnum(['popular', 'latest']).withDefault('latest'),
+})
+```
+
+### 문제점
+- 서버에선 기본값을 `'popular'`, 클라이언트에선 `'latest'`
+- 사용자는 `"popular"`로 접근했는데, 클라이언트에선 `"latest"`로 바뀌어 보임  
+    → **같은 URL인데 서로 다른 동작** → 버그 발생
+
+#### 해결 방법 : "쿼리 파서 구조를 일치"시켜서 서버/클라이언트 공통화
+
+```ts
+// lib/parsers.ts
+// Nuqs 파서 정의
+import { parseAsString, parseAsEnum } from 'nuqs'
+import { QuerySchema } from './schemas'
+
+export const pageParsers = {
+  filter: parseAsEnum(FILTTER_OPTIONS).withDefault('popular'),
+  category: parseAsString.optional(),
+}
+```
+
+```ts
+// app/page.tsx
+// Server Component (SSR)에서 searchParams 받기
+import { pageParsers } from '@/lib/parsers'
+import { PageClient } from './client'
+
+export default function Page({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
+  // SSR-safe 쿼리 파싱
+  const filter = pageParsers.filter.parse(searchParams.filter ?? null)
+  const category = pageParsers.category?.parse?.(searchParams.category ?? null)
+
+  return <PageClient filter={filter} category={category} />
+}
+```
+
+```ts
+// app/client.tsx
+// Client Component에서 동일 파서 재사용 가능
+'use client'
+
+import { useQueryStates } from 'nuqs'
+import { pageParsers } from '@/lib/parsers'
+
+export function PageClient(props: { filter: string; category?: string }) {
+  const [{ filter, category }, setQuery] = useQueryStates(pageParsers)
+
+  return (
+    <div>
+      <h1>Filter: {filter}</h1>
+      <h2>Category: {category}</h2>
+
+      <button onClick={() => setQuery({ filter: 'latest' })}>
+        Change
+      </button>
+      ...
+    </div>
+  )
+}
+
+```
+
+이렇게 `pageParsers` 를 서버/클라이언트에서 재사용하면 쿼리 구조(키, 타입, 기본값, 유효성)가 완전히 동일하게 유지된다. 굳!
+
+
+
