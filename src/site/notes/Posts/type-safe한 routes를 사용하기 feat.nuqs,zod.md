@@ -84,12 +84,12 @@ function MyComponent() {
 
 #### Zod란?
 
-**Zod** (https://zod.dev/)는 타입스크립트를 위한 타입 안전하고 선언적인 **런타임 유효성 검사 및 파싱 라이브러리**다.
+- **Zod** (https://zod.dev/)는 타입스크립트를 위한 타입 안전하고 선언적인 **런타임 유효성 검사 및 파싱 라이브러리**다.
 
 - TypeScript 타입처럼 `스키마`를 정의하면,
 - 실제 런타임에서 **데이터 구조를 검증하고, 안전하게 파싱**할 수 있게 도와준다.
 
-Zod의 특징은:
+#### Zod의 특징은? 
 - 타입 추론이 (`z.infer<typeof schema>`)
 - `safeParse()`로 에러 핸들링을 안전하게 처리
 - `.optional()`, `.default()`, `.refine()` 등 유연한 검증 API 제공
@@ -155,16 +155,16 @@ function MyComponent() {
 
 
 #### ✅ Zod로 개선
-##### type-safe : filter 값이 FILTER_OPTIONS enum에 포함되어야 한다.
-##### 재사용 가능 : API나 form 등에서도 재사용이 가능하다.
-##### 에러 방지 : 유효하지 않은 타입과 값을 검증할 수 있다.
-##### 코드 가독성 향상 : enum을 한 곳에서 관리해서 유지보수가 쉽다.
+- type-safe : filter 값이 FILTER_OPTIONS enum에 포함되어야 한다.
+- 재사용 가능 : API나 form 등에서도 재사용이 가능하다.
+- 에러 방지 : 유효하지 않은 타입과 값을 검증할 수 있다.
+- 코드 가독성 향상 : enum을 한 곳에서 관리해서 유지보수가 쉽다.
 
 ### Nuqs를 활용해 한 번 더 리팩토링해보자.
 
 ##### Nuqs란?
 
-Nuqs(https://nuqs.47ng.com/) 는 공식 문서에도 소개되어있듯이, "A type-safe query string state manager for Next.js App Router" 즉, 쿼리스트링을 타입 안전하게 읽고 쓰기 위한 React 훅 라이브러리다.
+- Nuqs(https://nuqs.47ng.com/) 는 공식 문서에도 소개되어있듯이, "*A type-safe query string state manager for Next.js App Router*" 즉, 쿼리스트링을 타입 안전하게 읽고 쓰기 위한 React 훅 라이브러리다.
 
 ```ts
 import { QuerySchema } from './schemas'
