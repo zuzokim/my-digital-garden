@@ -164,7 +164,7 @@ function MyComponent() {
 
 ##### Nuqs란?
 
-Nuqs(https://nuqs.47ng.com/) 는 
+Nuqs(https://nuqs.47ng.com/) 는 공식 문서에도 소개되어있듯이, "A type-safe query string state manager for Next.js App Router" 즉, 쿼리스트링을 타입 안전하게 읽고 쓰기 위한 React 훅 라이브러리다.
 
 ```ts
 import { QuerySchema } from './schemas'
