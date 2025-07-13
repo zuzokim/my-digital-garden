@@ -44,7 +44,7 @@ export default function HomePage() {
 
 Next.js 13부터 기본적으로 Server Components를 사용해 페이지를 렌더링한다. 이는 각 컴포넌트를 서버에서 렌더링한 후 클라이언트로 스트리밍하는 방식이다. 하지만 CSR과 Server Component는 서로 다른 층위의 개념이다:
 
-- Server Component는 “페이지를 어떻게 렌더링할 것인가”에 대한 전략이고,
+- Server Component는 “페이지를 어떻게/어디서 렌더링할 것인가”에 대한 전략이고,
 - CSR은 “페이지를 어떻게 전환할 것인가”에 대한 방식이다.
 
 즉, <Link />로 이동해도 결국 렌더링되는 페이지는 Server Component 기반일 수 있다. 중요한 점은 <Link>를 쓰면 Next.js가 서버에서 필요한 데이터만 요청해서 부드럽게 전환하고, window.location.href를 쓰면 전체 문서를 다시 받아야 하므로 Next.js의 최적화 이점을 잃게 된다.
