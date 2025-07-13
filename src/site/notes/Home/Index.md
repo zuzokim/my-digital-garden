@@ -8,6 +8,7 @@
 
 | Posts                                                                                                                                                                                                                                       | 🗓️                |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| [[Posts/Next.js에서 <Link> vs window.location.href — 정말 단순한 차이일까?\|Next.js에서 <Link> vs window.location.href — 정말 단순한 차이일까?]]                                                                                                               | July 13, 2025      |
 | [[Posts/type-safe한 routes를 사용하기 feat.nuqs,zod\|type-safe한 routes를 사용하기 feat.nuqs,zod]]                                                                                                                                                   | July 06, 2025      |
 | [[Posts/아무도 주지 않은 셀프 리프레시 휴가 feat.퇴사와 이직\|아무도 주지 않은 셀프 리프레시 휴가 feat.퇴사와 이직]]                                                                                                                                                             | June 29, 2025      |
 | [[Posts/Tanstack Query를 직접 만들어보자(1)\|Tanstack Query를 직접 만들어보자(1)]]                                                                                                                                                                       | June 21, 2025      |
@@ -54,11 +55,10 @@
 { .block-language-dataview}
 
 
-| Logs                                                                                                                                                                                                                 | 🗓️                       |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
-| [[Logs/How to Design a GoodAPI and Why it Matters - Joshua Bloch\|How to Design a GoodAPI and Why it Matters - Joshua Bloch]]                                                                                     | 3:07 PM - March 09, 2025  |
-| [[Logs/Cascading Spy Sheets - Exploiting the Complexity of Modern CSS for Email and Browser Fingerprinting\|Cascading Spy Sheets - Exploiting the Complexity of Modern CSS for Email and Browser Fingerprinting]] | 11:18 PM - March 02, 2025 |
-| [[Logs/study archives\|study archives]]                                                                                                                                                                           | 3:02 PM - August 28, 2024 |
-| [[Logs/engineering books\|engineering books]]                                                                                                                                                                     | 8:45 PM - August 24, 2024 |
+| Logs                                                                                                                             | 🗓️                       |
+| -------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| [[Logs/How to Design a GoodAPI and Why it Matters - Joshua Bloch\|How to Design a GoodAPI and Why it Matters - Joshua Bloch]] | 3:07 PM - March 09, 2025  |
+| [[Logs/study archives\|study archives]]                                                                                       | 3:02 PM - August 28, 2024 |
+| [[Logs/engineering books\|engineering books]]                                                                                 | 8:45 PM - August 24, 2024 |
 
 { .block-language-dataview}
