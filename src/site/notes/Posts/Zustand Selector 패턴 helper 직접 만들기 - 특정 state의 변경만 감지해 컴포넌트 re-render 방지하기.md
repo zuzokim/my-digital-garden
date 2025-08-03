@@ -104,7 +104,7 @@ export const useMyStore = createTypedSelector(useMyStoreBase);
 
 //Component.tsx
 // ✅ 컴포넌트에서 추론 잘 됨!
-const { state1, setState1 } = useMyStore({selectorKeys: ['state1', 'setState1'] as const});
+const { state1, setState1 } = useMyStore({ selectorKeys: ['state1', 'setState1'] as const });
 
 ```
 
@@ -112,7 +112,7 @@ const { state1, setState1 } = useMyStore({selectorKeys: ['state1', 'setState1'] 
 - as const 를 사용하지 않으면 Typescript는 key를 그냥 string으로 넓은(widened) 타입으로 추론한다.
 
 ```ts
-const { state1 } = useMyStore(['state1'] as const);
+const { state1 } = useMyStore({ selectorKeys: ['state1'] as const });
 // 🔴 Error: "state1" does not exist on type "MyState"
 ```
 
