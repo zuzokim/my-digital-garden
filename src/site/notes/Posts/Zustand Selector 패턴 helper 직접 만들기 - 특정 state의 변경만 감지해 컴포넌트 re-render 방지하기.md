@@ -113,7 +113,7 @@ const { state1, setState1 } = useMyStore(['state1', 'setState1'] as const);
 
 ```ts
 const { state1 } = useMyStore(['state1'] as const);
-// 🔴 Error: "stateX" does not exist on type "MyState"
+// 🔴 Error: "state1" does not exist on type "MyState"
 ```
 
 존재하지 않는 키를 넣으면 컴파일 에러가 난다.
