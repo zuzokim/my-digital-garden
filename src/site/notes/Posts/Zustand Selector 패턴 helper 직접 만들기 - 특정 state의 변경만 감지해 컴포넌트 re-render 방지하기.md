@@ -56,6 +56,7 @@ const {
 1. Base store 타입 정의와 함께 생성
 
 ```ts
+//store.ts
 type MyState = {
   state1: number;
   setState1: (v: number) => void;
@@ -74,10 +75,11 @@ const useMyStoreBase = create<MyState>((set) => ({
 
 2. Selector 타입 추론 helper
 ```ts
+//zustand-selector-helper.ts
 // 넘겨받은 key 로 Selector 함수 자동 구성
-function createTypedSelector<Store extends object>(
+export createTypedSelector<Store extends object> = (
   store: (selector: (state: Store) => any) => any
-) {
+) => {
   return function <K extends readonly (keyof Store)[]>(config: {
     selectorKeys: K;
   }): Pick<Store, K[number]> {
@@ -94,9 +96,11 @@ function createTypedSelector<Store extends object>(
 
 3. 컴포넌트에서 사용하기
 ```ts
+
 // store.ts에서 export
 export const useMyStore = createTypedSelector(useMyStoreBase);
 
+//Component.tsx
 // ✅ 컴포넌트에서 추론 잘 됨!
 const { state1, setState1 } = useMyStore(['state1', 'setState1'] as const);
 
@@ -106,7 +110,7 @@ const { state1, setState1 } = useMyStore(['state1', 'setState1'] as const);
 - as const 를 사용하지 않으면 Typescript는 key를 그냥 string으로 넓은(widened) 타입으로 추론한다.
 
 ```ts
-const { stateX } = useStorePick(['stateX'] as const);
+const { state1 } = useMyStore(['state1'] as const);
 // 🔴 Error: "stateX" does not exist on type "MyState"
 ```
 
