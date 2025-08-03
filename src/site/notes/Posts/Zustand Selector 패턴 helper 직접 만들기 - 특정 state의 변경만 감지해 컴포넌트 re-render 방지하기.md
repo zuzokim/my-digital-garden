@@ -53,7 +53,7 @@ const {
 
 그래서 만들어봄..
 
-1. Base store 타입 정의와 함께 생성
+**1번.  Base store 타입 정의와 함께 생성**
 
 ```ts
 //store.ts
@@ -73,7 +73,8 @@ const useMyStoreBase = create<MyState>((set) => ({
 
 ```
 
-2. Selector 타입 추론 helper
+**2번. Selector 타입 추론 helper**
+
 ```ts
 //zustand-selector-helper.ts
 // 넘겨받은 key 로 Selector 함수 자동 구성
@@ -94,7 +95,8 @@ export createTypedSelector<Store extends object> = (
 }
 ```
 
-3. 컴포넌트에서 사용하기
+**3번. 컴포넌트에서 사용하기**
+
 ```ts
 
 // store.ts에서 export
@@ -117,5 +119,5 @@ const { state1 } = useMyStore(['state1'] as const);
 존재하지 않는 키를 넣으면 컴파일 에러가 난다.
 
 ++ 일단 팀원들에게 아이디어를 제안한 뒤 간단한 구현만 해보았는데, 시간을 내어 조금 더 발전시켜볼 수 있겠다.
-- as const 대신 타입을 좁혀서 추론할 수 있게 하기 with Zod.literal
-- 객체 형태의 state를 위해 shallow도 지원할 수 있게 하기
+- **as const 대신 타입을 좁혀서 추론할 수 있게 하기 with Zod.literal**
+- **객체 형태의 state를 위해 shallow도 지원할 수 있게 하기**
