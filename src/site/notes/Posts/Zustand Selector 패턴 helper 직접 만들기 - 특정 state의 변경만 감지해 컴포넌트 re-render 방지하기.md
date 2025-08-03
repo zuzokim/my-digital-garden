@@ -104,7 +104,7 @@ export const useMyStore = createTypedSelector(useMyStoreBase);
 
 //Component.tsx
 // ✅ 컴포넌트에서 추론 잘 됨!
-const { state1, setState1 } = useMyStore(['state1', 'setState1'] as const);
+const { state1, setState1 } = useMyStore({selectorKeys: ['state1', 'setState1'] as const});
 
 ```
 
@@ -121,3 +121,5 @@ const { state1 } = useMyStore(['state1'] as const);
 ++ 일단 팀원들에게 아이디어를 제안한 뒤 간단한 구현만 해보았는데, 시간을 내어 조금 더 발전시켜볼 수 있겠다.
 - **as const 대신 타입을 좁혀서 추론할 수 있게 하기 with Zod.literal**
 - **객체 형태의 state를 위해 shallow도 지원할 수 있게 하기**
+
+ps. 아이디어에 긍정적으로 응답해준 팀원들에게 감사하다. 나 혼자 느낀 사소한 불편함과 아이디어였지만, 나도 팀원들에게 설명을 하면서 실제 구현을 더 자세히 생각해보게 되었다. 
