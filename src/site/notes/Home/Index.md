@@ -2,13 +2,13 @@
 {"dg-publish":true,"permalink":"/home/index/","pinned":true,"tags":["gardenEntry"],"updated":"2024-09-04T22:53:00"}
 ---
 
+![스크린샷 2024-03-18 오전 11.14.03.png|150](/img/user/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-03-18%20%EC%98%A4%EC%A0%84%2011.14.03.png)
 #### **Jiwoo Joy Kim | Web frontend Engineer**
 Email | zuzokim@gmail.com
 GitHub | [github.com/zuzokim](https://github.com/zuzokim)
 LinkedIn | [LinkedIn](https://www.linkedin.com/in/%EC%A7%80%EC%9A%B0-%EA%B9%80-635921206?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
 Linktree | [link.tree](https://linktr.ee/zuzokim)
 
----
 
 | Posts                                                                                                                                                                                                                                       | 🗓️                |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
