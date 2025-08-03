@@ -122,5 +122,6 @@ const { state1 } = useMyStore({ selectorKeys: ['state1'] as const });
 - **as const 대신 타입을 좁혀서 추론할 수 있게 하기 with Zod.literal**
 - **객체 형태의 state를 위해 shallow도 지원할 수 있게 하기**
 - **실제 사용하는 state와 구독하는 selectorKey가 다른 경우 알려주기 with Eslint** 
+	- https://github.com/paulschoen/eslint-plugin-zustand-rules 참고해보기
 
 ps. 아이디어에 긍정적으로 응답해준 팀원들에게 감사하다. 나 혼자 느낀 사소한 불편함과 아이디어였지만, 나도 팀원들에게 설명을 하면서 실제 구현을 더 자세히 생각해보게 되었고 이후 발전방향도 떠올려볼 수 있었다. 
