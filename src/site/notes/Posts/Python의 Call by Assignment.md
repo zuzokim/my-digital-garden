@@ -76,7 +76,7 @@ print(a)  # 5 ✅ (원본 변경 없음)
 - `x = x + 1` → **새로운 int 객체**를 `x`가 가리키도록 변경
 - 원래 `a`는 여전히 5를 가리킴
 
-## JS 예제 (primitive or reference type 케이스와 유사)
+## JS 예제 (primitive or reference type 케이스와 Python 비교)
 
 예) primitive (immutable)
 ```js
@@ -98,13 +98,13 @@ console.log(obj.val); // 2
 - 동작 원리는 Python list와 동일
 - 객체 참조가 전달 → 원본 변경 가능
 
-JS 는 Call by Value로 모든 인자를 값으로 넘기지만 값이 원시타입인지 참조타입인지에 따라 다르게 동작한다.
-Python은 모든 값이 객체이고, Call by Assignment에 따라 mutable 객체는 원본을 변경하고, immutable 객체(int, float, str 등)는 변경 불가한 방식으로 동작한다.
+- JS 는 Call by Value로 모든 인자를 값으로 넘기지만 값이 primitive타입인지 reference타입인지에 따라 다르게 동작한다.
+- Python은 **모든 값이 객체**이고, Call by Assignment에 따라 mutable객체는 원본을 변경하고, immutable 객체(int, float, str 등)는 변경 불가한 방식으로 동작한다.
 
 
-|언어|Call 방식|값 타입|동작|
-|---|---|---|---|
-|JS|Call by Value|primitive|값 복사 → 함수 안 변경 불가|
-|JS|Call by Value|object|참조값 복사 → 함수 안에서 객체 내부 변경 가능|
-|Python|Call by Assignment|immutable|함수 안에서 새 객체 할당 → 원본 변경 불가|
-|Python|Call by Assignment|mutable|함수 안에서 내부 값 변경 → 원본 변경 가능|
+| 언어     |     | Call 방식            | 값 타입      | 동작                          |
+| ------ | --- | ------------------ | --------- | --------------------------- |
+| JS     |     | Call by Value      | primitive | 값 복사 → 함수 안 변경 불가           |
+| JS     |     | Call by Value      | object    | 참조값 복사 → 함수 안에서 객체 내부 변경 가능 |
+| Python |     | Call by Assignment | immutable | 함수 안에서 새 객체 할당 → 원본 변경 불가   |
+| Python |     | Call by Assignment | mutable   | 함수 안에서 내부 값 변경 → 원본 변경 가능   |
