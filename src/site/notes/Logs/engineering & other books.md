@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/logs/engineering-and-other-books/","tags":["Books","Logs"],"updated":"2025-08-04T20:46:00"}
+{"dg-publish":true,"permalink":"/logs/engineering-and-other-books/","tags":["Books","Logs"],"updated":"2025-08-04"}
 ---
 
 1. 함께 자라기 애자일로 가는길

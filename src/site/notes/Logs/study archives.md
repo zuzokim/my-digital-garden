@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/logs/study-archives/","created":"2024-09-01","updated":"2024-09-01T15:42:00"}
+{"dg-publish":true,"permalink":"/logs/study-archives/","created":"2024-09-01","updated":"2025-06-01"}
 ---
 
 1. https://www.patterns.dev/ | 2022
