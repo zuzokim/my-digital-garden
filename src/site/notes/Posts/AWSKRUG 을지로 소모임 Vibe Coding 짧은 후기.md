@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/posts/awskrug-vibe-coding/","created":"2025-04-20","updated":"2025-04-20T21:55:00"}
+{"dg-publish":true,"permalink":"/posts/awskrug-vibe-coding/","tags":["Daily"],"created":"2025-04-20","updated":"2025-04-20T21:55:00"}
 ---
 
 https://www.meetup.com/awskrug/events/306989337/
