@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/posts/toss/","created":"2024-10-27","updated":"2024-10-27T22:38:00"}
+{"dg-publish":true,"permalink":"/posts/toss/","tags":["Daily"],"created":"2024-10-27","updated":"2024-10-27T22:38:00"}
 ---
 
 이번주 토스 프론트엔드 파이트클럽(프파클) Round4에 초대를 받아 참여하게 됐습니다.

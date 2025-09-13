@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/posts/oops-i-did-it-again/","created":"2025-03-08","updated":"2025-03-09T01:33:00"}
+{"dg-publish":true,"permalink":"/posts/oops-i-did-it-again/","tags":["Daily"],"created":"2025-03-08","updated":"2025-03-09T01:33:00"}
 ---
 
 저는 평소 불안이 큰 성향을 지닌 사람으로서, 이런 특성이 약점이 되지 않도록 애쓰며 ‘내 안의 또 다른 나’와 싸우느라 지칠 때가 많아요.
