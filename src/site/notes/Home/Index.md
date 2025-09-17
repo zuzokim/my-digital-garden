@@ -6,9 +6,8 @@
 #### **Jiwoo Joy Kim | Web frontend Engineer**
 Email | zuzokim@gmail.com
 GitHub | [github.com/zuzokim](https://github.com/zuzokim)
-LinkedIn | [LinkedIn](https://www.linkedin.com/in/%EC%A7%80%EC%9A%B0-%EA%B9%80-635921206?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
+LinkedIn | [LinkedIn](https://www.linkedin.com/in/jiwoo-kim-635921206/)
 Linktree | [link.tree](https://linktr.ee/zuzokim)
-
 
 | Daily                                                                                                                                                                                                                                       | 🗓️                |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
