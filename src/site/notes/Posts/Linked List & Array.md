@@ -2,6 +2,10 @@
 {"dg-publish":true,"permalink":"/posts/linked-list-and-array/","created":"2025-09-21","updated":"2025-09-21"}
 ---
 
+
+[쓰면서 익히는 알고리즘과 자료구조](https://product.kyobobook.co.kr/detail/S000001810374) 를 읽고 정리해보는 기초 자료구조 이해.. 챕터3의 연결리스트(Linked List) 부분정리!
+
+
 - **연결 리스트(Linked List)**
     - 노드(Node) 단위로 데이터를 저장한다.
     - 각 노드는 **데이터 + 다음 노드의 포인터**로 구성된다.
