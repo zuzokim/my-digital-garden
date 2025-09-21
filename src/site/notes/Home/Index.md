@@ -29,6 +29,7 @@ Linktree | [link.tree](https://linktr.ee/zuzokim)
 
 | Dev                                                                                                                                                               | 🗓️                |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| [[Posts/Linked List & Array\|Linked List & Array]]                                                                                                             | September 21, 2025 |
 | [[Posts/Next.js prerender error\|Next.js prerender error]]                                                                                                     | September 14, 2025 |
 | [[Posts/Corepack 과 packageManager\|Corepack 과 packageManager]]                                                                                                 | September 06, 2025 |
 | [[Posts/선언적으로 이벤트 로그 관리하기 feat.amplitude\|선언적으로 이벤트 로그 관리하기 feat.amplitude]]                                                                                   | August 24, 2025    |
