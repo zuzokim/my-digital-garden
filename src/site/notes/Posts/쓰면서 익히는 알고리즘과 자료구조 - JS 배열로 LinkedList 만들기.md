@@ -1,0 +1,68 @@
+---
+{"dg-publish":true,"permalink":"/posts/js-linked-list/","created":"2025-09-28","updated":"2025-09-28"}
+---
+
+
+배열 뒤집기 문제를 풀면서 새로 알게된 js 메소드 reduceRight 이라는게 있어서 기록해보는 배열로 연결리스트 만들고 뒤집기..!
+
+
+```js
+// --- 리스트 뒤집기 ---
+function reverseList(head) {
+  let prev = null;
+  let curr = head;
+  while (curr) {
+    let next = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = next;
+  }
+  return prev;
+}
+
+// —— 리스트를 다시 배열로 만들어주는 헬퍼 —-
+function listToArray(node) {
+  const res = [];
+  while (node) {
+    res.push(node.val);
+    node = node.next;
+  }
+  return res;
+}
+
+// —— 배열을 연결리스트(객체)로 만들어주는 헬퍼 —-
+function arrayToList(arr) {
+  // reduceRight로 배열을 연결리스트로 바꾸기
+  return arr.reduceRight((next, val) => ({ val, next }), null);
+}
+
+// --- 테스트케이스---
+const tests = [
+  { input: [], expected: [] },
+  { input: [1], expected: [1] },
+  { input: [1, 2], expected: [2, 1] },
+  { input: [1, 2, 3], expected: [3, 2, 1] },
+  { input: [1, 2, 3, 4, 5], expected: [5, 4, 3, 2, 1] },
+  { input: [10, 20, 30, 40], expected: [40, 30, 20, 10] },
+];
+
+tests.forEach(({ input, expected }, index) => {
+  const head = arrayToList(input);
+  const reversed = reverseList(head);
+  const output = listToArray(reversed);
+
+  const pass = JSON.stringify(output) === JSON.stringify(expected);
+  console.log(
+    `Test ${index + 1}: input=${JSON.stringify(input)} → output=${JSON.stringify(output)} ` +
+    (pass ? "✅ PASS" : `❌ FAIL (expected ${JSON.stringify(expected)})`)
+  );
+});
+```
+
+arrayToList 함수로 배열을 js 객체 형태로 바꿀 수 있다. value와 next를 key로 하는 중첩 객체를 만들고 이를 연결리스트로써 활용할 수 있게 하는 셈.
+
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight
+
+reduce는 많이 써봤는데 reduceRight은 잘 써볼일이 없어서 신기했다 ㅎㅎ
+
+reduce 보다 reduceRight를 사용하면 좋은 점은, reduceRight은 오른쪽에서 왼쪽으로 순회하기 때문에 next를 올바르게 담을 수 있다는 점. 누적순서가 반대로 됨.
