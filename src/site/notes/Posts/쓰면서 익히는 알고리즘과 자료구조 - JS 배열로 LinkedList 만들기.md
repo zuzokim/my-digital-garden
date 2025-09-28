@@ -59,6 +59,16 @@ tests.forEach(({ input, expected }, index) => {
 });
 ```
 
+
+```bash
+Test 1: input=[] → output=[] ✅ PASS
+Test 2: input=[1] → output=[1] ✅ PASS
+Test 3: input=[1,2] → output=[2,1] ✅ PASS
+Test 4: input=[1,2,3] → output=[3,2,1] ✅ PASS
+Test 5: input=[1,2,3,4,5] → output=[5,4,3,2,1] ✅ PASS
+Test 6: input=[10,20,30,40] → output=[40,30,20,10] ✅ PASS
+```
+
 arrayToList 함수로 배열을 js 객체 형태로 바꿀 수 있다. value와 next를 key로 하는 중첩 객체를 만들고 이를 연결리스트로써 활용할 수 있게 하는 셈.
 
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight
