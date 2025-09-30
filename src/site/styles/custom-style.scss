@@ -30,11 +30,11 @@ body {
 
     .content {
       font-size: 14px !important;
-      max-width: 620px !important;
-      --h6-weight: 400 !important;
+      max-width: 900px !important;
+      // --h6-weight: 400 !important;
     }
 
-    @media (max-width: 1400px) {
+    @media (max-width: 1900px) {
       .sidebar {
         max-width: 620px !important;
         right: 0;
