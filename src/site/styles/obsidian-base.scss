@@ -7178,6 +7178,8 @@ body {
     border-right-width: var(--table-column-last-border-width);
     //custom style
     width: 144px;
+    text-align: end;
+    white-space: nowrap;
   }
   .markdown-rendered thead tr {
     background-color: var(--table-header-background);
