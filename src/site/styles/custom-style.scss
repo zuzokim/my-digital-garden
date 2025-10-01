@@ -34,9 +34,9 @@ body {
       // --h6-weight: 400 !important;
     }
 
-    @media (max-width: 1900px) {
+    @media (max-width: 2400px) {
       .sidebar {
-        max-width: 620px !important;
+        max-width: 900px !important;
         right: 0;
       }
     }
@@ -144,7 +144,7 @@ body {
     }
 
     .giscus {
-      max-width: 620px;
+      max-width: 900px;
       margin-top: 120px;
       position: relative;
       left: 50%;
