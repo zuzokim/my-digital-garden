@@ -29,6 +29,7 @@ Linktree | [link.tree](https://linktr.ee/zuzokim)
 
 | Dev                                                                                                                                                               |                    |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| [[Posts/쓰면서 익히는 알고리즘과 자료구조 - 배열 & LinkedList 두 수 더하기\|쓰면서 익히는 알고리즘과 자료구조 - 배열 & LinkedList 두 수 더하기]]                                                           | October 05, 2025   |
 | [[Posts/쓰면서 익히는 알고리즘과 자료구조 - JS 배열로 LinkedList 만들기\|쓰면서 익히는 알고리즘과 자료구조 - JS 배열로 LinkedList 만들기]]                                                               | September 28, 2025 |
 | [[Posts/쓰면서 익히는 알고리즘과 자료구조 - Linked List & Array\|쓰면서 익히는 알고리즘과 자료구조 - Linked List & Array]]                                                                   | September 21, 2025 |
 | [[Posts/Next.js prerender error\|Next.js prerender error]]                                                                                                     | September 14, 2025 |
