@@ -242,3 +242,11 @@ const schema = z.string().refine(async (val) => {
 react-hook-form의 resolver는 Promise를 반환하면 **기본적으로 자동으로 await 처리** 해주므로 문제가 없다.
 
 https://github.com/react-hook-form/resolvers/blob/e95721d3c8c6d6e555508b0e7b21c6ac801360cf/zod/src/zod.ts#L224
+
+> - The function gives resolverOptions a default empty object: the parameter line (lines ~241–245) sets resolverOptions: { mode?: 'async' | 'sync'; raw?: boolean; } = {}.
+> - The code then chooses the async parser whenever mode is not the string 'sync':
+>   - Zod 3 path: schema[resolverOptions.mode === 'sync' ? 'parse' : 'parseAsync'](https://github.com/react-hook-form/resolvers/blob/e95721d3c8c6d6e555508b0e7b21c6ac801360cf/zod/src/zod.ts#L250) (lines ~249–251)
+>   -Zod 4 path: const parseFn = resolverOptions.mode === 'sync' ? z4.parse : z4.parseAsync (lines ~283–285)
+> 
+> Because resolverOptions.mode is undefined by default, the checks treat it as not 'sync' and therefore use the async parser — effectively making 'async' the default.
+
