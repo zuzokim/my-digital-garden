@@ -106,6 +106,137 @@ return <Select
 ...
 ```
 
-그럼 이제 zod의 여러 함수가 어떤 역할을 하는지 자세히 알아보자.
+##### 그럼 이제 zod의 여러 함수가 어떤 역할을 하는지 자세히 알아보자.
 
-우선, Select의 
+우선, Select에서 아무것도 선택하지 않으면 첫번째 option이 기본 선택된다. 하지만, 요구사항은 
+- 기본으로는 선택되지 않고, 문구를 "선택해주세요"로 보여준다.
+- option이 선택됐을 때에만 form 제출할 수 있게 유효성 검사를 한다.
+라면 어떻게 처리할 수 있을까?
+
+처음에는 아래와 같이 빈문자열을 기본값으로 하고 enum을 옵션으로 선택하고 타입 검사를 하도록 처리를 해줬었다.
+
+```ts
+  experience: z
+	  .enum(["0-3", "4-7", "8+"], "FE 경력 연차를 선택해주세요")
+	  .or(z.literal("")),
+```
+
+이러면 form type상 기본값을 빈 문자열로 줘도 타입에러가 발생하지 않는다. 그러나 이렇게 하면 실제 제출되는 값도 빈배열을 허용하기 때문에 실제 option을 선택하지 않아도 form이 제출되어버리는 문제가 있다.
+
+---
+
+##### 올바르게 유효성 검사하기
+
+그럼 이렇게 할 수 있다.
+
+```ts
+experience: z
+    .string()
+    .min(1, "FE 경력 연차를 선택해주세요")
+    .refine(
+      (val) => val === "0-3" || val === "4-7" || val === "8+",
+      "FE 경력 연차를 선택해주세요"
+    ),
+```
+
+#### Zod의 `.refine()`는 어떻게 동작하는 것일까?
+
+겉보기엔 단순히 “조건을 하나 더 추가하는 후처리 함수”처럼 보이지만, 실제로는 타입 시스템과 런타임 검증 사이의 경계를 다루는 중요한 메커니즘이다. 
+
+`.refine()`는 말 그대로 “정제(refine)”하는 함수이다.  기존 스키마가 통과시킨 값을 다시 한 번 걸러내고, 그 값이 우리가 원하는 조건을 만족하지 않으면 에러를 발생시킨다.
+
+`.refine()` 의 시그니쳐를 짚어보자. 
+
+```ts
+schema.refine(
+  (value) => boolean | Promise<boolean>, // 조건식
+  { message?: string, path?: (string | number)[] } // 옵션
+);
+
+```
+
+- 첫 번째 인자 `(value)`는 현재 검증 중인 값이다.  
+    이 함수가 `true`를 반환하면 통과, `false`면 실패이다.
+- 두 번째 인자는 에러 메시지와 위치를 지정하는 옵션이다.  
+    `path`는 어느 필드에 에러를 표시할지를 지정할 때 쓴다.
+- 비동기 함수도 지원하기 때문에, 서버에 요청해 중복 여부를 확인하는 검증 같은 것도 가능하다.  
+    이 경우 `parseAsync` 또는 `safeParseAsync`를 사용해야 한다.
+
+
+`.refine()` 이 후처리 방식이라고 했는데, 그럼 Zod는 어떤 순서로 스키마를 검증하는지도 보자.
+
+Zod는 스키마를 검증할 때 내부적으로 아래 순서대로 실행한다.
+
+1. **기본 타입 검사**: 예를 들어 `z.string()`이라면 값이 문자열인지 확인한다.
+2. **내장 제약 검사**: `.min()`, `.max()`, `.email()` 같은 내장 제약을 순서대로 검사한다.
+3. **사용자 정의 검사 (`refine`, `superRefine`)**: 우리가 직접 정의한 조건 함수를 호출한다.
+4. **에러 수집**: 실패한 검사는 모두 `ZodError.issues` 배열에 추가된다.
+
+즉, `.refine()`는 “기본 검증을 통과한 다음, 그 값에 추가 조건을 검증하는 후처리 단계” 에서 호출된다.
+
+
+---
+
+##### Zod의 `.superRefine()` 과 비교
+
+`.refine()`는 “불리언 기반의 단일 조건 검사”를 위한 간단한 도구이다.  하지만 복수의 조건을 한 번에 검사하거나, 다양한 필드에 에러를 나눠서 표시하고 싶을 때는 `.superRefine()`를 써야 한다.
+
+```ts
+z.string().superRefine((val, ctx) => {
+  if (!/^[0-9]+$/.test(val)) {
+	  //콜백의 두 번째 인자로 `ctx`를 받아 `ctx.addIssue()`로 여러 검증 결과를 추가할 수 있다.
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: "숫자만 입력해야 합니다",
+    });
+  }
+
+  if (val.length < 3) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.too_small,
+      message: "길이가 너무 짧습니다",
+    });
+  }
+});
+```
+
+---
+
+##### 타입시스템 관점에서의 한계
+
+`.refine()`는 런타임 검증만 수행한다.  즉, TypeScript 타입은 여전히 기존 타입 그대로 유지된다.
+
+```ts
+const experience = z
+  .string()
+  .refine((v) => v === "0-3" || v === "4-7" || v === "8+");
+
+type Experience = z.infer<typeof experience>;
+// 여전히 string
+
+```
+
+이건 타입 시스템 입장에서는 `string` 전체 중 일부만 허용하는 걸 알 수 없기 때문이다.  만약 타입까지 제한하고 싶다면 `z.enum()`을 사용해야 한다.
+
+```ts
+const experience = z.enum(["0-3", "4-7", "8+"]);
+type Experience = z.infer<typeof experience>;
+// "0-3" | "4-7" | "8+"
+```
+
+`.refine()`는 어디까지나 런타임 검증을 위한 장치일 뿐, 타입을 좁히지 않는다는 점을 기억해야 한다.  따라서 **타입 안정성과 런타임 안전성**을 모두 챙기고 싶다면, 가능한 한 `z.enum`, `z.literal`, `z.union` 같은 선언적 스키마를 우선적으로 고려하자.
+
+---
+
+##### 비동기 함수도 지원하는 `.refine()`
+
+```ts
+const schema = z.string().refine(async (val) => {
+  const exists = await checkIfUsernameExists(val);
+  return !exists;
+}, "이미 존재하는 아이디입니다");
+```
+
+이렇게 하면 비동기로 서버에서 유효성을 검증할 수 있다. 단, 이 경우에는 반드시 `parseAsync()`나 `safeParseAsync()`를 사용해야 한다.  동기 `parse()`를 쓰면 `Promise`가 resolve되는 것을 기다려주지 않기 때문에 검증이 제대로 작동하지 않는다.
+
+react-hook-form의 zodResolver는 이미 내부적으로 `safeParseAsync()`를 사용하므로, 이때는 문제가 없다.
