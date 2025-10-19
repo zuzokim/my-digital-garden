@@ -239,7 +239,7 @@ const schema = z.string().refine(async (val) => {
 
 이렇게 하면 비동기로 서버에서 유효성을 검증할 수 있다. 단, 이 경우에는 반드시 `parseAsync()`나 `safeParseAsync()`를 사용해야 한다.  동기 `parse()`를 쓰면 `Promise`가 resolve되는 것을 기다려주지 않기 때문에 검증이 제대로 작동하지 않는다.
 
-react-hook-form의 resolver는 Promise를 반환하면 **기본적으로 자동으로 await 처리** 해주므로 문제가 없다.
+react-hook-form의 resolver는 Promise를 반환하면 **기본적으로 자동으로 await 처리** 해주므로 문제가 없다. 정확히 말하면, 디폴트로 parseAsync를 사용한다.
 
 https://github.com/react-hook-form/resolvers/blob/e95721d3c8c6d6e555508b0e7b21c6ac801360cf/zod/src/zod.ts#L224
 
