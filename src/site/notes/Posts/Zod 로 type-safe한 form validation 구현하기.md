@@ -3,13 +3,15 @@
 ---
 
 
-프론트엔드 개발에서 아주 많이 다루는 from과 유효성 검사. [Zod](https://zod.dev/) 와 react-hook-form을 대부분 활용한다. 다른 form 라이브러리도 있는데, 가장 익숙한 것은 아무래도 react-hook-form이다.
+프론트엔드 개발에서 아주 많이 다루는 from과 유효성 검사. 
 
-최근에 Zod와 react-hook-form의 resolver를 활용해서 보다 선언적이고 유효성 검증이라는 관심사를 분리해 구현하는 방법을 알게 되어 시도해봤다. 기초적인 Zod의 여러 함수가 어떤 역할을 하고, 어떻게 활용하면 될지 공부하고 기록해보는 글.
+[Zod](https://zod.dev/) 와 react-hook-form을 대부분 활용한다. 다른 form 라이브러리도 있는데 가장 익숙한 것은 아무래도 react-hook-form이다.
+
+최근에 Zod와 react-hook-form의 resolver를 활용해서 보다 선언적이고, 유효성 검증이라는 하나의 관심사를 분리해 구현하는 방법을 알게 되어 시도해봤다. 기초적인 Zod의 여러 함수가 어떤 역할을 하고, 어떻게 활용하면 될지 공부하고 기록해보는 글.
 
 ---
 
-내가 익숙했던 방식은 아래와 같이 register한 form field에 required 여부와 유효성 패턴을 각각 작성해주는 식이었다. 이렇게 하면 각 field에 필수값 여부, 메세지, 유효성 검사 로직이 작성되므로, 빠른 구현이 된다.
+내가 익숙했던 방식은 아래와 같이 register한 form field에 required 여부와 유효성 패턴을 각각 작성해주는 식이었다. 이렇게 하면 각 field에 필수값 여부, 메세지, 유효성 검사 로직이 작성되므로 빠른 구현이 된다.
 
 ```ts
 {...register("experience", {
@@ -28,7 +30,7 @@
 ```
 
 
-다만, field가 매우 많아지는 경우를 가정하면, 한 컴포넌트 내에 form으로 관리해야할 field 마크업과 로직이 뒤섞이게 되고, 추후 수정이 필요하면 한 컴포넌트 파일 안에서 스크롤을 하며 수정을 해줘야 한다.
+다만, field가 매우 많아지는 경우를 가정하면, 한 컴포넌트 내에 form으로 관리해야할 field 마크업과 로직이 뒤섞이게 되고, 추후 수정이 필요하면 한 컴포넌트 파일 안에서 스크롤을 하며 이리저리 수정을 해줘야 한다.
 
 ---
 
@@ -78,7 +80,7 @@ const {
 	formState: { errors },
 	reset,
 } = useForm<FormData>({
-	resolver: zodResolver(formSchema), // 유효성 검사로직을 담음 schema
+	resolver: zodResolver(formSchema), // 유효성 검사로직을 담은 schema
 	defaultValues: {
 		name: "",
 		email: "",
@@ -121,7 +123,7 @@ return <Select
 	  .or(z.literal("")),
 ```
 
-이러면 form type상 기본값을 빈 문자열로 줘도 타입에러가 발생하지 않는다. 그러나 이렇게 하면 실제 제출되는 값도 빈배열을 허용하기 때문에 실제 option을 선택하지 않아도 form이 제출되어버리는 문제가 있다.
+이러면 form type상 기본값을 빈 문자열로 줘도 타입에러가 발생하지 않는다. 그러나 이렇게 하면 실제 제출되는 값도 빈 문자열 리터럴을 허용하기 때문에 실제 option을 선택하지 않아도 form이 제출되어버리는 문제가 있다.
 
 ---
 
@@ -143,7 +145,7 @@ experience: z
 
 겉보기엔 단순히 “조건을 하나 더 추가하는 후처리 함수”처럼 보이지만, 실제로는 타입 시스템과 런타임 검증 사이의 경계를 다루는 중요한 메커니즘이다. 
 
-`.refine()`는 말 그대로 “정제(refine)”하는 함수이다.  기존 스키마가 통과시킨 값을 다시 한 번 걸러내고, 그 값이 우리가 원하는 조건을 만족하지 않으면 에러를 발생시킨다.
+`.refine()`는 말 그대로 “정제(refine)”하는 함수이다.  기존 스키마가 통과시킨 값을 다시 한 번 걸러내고, 그 값이 원하는 조건을 만족하지 않으면 에러를 발생시킨다.
 
 `.refine()` 의 시그니쳐를 짚어보자. 
 
@@ -179,7 +181,7 @@ Zod는 스키마를 검증할 때 내부적으로 아래 순서대로 실행한�
 
 ##### Zod의 `.superRefine()` 과 비교
 
-`.refine()`는 “불리언 기반의 단일 조건 검사”를 위한 간단한 도구이다.  하지만 복수의 조건을 한 번에 검사하거나, 다양한 필드에 에러를 나눠서 표시하고 싶을 때는 `.superRefine()`를 써야 한다.
+`.refine()`는 “boolean 기반의 단일 조건 검사”를 위한 간단한 도구이다.  하지만 복수의 조건을 한 번에 검사하거나, 다양한 필드에 에러를 나눠서 표시하고 싶을 때는 `.superRefine()`를 써야 한다.
 
 ```ts
 z.string().superRefine((val, ctx) => {
@@ -239,7 +241,7 @@ const schema = z.string().refine(async (val) => {
 
 이렇게 하면 비동기로 서버에서 유효성을 검증할 수 있다. 단, 이 경우에는 반드시 `parseAsync()`나 `safeParseAsync()`를 사용해야 한다.  동기 `parse()`를 쓰면 `Promise`가 resolve되는 것을 기다려주지 않기 때문에 검증이 제대로 작동하지 않는다.
 
-react-hook-form의 resolver는 Promise를 반환하면 **기본적으로 자동으로 await 처리** 해주므로 문제가 없다. 정확히 말하면, 디폴트로 parseAsync를 사용한다.
+react-hook-form의 resolver는 Promise를 반환하면 **기본적으로 await 처리** 해주므로 문제가 없다. 정확히 말하면, 디폴트로 parseAsync를 사용한다.
 
 https://github.com/react-hook-form/resolvers/blob/e95721d3c8c6d6e555508b0e7b21c6ac801360cf/zod/src/zod.ts#L224
 
