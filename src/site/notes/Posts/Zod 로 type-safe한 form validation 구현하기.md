@@ -3,9 +3,9 @@
 ---
 
 
-프론트엔드 개발에서 아주 많이 다루는 from과 유효성 검사. Zod 와 react-hook-form을 대부분 활용한다. 다른 form 라이브러리도 있는데, 가장 익숙한 것은 아무래도 react-hook-form이다.
+프론트엔드 개발에서 아주 많이 다루는 from과 유효성 검사. [Zod](https://zod.dev/) 와 react-hook-form을 대부분 활용한다. 다른 form 라이브러리도 있는데, 가장 익숙한 것은 아무래도 react-hook-form이다.
 
-https://zod.dev/
+
 
 최근에 Zod와 react-hook-form의 resolver를 활용해서 보다 선언적이고 유효성 검증이라는 관심사를 분리해 구현하는 방법을 알게 되어 시도해봤다.
 
