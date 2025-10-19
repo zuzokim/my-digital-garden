@@ -5,15 +5,11 @@
 
 프론트엔드 개발에서 아주 많이 다루는 from과 유효성 검사. [Zod](https://zod.dev/) 와 react-hook-form을 대부분 활용한다. 다른 form 라이브러리도 있는데, 가장 익숙한 것은 아무래도 react-hook-form이다.
 
-
-
-최근에 Zod와 react-hook-form의 resolver를 활용해서 보다 선언적이고 유효성 검증이라는 관심사를 분리해 구현하는 방법을 알게 되어 시도해봤다.
-
-기초적인 Zod의 여러 함수가 어떤 역할을 하고, 어떻게 활용하면 될지 공부하고 기록해보는 글.
+최근에 Zod와 react-hook-form의 resolver를 활용해서 보다 선언적이고 유효성 검증이라는 관심사를 분리해 구현하는 방법을 알게 되어 시도해봤다. 기초적인 Zod의 여러 함수가 어떤 역할을 하고, 어떻게 활용하면 될지 공부하고 기록해보는 글.
 
 ---
 
-내가 익숙했던 방식은 아래와 같이 register한 form field에 required 여부와 유효성 패턴을 각각 작성해주는 식이었다.
+내가 익숙했던 방식은 아래와 같이 register한 form field에 required 여부와 유효성 패턴을 각각 작성해주는 식이었다. 이렇게 하면 각 field에 필수값 여부, 메세지, 유효성 검사 로직이 작성되므로, 빠른 구현이 된다.
 
 ```ts
 {...register("experience", {
@@ -31,13 +27,14 @@
 })}
 ```
 
-이렇게 하면 각 field에 필수값 여부, 메세지, 유효성 검사 로직이 작성되므로, 빠른 구현이 된다.
+
 다만, field가 매우 많아지는 경우를 가정하면, 한 컴포넌트 내에 form으로 관리해야할 field 마크업과 로직이 뒤섞이게 되고, 추후 수정이 필요하면 한 컴포넌트 파일 안에서 스크롤을 하며 수정을 해줘야 한다.
 
+---
 
 이제 그럼 zodResolver와 zod로 type-safe한 유효성 검사를 선언적으로 관리해보자.
 
-아래처럼 유효성 검사로직을 담음 schema 파일을 별도로 만들어주자.
+아래처럼 유효성 검사로직을 담은 schema 파일을 별도로 만들어주자.
 
 ```ts
 import z from "zod";
@@ -68,7 +65,7 @@ export const formSchema = z.object({
 export type FormData = z.infer<typeof formSchema>;
 ```
 
-그리고 react-hook-form의 resolver에 넘겨주면, field 마크업에는 register만 해주면 되고, 실제 유효성 검사 로직은 schema 파일 내에서 다룰 수 있게 된다.  
+그리고 react-hook-form의 resolver에 넘겨주면 field 마크업에는 register만 해주면 된다. 실제 유효성 검사 로직은 schema 파일 내에서 다룰 수 있게 되는 것.
 
 ```ts
 import { zodResolver } from "@hookform/resolvers/zod";
