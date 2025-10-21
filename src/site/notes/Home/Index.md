@@ -9,12 +9,13 @@ GitHub | [github.com/zuzokim](https://github.com/zuzokim)
 LinkedIn | [LinkedIn](https://www.linkedin.com/in/jiwoo-kim-635921206/)
 Linktree | [link.tree](https://linktr.ee/zuzokim)
 
-| Popular                                                                         |                |
-| ------------------------------------------------------------------------------- | -------------- |
-| [[Posts/2025.03 프리랜서 예술가 백수는 왜 엔지니어가 됐나?\|2025.03 프리랜서 예술가 백수는 왜 엔지니어가 됐나?]] | March 30, 2025 |
+| Engineering & Arts                                                                                                                                                                                                                          |                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| [[Posts/2025.10 엔지니어링과 예술\|2025.10 엔지니어링과 예술]]                                                                                                                                                                                           | October 22, 2025   |
+| [[Posts/2025.03 프리랜서 예술가 백수는 왜 엔지니어가 됐나?\|2025.03 프리랜서 예술가 백수는 왜 엔지니어가 됐나?]]                                                                                                                                                             | March 30, 2025     |
+| [[Posts/WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY FORMULATED IDEAS, Marvin Minsky\|WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY FORMULATED IDEAS, Marvin Minsky]] | September 03, 2024 |
 
 { .block-language-dataview}
-
 | Daily                                                                                                                                                                                                                                       |                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
 | [[Posts/WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY FORMULATED IDEAS, Marvin Minsky\|WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY FORMULATED IDEAS, Marvin Minsky]] | September 03, 2024 |
@@ -34,7 +35,7 @@ Linktree | [link.tree](https://linktr.ee/zuzokim)
 
 { .block-language-dataview}
 
-| Dev                                                                                                                                                               |                    |
+| Engineering                                                                                                                                                       |                    |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
 | [[Posts/Zod 로 type-safe한 form validation 구현하기\|Zod 로 type-safe한 form validation 구현하기]]                                                                         | October 19, 2025   |
 | [[Posts/쓰면서 익히는 알고리즘과 자료구조 - Stack\|쓰면서 익히는 알고리즘과 자료구조 - Stack]]                                                                                               | October 12, 2025   |
