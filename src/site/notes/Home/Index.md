@@ -9,21 +9,27 @@ GitHub | [github.com/zuzokim](https://github.com/zuzokim)
 LinkedIn | [LinkedIn](https://www.linkedin.com/in/jiwoo-kim-635921206/)
 Linktree | [link.tree](https://linktr.ee/zuzokim)
 
+| Popular                                                                         |                |
+| ------------------------------------------------------------------------------- | -------------- |
+| [[Posts/2025.03 프리랜서 예술가 백수는 왜 엔지니어가 됐나?\|2025.03 프리랜서 예술가 백수는 왜 엔지니어가 됐나?]] | March 30, 2025 |
+
+{ .block-language-dataview}
+
 | Daily                                                                                                                                                                                                                                       |                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| [[Posts/작은 스타트업에 대한 요모조모 고민(retrospective)\|작은 스타트업에 대한 요모조모 고민(retrospective)]]                                                                                                                                                         | July 27, 2025      |
-| [[Posts/아무도 주지 않은 셀프 리프레시 휴가 feat.퇴사와 이직\|아무도 주지 않은 셀프 리프레시 휴가 feat.퇴사와 이직]]                                                                                                                                                             | June 29, 2025      |
-| [[Posts/3.5년차 직장인의 고민\|3.5년차 직장인의 고민]]                                                                                                                                                                                                   | May 11, 2025       |
-| [[Posts/AWSKRUG 을지로 소모임 Vibe Coding 짧은 후기\|AWSKRUG 을지로 소모임 Vibe Coding 짧은 후기]]                                                                                                                                                           | April 20, 2025     |
-| [[Posts/2025.03 프리랜서 예술가 백수는 왜 엔지니어가 됐나?\|2025.03 프리랜서 예술가 백수는 왜 엔지니어가 됐나?]]                                                                                                                                                             | March 30, 2025     |
-| [[Posts/Oops, I Did It Again 실수, 그리고 성장 - 참여 후기\|Oops, I Did It Again 실수, 그리고 성장 - 참여 후기]]                                                                                                                                               | March 08, 2025     |
-| [[Posts/2025 벅뚜벅뚜\|2025 벅뚜벅뚜]]                                                                                                                                                                                                           | January 01, 2025   |
-| [[Posts/2024.12.03 - 2024.12.08\|2024.12.03 - 2024.12.08]]                                                                                                                                                                               | December 03, 2024  |
-| [[Posts/슬로우 워크Slow Productivity(2)\|슬로우 워크Slow Productivity(2)]]                                                                                                                                                                         | November 24, 2024  |
-| [[Posts/슬로우 워크Slow Productivity(1)\|슬로우 워크Slow Productivity(1)]]                                                                                                                                                                         | November 03, 2024  |
-| [[Posts/toss 프론트엔드 파이트 클럽 참여\|toss 프론트엔드 파이트 클럽 참여]]                                                                                                                                                                                     | October 27, 2024   |
-| [[Posts/데브콘2024 다녀와서\|데브콘2024 다녀와서]]                                                                                                                                                                                                     | October 13, 2024   |
 | [[Posts/WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY FORMULATED IDEAS, Marvin Minsky\|WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY FORMULATED IDEAS, Marvin Minsky]] | September 03, 2024 |
+| [[Posts/데브콘2024 다녀와서\|데브콘2024 다녀와서]]                                                                                                                                                                                                     | October 13, 2024   |
+| [[Posts/toss 프론트엔드 파이트 클럽 참여\|toss 프론트엔드 파이트 클럽 참여]]                                                                                                                                                                                     | October 27, 2024   |
+| [[Posts/슬로우 워크Slow Productivity(1)\|슬로우 워크Slow Productivity(1)]]                                                                                                                                                                         | November 03, 2024  |
+| [[Posts/슬로우 워크Slow Productivity(2)\|슬로우 워크Slow Productivity(2)]]                                                                                                                                                                         | November 24, 2024  |
+| [[Posts/2024.12.03 - 2024.12.08\|2024.12.03 - 2024.12.08]]                                                                                                                                                                               | December 03, 2024  |
+| [[Posts/2025 벅뚜벅뚜\|2025 벅뚜벅뚜]]                                                                                                                                                                                                           | January 01, 2025   |
+| [[Posts/Oops, I Did It Again 실수, 그리고 성장 - 참여 후기\|Oops, I Did It Again 실수, 그리고 성장 - 참여 후기]]                                                                                                                                               | March 08, 2025     |
+| [[Posts/2025.03 프리랜서 예술가 백수는 왜 엔지니어가 됐나?\|2025.03 프리랜서 예술가 백수는 왜 엔지니어가 됐나?]]                                                                                                                                                             | March 30, 2025     |
+| [[Posts/AWSKRUG 을지로 소모임 Vibe Coding 짧은 후기\|AWSKRUG 을지로 소모임 Vibe Coding 짧은 후기]]                                                                                                                                                           | April 20, 2025     |
+| [[Posts/3.5년차 직장인의 고민\|3.5년차 직장인의 고민]]                                                                                                                                                                                                   | May 11, 2025       |
+| [[Posts/아무도 주지 않은 셀프 리프레시 휴가 feat.퇴사와 이직\|아무도 주지 않은 셀프 리프레시 휴가 feat.퇴사와 이직]]                                                                                                                                                             | June 29, 2025      |
+| [[Posts/작은 스타트업에 대한 요모조모 고민(retrospective)\|작은 스타트업에 대한 요모조모 고민(retrospective)]]                                                                                                                                                         | July 27, 2025      |
 
 { .block-language-dataview}
 
