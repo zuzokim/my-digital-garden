@@ -30,6 +30,7 @@ Linktree | [link.tree](https://linktr.ee/zuzokim)
 | [[Posts/3.5년차 직장인의 고민\|3.5년차 직장인의 고민]]                                                                                                                                                                                                   | May 11, 2025       |
 | [[Posts/아무도 주지 않은 셀프 리프레시 휴가 feat.퇴사와 이직\|아무도 주지 않은 셀프 리프레시 휴가 feat.퇴사와 이직]]                                                                                                                                                             | June 29, 2025      |
 | [[Posts/작은 스타트업에 대한 요모조모 고민(retrospective)\|작은 스타트업에 대한 요모조모 고민(retrospective)]]                                                                                                                                                         | July 27, 2025      |
+| [[Posts/2025.10 엔지니어링과 예술\|2025.10 엔지니어링과 예술]]                                                                                                                                                                                           | October 22, 2025   |
 
 { .block-language-dataview}
 
