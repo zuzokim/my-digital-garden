@@ -85,7 +85,7 @@ Linktree | [link.tree](https://linktr.ee/zuzokim)
 
 | Logs                                                                                                                             |                               |
 | -------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| [[Logs/engineering & other books\|engineering & other books]]                                                                 | August 04, 2025               |
+| [[Logs/engineering & other books\|engineering & other books]]                                                                 | October 23, 2025              |
 | [[Logs/study archives\|study archives]]                                                                                       | June 01, 2025                 |
 | [[Logs/recollect-logs\|recollect-logs]]                                                                                       | 11:40 PM - September 04, 2024 |
 | [[Logs/How to Design a GoodAPI and Why it Matters - Joshua Bloch\|How to Design a GoodAPI and Why it Matters - Joshua Bloch]] | June 13, 2024                 |
