@@ -37,6 +37,7 @@ Linktree | [link.tree](https://linktr.ee/zuzokim)
 
 | Engineering                                                                                                                                                       |                    |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| [[Posts/Typescript Generic (1)\|Typescript Generic (1)]]                                                                                                       | November 08, 2025  |
 | [[Posts/HTML id 속성과 CSS “identifier”의 스펙이 다른 이유 - feat. W3C Selector API 문서\|HTML id 속성과 CSS “identifier”의 스펙이 다른 이유 - feat. W3C Selector API 문서]]             | October 29, 2025   |
 | [[Posts/Zod 로 type-safe한 form validation 구현하기\|Zod 로 type-safe한 form validation 구현하기]]                                                                         | October 19, 2025   |
 | [[Posts/쓰면서 익히는 알고리즘과 자료구조 - Stack\|쓰면서 익히는 알고리즘과 자료구조 - Stack]]                                                                                               | October 12, 2025   |
