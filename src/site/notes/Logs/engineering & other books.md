@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/logs/engineering-and-other-books/","tags":["Books","Logs"],"updated":"2025-10-23"}
+{"dg-publish":true,"permalink":"/logs/engineering-and-other-books/","tags":["Books","Logs"],"updated":"2025-11-10"}
 ---
 
 1. [함께 자라기 애자일로 가는길](http://aladin.kr/p/wLch8)
@@ -19,3 +19,5 @@
 15. 읽지 못하는 사람의 미래
 16. 먼저 온 미래 : AI 이후의 세계를 경험한 사람들
 17. [그을린 예술](http://aladin.kr/p/1vmR)
+18. [Uncomputable - Alexander Galloway](https://www.amazon.com/Uncomputable-Play-Politics-Long-Digital/dp/1839763981) 
+19. …<3
