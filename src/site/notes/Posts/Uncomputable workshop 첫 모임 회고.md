@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/posts/uncomputable-workshop/","tags":["Daily"],"created":"2025-11-14","updated":"2025-11-14"}
 ---
 
-최근 [<계산할 수 없음 Uncomputable>](https://www.instagram.com/p/DQdIRqaEccz/?igsh=eWRyeGJ2ZnVuc2to) 워크숍에 참여하고 있다. 워크숍은 서울대학교 제23회 디자인문화국제학술대회 와 포에버 갤러리(Forever Gallery)의 협력으로 진행되는 워크숍이다.
+최근 [<계산할 수 없음 Uncomputable>](https://www.instagram.com/p/DQdIRqaEccz) 워크숍에 참여하고 있다. 워크숍은 서울대학교 제23회 디자인문화국제학술대회 와 포에버 갤러리(Forever Gallery)의 협력으로 진행되는 워크숍이다.
 ![IMG_1431.jpeg|400](/img/user/IMG_1431.jpeg)계산할수없음_워크숍포스터_디자인_권세현
 
 [[Logs/engineering & other books\|engineering & other books]] 워크숍과 동명의 책 알렉산더 갤러웨이의 Uncomputable을 메인 텍스트로 여러가지 이야기와 글을 나눈다.
