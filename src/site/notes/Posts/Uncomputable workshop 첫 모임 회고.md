@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/posts/uncomputable-workshop/","tags":["Daily"],"created":"2025-11-14","updated":"2025-11-14"}
+{"dg-publish":true,"permalink":"/posts/uncomputable-workshop/","tags":["Daily","Books"],"created":"2025-11-14","updated":"2025-11-14"}
 ---
 
 ![IMG_1431.jpeg|400](/img/user/IMG_1431.jpeg)
