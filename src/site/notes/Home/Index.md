@@ -33,7 +33,7 @@ Linktree | [link.tree](https://linktr.ee/zuzokim)
 | [[Posts/작은 스타트업에 대한 요모조모 고민(retrospective)\|작은 스타트업에 대한 요모조모 고민(retrospective)]]                                                                                                                                                         | July 27, 2025      |
 | [[Posts/2025.10 엔지니어링과 예술\|2025.10 엔지니어링과 예술]]                                                                                                                                                                                           | October 22, 2025   |
 | [[Posts/Uncomputable workshop 첫 모임 회고\|Uncomputable workshop 첫 모임 회고]]                                                                                                                                                                   | November 14, 2025  |
-| [[Posts/Uncomputable 서문 북리뷰\|Uncomputable 서문 북리뷰]]                                                                                                                                                                                       | November 22, 2025  |
+| [[Posts/Uncomputable Introduction 북리뷰\|Uncomputable Introduction 북리뷰]]                                                                                                                                                                   | November 22, 2025  |
 
 { .block-language-dataview}
 
