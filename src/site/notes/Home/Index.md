@@ -34,12 +34,12 @@ Linktree | [link.tree](https://linktr.ee/zuzokim)
 | [[Posts/2025.10 엔지니어링과 예술\|2025.10 엔지니어링과 예술]]                                                                                                                                                                                           | October 22, 2025   |
 | [[Posts/Uncomputable workshop 첫 모임 회고\|Uncomputable workshop 첫 모임 회고]]                                                                                                                                                                   | November 14, 2025  |
 | [[Posts/Uncomputable Introduction 북리뷰\|Uncomputable Introduction 북리뷰]]                                                                                                                                                                   | November 22, 2025  |
+| [[Posts/Uncomputable 3,4장 리뷰\|Uncomputable 3,4장 리뷰]]                                                                                                                                                                                     | December 02, 2025  |
 
 { .block-language-dataview}
 
 | Engineering                                                                                                                                                       |                    |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| [[Posts/Uncomputable 3,4장 리뷰\|Uncomputable 3,4장 리뷰]]                                                                                                           | December 02, 2025  |
 | [[Posts/Typescript Generic (1)\|Typescript Generic (1)]]                                                                                                       | November 08, 2025  |
 | [[Posts/HTML id 속성과 CSS “identifier”의 스펙이 다른 이유 - feat. W3C Selector API 문서\|HTML id 속성과 CSS “identifier”의 스펙이 다른 이유 - feat. W3C Selector API 문서]]             | October 29, 2025   |
 | [[Posts/Zod 로 type-safe한 form validation 구현하기\|Zod 로 type-safe한 form validation 구현하기]]                                                                         | October 19, 2025   |

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/posts/uncomputable-3-4/","tags":["Books"],"created":"2025-12-02","updated":"2025-12-02"}
+{"dg-publish":true,"permalink":"/posts/uncomputable-3-4/","tags":["Books","Daily"],"created":"2025-12-02","updated":"2025-12-02"}
 ---
 
 계산할 수 없는 3장 발췌 (Gemini 번역 바탕으로 의역)
