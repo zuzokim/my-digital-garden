@@ -107,6 +107,4 @@ XY Problem이란게 있다. 질문할 때 진짜 문제(X) 대신, 그 문제를
 
 2025년 회고의 중심에는 아무래도 Frontend Accelerator가 가장 큰 비중을 차지한다. 그리고 앞서 이야기한 나의 병목이 코딩 실력과 무관하다는 말 역시, 이 글의 끝에서 충분히 설명되었다고 생각한다. 12월 짧다면 짧은 시간이었지만, 이 시간과 경험은 앞으로의 인생과 커리어에 오래 다져진 땅처럼 단단한 기반이 되어줄 것이라고 믿는다.
 
-![IMG_2023.png](/img/user/IMG_2023.png)
-![IMG_2025.png](/img/user/IMG_2025.png)
-![IMG_2024.png](/img/user/IMG_2024.png)
+![IMG_2023.png|400](/img/user/IMG_2023.png)![IMG_2025.png|400](/img/user/IMG_2025.png)![IMG_2024.png|400](/img/user/IMG_2024.png)
