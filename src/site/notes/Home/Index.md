@@ -92,7 +92,7 @@ Linktree | [link.tree](https://linktr.ee/zuzokim)
 
 | Logs                                                                                                                             |                               |
 | -------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| [[Logs/engineering & other books\|engineering & other books]]                                                                 | November 28, 2025             |
+| [[Logs/engineering & other books\|engineering & other books]]                                                                 | January 25, 2026              |
 | [[Logs/dot to dot wallpaper\|dot to dot wallpaper]]                                                                           | October 29, 2025              |
 | [[Logs/study archives\|study archives]]                                                                                       | June 01, 2025                 |
 | [[Logs/recollect-logs\|recollect-logs]]                                                                                       | 11:40 PM - September 04, 2024 |
