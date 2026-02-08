@@ -41,6 +41,7 @@ Linktree | [link.tree](https://linktr.ee/zuzokim)
 
 | Engineering                                                                                                                                                       |                    |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| [[Posts/서버 설정 없는 환경에서 SPA 라우팅 확장하기\|서버 설정 없는 환경에서 SPA 라우팅 확장하기]]                                                                                               | February 08, 2026  |
 | [[Posts/React Router 와 상태관리\|React Router 와 상태관리]]                                                                                                             | January 25, 2026   |
 | [[Posts/Typescript Generic (1)\|Typescript Generic (1)]]                                                                                                       | November 08, 2025  |
 | [[Posts/HTML id 속성과 CSS “identifier”의 스펙이 다른 이유 - feat. W3C Selector API 문서\|HTML id 속성과 CSS “identifier”의 스펙이 다른 이유 - feat. W3C Selector API 문서]]             | October 29, 2025   |
