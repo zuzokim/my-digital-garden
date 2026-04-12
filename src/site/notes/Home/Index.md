@@ -41,6 +41,7 @@ Linktree | [link.tree](https://linktr.ee/zuzokim)
 
 | Engineering                                                                                                                                                       |                    |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| [[Posts/HTML-in-canvas API 가 푸는 문제\|HTML-in-canvas API 가 푸는 문제]]                                                                                               | April 12, 2026     |
 | [[Posts/React를 벗어나보자, 그리고 렌더링을 다시 보자 feat. jsp jquery Next..\|React를 벗어나보자, 그리고 렌더링을 다시 보자 feat. jsp jquery Next..]]                                           | March 29, 2026     |
 | [[Posts/PDF exporter 크롬 익스텐션 개발기\|PDF exporter 크롬 익스텐션 개발기]]                                                                                                   | March 15, 2026     |
 | [[Posts/커스텀 가상키보드 입력을 React에서 감지하는 방법-이벤트 버블링의 한계와 Property Descriptor\|커스텀 가상키보드 입력을 React에서 감지하는 방법-이벤트 버블링의 한계와 Property Descriptor]]                       | March 01, 2026     |
