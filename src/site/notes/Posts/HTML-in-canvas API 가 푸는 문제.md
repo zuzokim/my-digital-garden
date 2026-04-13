@@ -176,7 +176,7 @@ const png = canvas.toDataURL('image/png');
 
 ###### 방법 B: Puppeteer / Playwright (헤드리스 브라우저)
 서버에서 실제 Chrome을 무헤드로 띄워서 스크린샷을 찍는 방법이 있다. 렌더링 정확도는 완벽하지만 운영 비용이 크다.
-동시에 100개 요청이 오면 최소 2030개의 브라우저 인스턴스가 필요하고, Chrome 메모리만 615GB입니다. 요청 큐잉, 타임아웃 처리, 재시도 로직도 따로 구축해야 해요. 트래픽 급증 시 메모리 부족으로 서비스가 죽는 일이 실제로 일어난다.
+동시에 100개 요청이 오면 최소 2030개의 브라우저 인스턴스가 필요하고, Chrome 메모리만 615GB입니다. 요청 큐잉, 타임아웃 처리, 재시도 로직도 따로 구축해야 한다. 트래픽 급증 시 메모리 부족으로 서비스가 죽는 일이 실제로 일어난다.
 
 사용자 요청 → 서버 → Chrome 인스턴스 띄우기 → 페이지 로드 → 스크린샷 → 반환
          ↑ 이 과정이 수 초 걸리고, 인스턴스마다 RAM 수백 MB 소비
@@ -332,7 +332,7 @@ setInterval(() => {
 }, 500);
 ```
 
-코드 양의 차이도 크지만, 진짜 차이는 *불가능했던 것이 가능해졌다*는 점이다. `<input>`의 커서, 한글 조합 입력, 스크린 리더 접근성—이제 3D 씬 안에서도 공짜로 따라온다.
+코드 양의 차이도 크지만, 진짜 차이는 *불가능했던 것이 가능해졌다*는 점이다. `<input>`의 커서, 한글 조합 입력, 스크린 리더 접근성 - 이제 3D 씬 안에서도 공짜로 따라온다.
 
 -----
 
@@ -364,18 +364,18 @@ Mozilla는 표준 포지션 검토 중(이슈 #1076)이고, WebKit 역시 별도
 
 ## 7. 전망: 웹의 다음 단계
 
-HTML in Canvas는 하나의 API 제안이 아니다. 웹이 처음 설계될 때부터 존재했던 근본적인 이원성—문서 모델과 그래픽 모델의 분리—를 처음으로 통합하는 시도다.
+HTML in Canvas는 하나의 API 제안이 아니다. 웹이 처음 설계될 때부터 존재했던 근본적인 이원성 - 문서 모델과 그래픽 모델의 분리 - 를 처음으로 통합하는 시도다.
 
-WebGPU와의 통합(현재 `copyElementImageToTexture`로 논의 중), WebXR과의 연동, OffscreenCanvas를 통한 Worker 스레드 활용—이런 확장 가능성들이 이미 제안서에 언급되어 있다.
+WebGPU와의 통합(현재 `copyElementImageToTexture`로 논의 중), WebXR과의 연동, OffscreenCanvas를 통한 Worker 스레드 활용 - 이런 확장 가능성들이 이미 제안서에 언급되어 있다.
 
-실용적인 관점에서 가장 먼저 영향받을 영역은 데이터 시각화다. 차트 라이브러리들은 오랫동안 Canvas 성능과 HTML 접근성 사이에서 타협해왔다. HTML in Canvas가 표준화되면 이 타협이 사라진다. 게임 개발, 크리에이티브 도구, XR 경험—모두 같은 방향이다.
+실용적인 관점에서 가장 먼저 영향받을 영역은 데이터 시각화다. 차트 라이브러리들은 오랫동안 Canvas 성능과 HTML 접근성 사이에서 타협해왔다. HTML in Canvas가 표준화되면 이 타협이 사라진다. 게임 개발, 크리에이티브 도구, XR 경험 - 모두 같은 방향이다.
 
 지금 당장 프로덕션에서 쓸 수 없는 기술이지만, 방향은 명확하다. DOM과 GPU 사이의 벽은 무너지고 있다. 
 
 > The API is most compelling not when it enables new categories of effect, but when it makes something everyone’s seen a thousand times feel dramatically better. The web has always been flat. This API lets it have depth. but only when that depth serves a purpose.
 > 
-> “웹은 언제나 평평했다. 이 API는 그것에 깊이를 준다—단, 그 깊이가 목적을 달성하고자 할 때만.”
-> — Matt Rothenberg
+> “웹은 언제나 평평했다. 이 API는 그것에 깊이를 준다. 단, 그 깊이가 목적을 달성하고자 할 때만.”
+> - Matt Rothenberg
 
 로텐버그의 글이 인상깊어서 인용해본다. API가 실제 UX 문제를 더 잘 푸는 데에 도움을 주고 있고, 기술을 위한 기술이 아닌 목적있는 기술이 중요하다는 언급으로 느껴진다. 웹의 무궁무진한 기술, 실험과 브라우저의 신기능들이 어떤 문제를 풀려고 하는지 생각해보는 것의 중요함을 또 느끼며 글 마무리. 
 
