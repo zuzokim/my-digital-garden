@@ -41,6 +41,7 @@ Linktree | [link.tree](https://linktr.ee/zuzokim)
 
 | Engineering                                                                                                                                                       |                    |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| [[Posts/Git https vs ssh\|Git https vs ssh]]                                                                                                                   | April 26, 2026     |
 | [[Posts/HTML-in-canvas API 가 푸는 문제\|HTML-in-canvas API 가 푸는 문제]]                                                                                               | April 12, 2026     |
 | [[Posts/React를 벗어나보자, 그리고 렌더링을 다시 보자 feat. jsp jquery Next..\|React를 벗어나보자, 그리고 렌더링을 다시 보자 feat. jsp jquery Next..]]                                           | March 29, 2026     |
 | [[Posts/PDF exporter 크롬 익스텐션 개발기\|PDF exporter 크롬 익스텐션 개발기]]                                                                                                   | March 15, 2026     |
